@@ -9,7 +9,7 @@ const router = createRouter({
       name: "defaultview",
       component: MainMenu,
       meta:{
-        title: 'Hydra '
+        title: 'Hydra'
       }
     },
     {
@@ -17,6 +17,9 @@ const router = createRouter({
       name: "LoginView",
       component: LoginView,
       redirect: "/Main",
+      meta:{
+        title: 'Hydra'
+      }
     },
   ],
 });
