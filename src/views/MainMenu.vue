@@ -70,7 +70,7 @@
                 <!-- back content -->
                 <h3>Summary</h3>
                 <p>
-                  You can create a verfied customer without needing for
+                  You can create a verfied contractor without needing for
                   activation his account
                 </p>
                 <button class="button" @click="toggleModal">Create</button>
@@ -101,7 +101,7 @@
                 <!-- back content -->
                 <h3>Summary</h3>
                 <p>
-                  You can create a verfied customer without needing for
+                  You can create a verfied supplier without needing for
                   activation his account
                 </p>
                 <button class="button" @click="toggleModal1">Create</button>
