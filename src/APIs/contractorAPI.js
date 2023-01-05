@@ -13,6 +13,7 @@ export async function createContractor() {
       email: firstName + secondName + "@brkz.co",
       phoneNumber: "+966" + national_number.toString(),
       lang: "EN",
+      contractorType:"COMPANY",
       notificationPreference: {
         whatsappNotification: "true",
         emailMarketing: "true",
