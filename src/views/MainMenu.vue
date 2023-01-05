@@ -90,37 +90,6 @@
                 <!-- front content -->
                 <img
                   class="flip-image"
-                  src="../assets/images/contractor.png"
-                  alt="Image alt text"
-                />
-                <div class="block-content">
-                  <h3>Create Contractor</h3>
-                </div>
-              </div>
-              <div class="back">
-                <!-- back content -->
-                <h3>Summary</h3>
-                <p>
-                  You can create a verfied contractor without needing for
-                  activation his account
-                </p>
-                <button class="button" @click="toggleModal">Create</button>
-              </div>
-            </div>
-          </div>
-          <CreateContractorModal @close="toggleModal" :showModal="showModal">
-          </CreateContractorModal>
-        </div>
-        <div class="content">
-          <div
-            class="flip-container"
-            ontouchstart="this.classList.toggle('hover');"
-          >
-            <div class="flipper">
-              <div class="front">
-                <!-- front content -->
-                <img
-                  class="flip-image"
                   src="../assets/images/supplier.png"
                   alt="Image alt text"
                 />
