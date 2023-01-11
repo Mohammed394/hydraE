@@ -6,7 +6,7 @@ export async function createContractor() {
   try {
     var firstName = getRandomName();
     var secondName = getRandomName();
-    var national_number = Math.floor(Math.random() * 1000000000);
+    var national_number = Math.floor(Math.random() * 10000000000);
     var formData = {
       fullName: firstName + " " + secondName,
       password: "12345678",
