@@ -14,3 +14,14 @@ export function getUniquePost() {
 
   return "Post text is " + text;
 }
+export function getBid() {
+  var text = "";
+  var possible = "123456789";
+  for (var i = 0; i < 4; i++)
+    firsttext += possible.charAt(Math.floor(Math.random() * possible.length));
+  for (var i = 0; i < 4; i++)
+    secondtext += possible.charAt(Math.floor(Math.random() * possible.length));
+  for (var i = 0; i < 4; i++)
+    thirdtext += possible.charAt(Math.floor(Math.random() * possible.length));
+  return firsttext +"-"+ secondtext+"-"+thirdtext;
+}

@@ -59,26 +59,25 @@
                 <!-- front content -->
                 <img
                   class="flip-image"
-                  src="../assets/images/contractor.png"
+                  src="../assets/images/Order.png"
                   alt="Image alt text"
                 />
                 <div class="block-content">
-                  <h3>Create Contractor</h3>
+                  <h3>Create Order</h3>
                 </div>
               </div>
               <div class="back">
                 <!-- back content -->
                 <h3>Summary</h3>
                 <p>
-                  You can create a verfied contractor without needing for
-                  activation his account
+                  You Can create Order easily using this tool
                 </p>
-                <button class="button" @click="toggleModal">Create</button>
+                <button class="button" @click="toggleModal1">Create</button>
               </div>
             </div>
           </div>
-          <CreateContractorModal @close="toggleModal" :showModal="showModal">
-          </CreateContractorModal>
+          <CreateOrderModal @close="toggleModal1" :showModal1="showModal1">
+          </CreateOrderModal>
         </div>
         <div class="content">
           <div
@@ -90,56 +89,26 @@
                 <!-- front content -->
                 <img
                   class="flip-image"
-                  src="../assets/images/supplier.png"
+                  src="../assets/images/RFQ.png"
                   alt="Image alt text"
                 />
                 <div class="block-content">
-                  <h3>Create Supplier</h3>
+                  <h3>Buyer Journey</h3>
                 </div>
               </div>
               <div class="back">
                 <!-- back content -->
                 <h3>Summary</h3>
                 <p>
-                  You can create a verfied supplier without needing for
-                  activation his account
+                 You can simulate the journey of our app using this tool
                 </p>
-                <button class="button" @click="toggleModal1">Create</button>
+                <button class="button" @click="toggleRFQModal">Start</button>
               </div>
             </div>
           </div>
-          <CreateSupplierModal @close="toggleModal1" :showModal1="showModal1">
-          </CreateSupplierModal>
+          <CreateRFQ @close="toggleRFQModal" :showRFQModal="showRFQModal">
+          </CreateRFQ>
         </div>
-        <!-- <div class="content" v-if="!showModal">
-          <div
-            class="flip-container"
-            ontouchstart="this.classList.toggle('hover');"
-          >
-            <div class="flipper">
-              <div class="front">
-                <img
-                  class="flip-image"
-                  src="../assets/images/supplier.png"
-                  alt="Image alt text"
-                />
-                <div class="block-content">
-                  <h3>Create Supplier</h3>
-                </div>
-              </div>
-              <div class="back">
-                <h3>Summary</h3>
-                <p>
-                  You can book a ride with one step without carring about
-                  creating ride or customer
-                </p>
-                <button class="button" @click="callSupplierModal">Create</button>
-              </div>
-            </div>
-            <CreateSupplierModal @close="closeSupplier" v-if="isSupplierModalShown">
-            </CreateSupplierModal>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
@@ -147,14 +116,16 @@
 <script>
 import { ref } from "vue";
 import CreateContractorModal from "../components/modal/CreateContractor.vue";
-import CreateSupplierModal from "../components/modal/CreateSupplier.vue";
+import CreateOrderModal from "../components/modal/CreateOrder.vue";
+import CreateRFQ from "../components/modal/CreateRFQ.vue";
 import "../script";
 
 export default {
   name: "MainMenu",
   components: {
     CreateContractorModal,
-    CreateSupplierModal
+    CreateOrderModal,
+    CreateRFQ
   },
   data(){
     return{
@@ -178,7 +149,11 @@ export default {
     const toggleModal1 = () => {
       showModal1.value = !showModal1.value;
     };
-    return { showModal, toggleModal ,showModal1 ,toggleModal1};
+    const showRFQModal = ref(false);
+    const toggleRFQModal = () => {
+      showRFQModal.value = !showRFQModal.value;
+    };
+    return { showModal, toggleModal ,showModal1 ,toggleModal1, showRFQModal, toggleRFQModal};
   },
 };
 </script>
