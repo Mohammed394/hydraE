@@ -6,7 +6,13 @@
 </style>
 <template>
   <body>
-    <canvas style="display: contents;width: -webkit-fill-available;height: -webkit-fill-available;" ></canvas>
+    <canvas
+      style="
+        display: contents;
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+      "
+    ></canvas>
   </body>
   <link
     rel="stylesheet"
@@ -59,25 +65,23 @@
                 <!-- front content -->
                 <img
                   class="flip-image"
-                  src="../assets/images/Order.png"
+                  src="../assets/images/RFQ.png"
                   alt="Image alt text"
                 />
                 <div class="block-content">
-                  <h3>Create Order</h3>
+                  <h3>Buyer Journey</h3>
                 </div>
               </div>
               <div class="back">
                 <!-- back content -->
                 <h3>Summary</h3>
-                <p>
-                  You Can create Order easily using this tool
-                </p>
-                <button class="button" @click="toggleModal1">Create</button>
+                <p>You can simulate the journey of our app step by step using this tool</p>
+                <button class="button" @click="toggleRFQModal">Start</button>
               </div>
             </div>
           </div>
-          <CreateOrderModal @close="toggleModal1" :showModal1="showModal1">
-          </CreateOrderModal>
+          <CreateRFQ @close="toggleRFQModal" :showRFQModal="showRFQModal">
+          </CreateRFQ>
         </div>
         <div class="content">
           <div
@@ -89,25 +93,23 @@
                 <!-- front content -->
                 <img
                   class="flip-image"
-                  src="../assets/images/RFQ.png"
+                  src="../assets/images/Order.png"
                   alt="Image alt text"
                 />
                 <div class="block-content">
-                  <h3>Buyer Journey</h3>
+                  <h3>Create Order</h3>
                 </div>
               </div>
               <div class="back">
                 <!-- back content -->
                 <h3>Summary</h3>
-                <p>
-                 You can simulate the journey of our app using this tool
-                </p>
-                <button class="button" @click="toggleRFQModal">Start</button>
+                <p>You Can create Order in one time using this tool</p>
+                <button class="button" @click="toggleModal1">Create</button>
               </div>
             </div>
           </div>
-          <CreateRFQ @close="toggleRFQModal" :showRFQModal="showRFQModal">
-          </CreateRFQ>
+          <CreateOrderModal @close="toggleModal1" :showModal1="showModal1">
+          </CreateOrderModal>
         </div>
       </div>
     </div>
@@ -125,20 +127,20 @@ export default {
   components: {
     CreateContractorModal,
     CreateOrderModal,
-    CreateRFQ
+    CreateRFQ,
   },
-  data(){
-    return{
-      isSupplierModalShown: false
-    }
+  data() {
+    return {
+      isSupplierModalShown: false,
+    };
   },
   methods: {
-    closeSupplier(){
-      this.isSupplierModalShown = false
+    closeSupplier() {
+      this.isSupplierModalShown = false;
     },
-    callSupplierModal(){
-      this.isSupplierModalShown = true
-    }
+    callSupplierModal() {
+      this.isSupplierModalShown = true;
+    },
   },
   setup() {
     const showModal = ref(false);
@@ -153,7 +155,14 @@ export default {
     const toggleRFQModal = () => {
       showRFQModal.value = !showRFQModal.value;
     };
-    return { showModal, toggleModal ,showModal1 ,toggleModal1, showRFQModal, toggleRFQModal};
+    return {
+      showModal,
+      toggleModal,
+      showModal1,
+      toggleModal1,
+      showRFQModal,
+      toggleRFQModal,
+    };
   },
 };
 </script>
