@@ -115,7 +115,7 @@ export async function raiseManualRFQ() {
   try {
     var formData = {
       contractorId: localStorage.getItem("contractorId").replace(/['"]+/g, ""),
-      fullName: localStorage.getItem("ContractorFullName"),
+      fullName: localStorage.getItem("ContractorFullName").replace(/['"]+/g, ""),
       phoneNumber: localStorage.getItem("ContractorPhoneNumber"),
       projectName: "Test Project",
       location: "Test Address",
