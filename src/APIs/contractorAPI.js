@@ -76,7 +76,7 @@ export async function getBuyerInfo(phoneNumber){
         phoneNumber)
     if (result.status == 200) {
       localStorage.setItem("contractorId", JSON.stringify(result.data.id));
-      localStorage.setItem("ContractorPhoneNumber", JSON.stringify(result.data.phoneNumber));
+      localStorage.setItem("ContractorPhoneNumber", JSON.stringify(result.data.phoneNumber).replace(/['"]+/g, ""));
       localStorage.setItem("ContractorFullName", JSON.stringify(result.data.fullName).replace(/['"]+/g, ""));
       return true;
     } else {
@@ -101,7 +101,7 @@ export async function loginContractor(phoneNumber,password){
     );
     if (result.status == 200) {
       localStorage.setItem("ContractorFullName", JSON.stringify(result.data.profile.fullName).replace(/['"]+/g, ""));
-      localStorage.setItem("ContractorPhoneNumber", JSON.stringify(result.data.profile.phoneNumber));
+      localStorage.setItem("ContractorPhoneNumber", JSON.stringify(result.data.profile.phoneNumber).replace(/['"]+/g, ""));
       localStorage.setItem("contractorId", JSON.stringify(result.data.profile.id));
       return true;
     } else {
@@ -116,7 +116,7 @@ export async function raiseManualRFQ() {
     var formData = {
       contractorId: localStorage.getItem("contractorId").replace(/['"]+/g, ""),
       fullName: localStorage.getItem("ContractorFullName").replace(/['"]+/g, ""),
-      phoneNumber: localStorage.getItem("ContractorPhoneNumber"),
+      phoneNumber: localStorage.getItem("ContractorPhoneNumber").replace(/['"]+/g, ""),
       projectName: "Test Project",
       location: "Test Address",
       products: [
