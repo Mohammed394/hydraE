@@ -153,3 +153,21 @@ export async function selectWinning() {
     return false;
   }
 }
+
+export async function getOrderId() {
+  try {
+    let result = await axios.get(
+      returnURL() +
+        "/orders/paginated/filtered?page=0&size=1&orderNumber=" +
+        localStorage.getItem("rfqId").replace(/['"]+/g, "")
+    );
+    if (result.status == 200) {
+      localStorage.setItem("orderId", JSON.stringify(result.data.content[0].orderId));
+      return true;
+    } else {
+      return false;
+    }
+  } catch {
+    return false;
+  }
+}

@@ -45,7 +45,7 @@
 <script>
 import { getBuyerInfo,getOpportunity, raiseManualRFQ, acceptQuotation,rejectQuotation, getOffer} from "../../APIs/contractorAPI";
 import { submitQuotation} from "../../APIs/supplierAPI";
-import { updateMargin, selectWinning, updateNote} from "../../APIs/retoolAPI";
+import { updateMargin, selectWinning, updateNote, getOrderId} from "../../APIs/retoolAPI";
 export default {
   props: {
     showRFQModal: Boolean,
@@ -130,10 +130,18 @@ export default {
     },
     async acceptQuotation(){
       let result = await acceptQuotation()
+      result = await getOrderId()
+
       if (result == true) {
         var temp = document.getElementById("textAreaField").value
         document.getElementById("textAreaField").value = temp + "\r\n" + `-------------------------------------------`+ "\r\n" + 
           `Quotation is accepted`
+        document.getElementById("textAreaField").value =
+          temp +
+          "\r\n" +
+          `-------------------------------------------` +
+          "\r\n" +
+          `Order Id: ${localStorage.getItem("orderId")}`;
          
       } else {
         document.getElementById("textAreaField").value = "Failed to accept Quotation";

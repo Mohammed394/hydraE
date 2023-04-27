@@ -8,7 +8,7 @@ body{
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
   background-position: center; /* Center the image */
-  background: #080410;
+  background: #16434a;
   background-size: 400% 400%;
   animation: body 10s infinite ease-in;
 }
