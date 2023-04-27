@@ -77,7 +77,7 @@ export async function getBuyerInfo(phoneNumber){
     if (result.status == 200) {
       localStorage.setItem("contractorId", JSON.stringify(result.data.id));
       localStorage.setItem("ContractorPhoneNumber", JSON.stringify(result.data.phoneNumber));
-      localStorage.setItem("ContractorFullName", JSON.stringify(result.data.fullName));
+      localStorage.setItem("ContractorFullName", JSON.stringify(result.data.fullName).replace(/['"]+/g, ""));
       return true;
     } else {
       return false;
@@ -100,7 +100,7 @@ export async function loginContractor(phoneNumber,password){
       formData
     );
     if (result.status == 200) {
-      localStorage.setItem("ContractorFullName", JSON.stringify(result.data.profile.fullName));
+      localStorage.setItem("ContractorFullName", JSON.stringify(result.data.profile.fullName).replace(/['"]+/g, ""));
       localStorage.setItem("ContractorPhoneNumber", JSON.stringify(result.data.profile.phoneNumber));
       localStorage.setItem("contractorId", JSON.stringify(result.data.profile.id));
       return true;
