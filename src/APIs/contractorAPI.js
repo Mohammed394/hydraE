@@ -119,9 +119,9 @@ export async function raiseManualRFQ() {
       phoneNumber: localStorage.getItem("ContractorPhoneNumber").replace(/['"]+/g, ""),
       projectName: "Test Project",
       location: "Test Address",
-      products: [
+      products: 
         returnBasicProduct()
-      ],
+      ,
       source: "WEB",
     };
     let result = await axios.post(
@@ -148,7 +148,8 @@ export async function getOpportunity() {
     if (result.status == 200) {
       localStorage.setItem("opportunityId", JSON.stringify(result.data.id));
       localStorage.setItem("rfqId", JSON.stringify(result.data.rfqId));
-      localStorage.setItem("products", JSON.stringify(result.data.products[0].name));
+      const productNames = result.data.products.map(product => product.name).join('\n');
+      localStorage.setItem("products", JSON.stringify(productNames));
       localStorage.setItem(
         "deliveryTime",
         JSON.stringify(result.data.deliveryTime)

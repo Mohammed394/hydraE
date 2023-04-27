@@ -45,7 +45,7 @@
 <script>
 import { getBuyerInfo,getOpportunity, raiseManualRFQ, acceptQuotation,rejectQuotation, getOffer} from "../../APIs/contractorAPI";
 import { submitQuotation} from "../../APIs/supplierAPI";
-import { updateMargin, selectWinning} from "../../APIs/retoolAPI";
+import { updateMargin, selectWinning, updateNote} from "../../APIs/retoolAPI";
 export default {
   props: {
     showRFQModal: Boolean,
@@ -93,9 +93,9 @@ export default {
           )}`
           +
           "\r\n" +
-          `Products: ${localStorage.getItem(
+          `Products: \r\n${JSON.parse(localStorage.getItem(
             "products"
-          )}`
+          )).split('\r\n')}`
          
       } else {
         document.getElementById("textAreaField").value = "Failed to create RFQ";
@@ -116,6 +116,7 @@ export default {
     },
     async selectAsWinning(){
       let result = await updateMargin()
+      result = await updateNote()
       result = await selectWinning()
       result = await getOffer()
       if (result == true) {

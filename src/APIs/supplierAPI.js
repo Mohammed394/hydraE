@@ -1,5 +1,5 @@
 import axios from "axios";
-import { returnURL } from "../APIs/BaseAPI";
+import { returnURL, returnSubmittedQuotationBody } from "../APIs/BaseAPI";
 import { getRandomName, getBid } from "../utilities/commonMethods";
 
 export async function createSupplier() {
@@ -65,50 +65,11 @@ export async function submitQuotation() {
     var formData = {
       supplierId: "63c4f8a715b61712067115c6",
       expiryDate: "2023-12-22T10:56:48",
-      notes: "Some Test Notes",
-
-      lineItems: [
-        {
-          product: {
-            productId: "63c10eb2048f5908d50df389",
-            name: "Rebar",
-            imageUrl: "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139439/mobile-assets/steel_rebar_v1oddb.png",
-            arabicName: "حديد تسليح",
-            attributes: [
-              {
-                name: "Brand",
-                type: "brand",
-                value: "Sabic",
-              },
-              {
-                name: "Unit",
-                type: "unit",
-                value: "ton",
-              },
-              {
-                name: "Diameter Size",
-                type: "diameter_size",
-                value: "6mm",
-              },
-              {
-                name: "Length",
-                type: "length",
-                value: "12m",
-              },
-            ],
-            quantity: 10,
-            unitPrice: 100,
-          },
-          offerAmountBySupplier: {
-            amount: 20,
-            currency: "SAR",
-          },
-          offerAmount: {
-            amount: 20,
-            currency: "SAR",
-          },
-        },
-      ],
+      notes: "This is a test measure the typing size - Address 34 King Fahad - location 2000- Year 2023" +"\r\n" +
+     " هذا مجرد اختبار يقيس مدى تحمل البرنامج حجم الكتابة - العنوان ٣٤  شارع الملك فهد - الموقع ٢٠٠٠ - عام ٢٠٢٣",
+      lineItems: 
+        returnSubmittedQuotationBody()
+      ,
     };
     let result = await axios.post(
       returnURL() +
