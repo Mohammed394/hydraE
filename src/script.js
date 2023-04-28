@@ -7,7 +7,7 @@ var canvasDots = function () {
   canvas.height = window.innerHeight;
   canvas.style.display = "block";
   ctx.fillStyle = colorDot;
-  ctx.lineWidth = 0.1;
+  ctx.lineWidth = 0.3;
   ctx.strokeStyle = color;
 
   var mousePosition = {
@@ -16,7 +16,7 @@ var canvasDots = function () {
   };
 
   var dots = {
-    nb: 800,
+    nb: 700,
     distance: 70,
     d_radius: 10000,
     array: [],
