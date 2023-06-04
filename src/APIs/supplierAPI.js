@@ -65,11 +65,16 @@ export async function submitQuotation() {
     var formData = {
       supplierId: "63c4f8a715b61712067115c6",
       expiryDate: "2023-12-22T10:56:48",
-      notes: "This is a test measure the typing size - Address 34 King Fahad - location 2000- Year 2023" +"\r\n" +
-     " هذا مجرد اختبار يقيس مدى تحمل البرنامج حجم الكتابة - العنوان ٣٤  شارع الملك فهد - الموقع ٢٠٠٠ - عام ٢٠٢٣",
-      lineItems: 
-        returnSubmittedQuotationBody()
-      ,
+      status: "SUBMITTED",
+      notes: {
+        content:
+          "This is a test measure the typing size - Address 34 King Fahad - location 2000- Year 2023" +
+          "\r\n" +
+          " هذا مجرد اختبار يقيس مدى تحمل البرنامج حجم الكتابة - العنوان ٣٤  شارع الملك فهد - الموقع ٢٠٠٠ - عام ٢٠٢٣",
+        visibility: true,
+      },
+      lineItems: returnSubmittedQuotationBody(),
+      termsAndConditions: "Payment: 100% Advance.\nDelivery: Within 5 days.\nValidity: 2 days from the date of this quotation.\nPrice includes the delivery to the job site within Riyadh.\nPrice is valid for requested quantity and is subject to changed if the quantity is changed"
     };
     let result = await axios.post(
       returnURL() +
