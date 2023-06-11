@@ -31,7 +31,6 @@
         <div class="button-container">
         <button class="createButton" v-on:click="login1">Raise RFQ</button>
         <button class="createButton" v-on:click="submitQuot">Submit Quotation</button>
-        <button class="createButton" v-on:click="selectAsWinning">Winning Selection</button>
         </div>
         <div class="actions-container">
         <button class="acceptButtons" v-on:click="acceptQuotation">Accept Quotation</button>

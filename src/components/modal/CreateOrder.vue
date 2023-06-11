@@ -93,22 +93,22 @@ export default {
           "Failed to submit Quotation";
       }
 
-      result = await updateMargin();
-      result = await updateNote()
-      result = await selectWinning();
-      result = await getOffer();
-      if (result == true) {
-        var temp = document.getElementById("textAreaField").value;
-        document.getElementById("textAreaField").value =
-          temp +
-          "\r\n" +
-          `-------------------------------------------` +
-          "\r\n" +
-          `Quotation is selected as a Winning`;
-      } else {
-        document.getElementById("textAreaField").value =
-          "Failed to submit Quotation";
-      }
+      // result = await updateMargin();
+      // result = await updateNote()
+      // result = await selectWinning();
+      // result = await getOffer();
+      // if (result == true) {
+      //   var temp = document.getElementById("textAreaField").value;
+      //   document.getElementById("textAreaField").value =
+      //     temp +
+      //     "\r\n" +
+      //     `-------------------------------------------` +
+      //     "\r\n" +
+      //     `Quotation is selected as a Winning`;
+      // } else {
+      //   document.getElementById("textAreaField").value =
+      //     "Failed to submit Quotation";
+      // }
       result = await acceptQuotation();
       if (result == true) {
         var temp = document.getElementById("textAreaField").value;

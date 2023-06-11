@@ -1,5 +1,5 @@
 import axios from "axios";
-import { returnURL,returnBasicProduct } from "../APIs/BaseAPI";
+import { returnURL, returnBasicProduct } from "../APIs/BaseAPI";
 import { getRandomName } from "../utilities/commonMethods";
 
 export async function createContractor() {
@@ -68,16 +68,21 @@ export async function activateAccount() {
   }
 }
 
-export async function getBuyerInfo(phoneNumber){
+export async function getBuyerInfo(phoneNumber) {
   try {
     let result = await axios.get(
-      returnURL() +
-        "/contractor/phoneNumber/" +
-        phoneNumber)
+      returnURL() + "/contractor/phoneNumber/" + phoneNumber
+    );
     if (result.status == 200) {
       localStorage.setItem("contractorId", JSON.stringify(result.data.id));
-      localStorage.setItem("ContractorPhoneNumber", JSON.stringify(result.data.phoneNumber).replace(/['"]+/g, ""));
-      localStorage.setItem("ContractorFullName", JSON.stringify(result.data.fullName).replace(/['"]+/g, ""));
+      localStorage.setItem(
+        "ContractorPhoneNumber",
+        JSON.stringify(result.data.phoneNumber).replace(/['"]+/g, "")
+      );
+      localStorage.setItem(
+        "ContractorFullName",
+        JSON.stringify(result.data.fullName).replace(/['"]+/g, "")
+      );
       return true;
     } else {
       return false;
@@ -86,7 +91,7 @@ export async function getBuyerInfo(phoneNumber){
     return false;
   }
 }
-export async function loginContractor(phoneNumber,password){
+export async function loginContractor(phoneNumber, password) {
   try {
     var firstName = getRandomName();
     var secondName = getRandomName();
@@ -95,14 +100,20 @@ export async function loginContractor(phoneNumber,password){
       phoneNumber: phoneNumber,
       password: password,
     };
-    let result = await axios.post(
-      returnURL() + "/contractor/login",
-      formData
-    );
+    let result = await axios.post(returnURL() + "/contractor/login", formData);
     if (result.status == 200) {
-      localStorage.setItem("ContractorFullName", JSON.stringify(result.data.profile.fullName).replace(/['"]+/g, ""));
-      localStorage.setItem("ContractorPhoneNumber", JSON.stringify(result.data.profile.phoneNumber).replace(/['"]+/g, ""));
-      localStorage.setItem("contractorId", JSON.stringify(result.data.profile.id));
+      localStorage.setItem(
+        "ContractorFullName",
+        JSON.stringify(result.data.profile.fullName).replace(/['"]+/g, "")
+      );
+      localStorage.setItem(
+        "ContractorPhoneNumber",
+        JSON.stringify(result.data.profile.phoneNumber).replace(/['"]+/g, "")
+      );
+      localStorage.setItem(
+        "contractorId",
+        JSON.stringify(result.data.profile.id)
+      );
       return true;
     } else {
       return false;
@@ -115,13 +126,15 @@ export async function raiseManualRFQ() {
   try {
     var formData = {
       contractorId: localStorage.getItem("contractorId").replace(/['"]+/g, ""),
-      fullName: localStorage.getItem("ContractorFullName").replace(/['"]+/g, ""),
-      phoneNumber: localStorage.getItem("ContractorPhoneNumber").replace(/['"]+/g, ""),
+      fullName: localStorage
+        .getItem("ContractorFullName")
+        .replace(/['"]+/g, ""),
+      phoneNumber: localStorage
+        .getItem("ContractorPhoneNumber")
+        .replace(/['"]+/g, ""),
       projectName: "Test Project",
       location: "Test Address",
-      products: 
-        returnBasicProduct()
-      ,
+      products: returnBasicProduct(),
       source: "WEB",
     };
     let result = await axios.post(
@@ -129,7 +142,10 @@ export async function raiseManualRFQ() {
       formData
     );
     if (result.status == 201) {
-      localStorage.setItem("opportunityId", JSON.stringify(result.data.opportunityId));
+      localStorage.setItem(
+        "opportunityId",
+        JSON.stringify(result.data.opportunityId)
+      );
       return true;
     } else {
       return false;
@@ -148,7 +164,9 @@ export async function getOpportunity() {
     if (result.status == 200) {
       localStorage.setItem("opportunityId", JSON.stringify(result.data.id));
       localStorage.setItem("rfqId", JSON.stringify(result.data.rfqId));
-      const productNames = result.data.products.map(product => product.name).join('\n');
+      const productNames = result.data.products
+        .map((product) => product.name)
+        .join("\n");
       localStorage.setItem("products", JSON.stringify(productNames));
       localStorage.setItem(
         "deliveryTime",
@@ -166,12 +184,13 @@ export async function getOpportunity() {
     return false;
   }
 }
-export async function getOffer(){
+export async function getOffer() {
   try {
     let result = await axios.get(
       returnURL() +
         "/offer/opportunity/" +
-        localStorage.getItem("opportunityId").replace(/['"]+/g, ""))
+        localStorage.getItem("opportunityId").replace(/['"]+/g, "")
+    );
     if (result.status == 200) {
       localStorage.setItem("offerId", JSON.stringify(result.data.id));
       return true;
@@ -182,17 +201,18 @@ export async function getOffer(){
     return false;
   }
 }
-export async function acceptQuotation(){
+export async function acceptQuotation() {
   try {
     var formData = {
-        rejectedReasons:[]
+      bidStatus: "ACCEPTED",
     };
-    let result = await axios.put(
+    let result = await axios.patch(
       returnURL() +
-        "/offer/" +
-        localStorage.getItem("offerId").replace(/['"]+/g, "")+"/status/ACCEPTED",
+        "/bidding/bid/" +
+        localStorage.getItem("bidId").replace(/['"]+/g, "") +
+        "/status",
       formData
-    );    
+    );
     if (result.status == 200) {
       return true;
     } else {
@@ -202,17 +222,19 @@ export async function acceptQuotation(){
     return false;
   }
 }
-export async function rejectQuotation(){
+export async function rejectQuotation() {
   try {
     var formData = {
-        rejectedReasons:["Any"]
+      bidStatus: "REJECTED",
+      rejectedReasons: ["Price over the budget"],
     };
-    let result = await axios.put(
+    let result = await axios.patch(
       returnURL() +
-        "/offer/" +
-        localStorage.getItem("offerId").replace(/['"]+/g, "")+"/status/REJECTED",
+        "/bidding/bid/" +
+        localStorage.getItem("bidId").replace(/['"]+/g, "") +
+        "/status",
       formData
-    );    
+    );
     if (result.status == 200) {
       return true;
     } else {

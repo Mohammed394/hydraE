@@ -73,8 +73,11 @@ export async function submitQuotation() {
           " هذا مجرد اختبار يقيس مدى تحمل البرنامج حجم الكتابة - العنوان ٣٤  شارع الملك فهد - الموقع ٢٠٠٠ - عام ٢٠٢٣",
         visibility: true,
       },
+      paymentTermsId: "647d84c6399cd8f8cb099d6b",
+      creditMarginPercentage: 1.5,
       lineItems: returnSubmittedQuotationBody(),
-      termsAndConditions: "Payment: 100% Advance.\nDelivery: Within 5 days.\nValidity: 2 days from the date of this quotation.\nPrice includes the delivery to the job site within Riyadh.\nPrice is valid for requested quantity and is subject to changed if the quantity is changed"
+      termsAndConditions:
+        "Payment: 100% Advance.\nDelivery: Within 5 days.\nValidity: 2 days from the date of this quotation.\nPrice includes the delivery to the job site within Riyadh.\nPrice is valid for requested quantity and is subject to changed if the quantity is changed",
     };
     let result = await axios.post(
       returnURL() +

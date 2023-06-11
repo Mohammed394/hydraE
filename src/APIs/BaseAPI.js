@@ -336,15 +336,19 @@ export function returnSubmittedQuotationBody() {
         quantity: 2000,
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139434/mobile-assets/finishing_cement_fq2n6u.png",
-        marginAmount: 0,
-        marginPercentage: 0,
+        marginAmount: 330,
+        marginPercentage: 1.5,
       },
       offerAmountBySupplier: {
-        amount: 242000,
+        amount: 22000,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 242000,
+        amount: 22330,
+        currency: "SAR",
+      },
+      sellingPrice: {
+        amount: "11",
         currency: "SAR",
       },
     },
@@ -368,15 +372,19 @@ export function returnSubmittedQuotationBody() {
         quantity: 1000,
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139435/mobile-assets/multi_purpose_joint_compo_nehyc9.png",
-        marginAmount: 0,
-        marginPercentage: 0,
+        marginAmount: 9300,
+        marginPercentage: 84.55,
       },
       offerAmountBySupplier: {
-        amount: 21000,
+        amount: 11000,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 21000,
+        amount: 20300,
+        currency: "SAR",
+      },
+      sellingPrice: {
+        amount: "20",
         currency: "SAR",
       },
     },
@@ -400,15 +408,19 @@ export function returnSubmittedQuotationBody() {
         quantity: 111111,
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139438/mobile-assets/src_sulphate_resistant_cement_pebirn.png",
-        marginAmount: 0,
-        marginPercentage: 0,
+        marginAmount: -207222.02,
+        marginPercentage: -16.95,
       },
       offerAmountBySupplier: {
-        amount: 2333331,
+        amount: 1222221,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 2333331,
+        amount: 1014998.985,
+        currency: "SAR",
+      },
+      sellingPrice: {
+        amount: "9",
         currency: "SAR",
       },
     },
@@ -432,15 +444,19 @@ export function returnSubmittedQuotationBody() {
         quantity: 3000,
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139441/mobile-assets/ventonit_pool_fix_kff3rh.png",
-        marginAmount: 0,
-        marginPercentage: 0,
+        marginAmount: 4500,
+        marginPercentage: 1.5,
       },
       offerAmountBySupplier: {
-        amount: 63000,
+        amount: 300000,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 63000,
+        amount: 304500,
+        currency: "SAR",
+      },
+      sellingPrice: {
+        amount: "100",
         currency: "SAR",
       },
     },
@@ -469,15 +485,19 @@ export function returnSubmittedQuotationBody() {
         quantity: 5000,
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1675844633/products/Spray_Paint_saq24t.png",
-        marginAmount: -45000,
-        marginPercentage: -42.86,
+        marginAmount: 32875,
+        marginPercentage: 6.58,
       },
       offerAmountBySupplier: {
-        amount: 105000,
+        amount: 500000,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 60000,
+        amount: 532875,
+        currency: "SAR",
+      },
+      sellingPrice: {
+        amount: "105",
         currency: "SAR",
       },
     },
@@ -511,15 +531,19 @@ export function returnSubmittedQuotationBody() {
         quantity: 2000,
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139439/mobile-assets/steel_rebar_v1oddb.png",
-        marginAmount: 0,
-        marginPercentage: 0,
+        marginAmount: -7150,
+        marginPercentage: -3.57,
       },
       offerAmountBySupplier: {
-        amount: 42000,
+        amount: 200000,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 42000,
+        amount: 192850,
+        currency: "SAR",
+      },
+      sellingPrice: {
+        amount: "95",
         currency: "SAR",
       },
     },
@@ -548,15 +572,19 @@ export function returnSubmittedQuotationBody() {
         quantity: 1000000,
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Concrete_nail_d1y2pf.png",
-        marginAmount: 0,
-        marginPercentage: 0,
+        marginAmount: 103000000,
+        marginPercentage: 103,
       },
       offerAmountBySupplier: {
-        amount: 21000000,
+        amount: 100000000,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 21000000,
+        amount: 203000000,
+        currency: "SAR",
+      },
+      sellingPrice: {
+        amount: "200",
         currency: "SAR",
       },
     },
@@ -580,15 +608,19 @@ export function returnSubmittedQuotationBody() {
         quantity: 10000,
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Wood_nail_ddvpa0.png",
-        marginAmount: 90000,
-        marginPercentage: 75,
+        marginAmount: 1650,
+        marginPercentage: 1.5,
       },
       offerAmountBySupplier: {
-        amount: 120000,
+        amount: 110000,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 210000,
+        amount: 111649.99999999999,
+        currency: "SAR",
+      },
+      sellingPrice: {
+        amount: "11",
         currency: "SAR",
       },
     },
@@ -617,15 +649,19 @@ export function returnSubmittedQuotationBody() {
         quantity: 10000,
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Steel_wire_Mesh_eulqzx.png",
-        marginAmount: 0,
-        marginPercentage: 0,
+        marginAmount: 10300,
+        marginPercentage: 103,
       },
       offerAmountBySupplier: {
-        amount: 210000,
+        amount: 10000,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 210000,
+        amount: 20299.999999999996,
+        currency: "SAR",
+      },
+      sellingPrice: {
+        amount: "2",
         currency: "SAR",
       },
     },
@@ -649,15 +685,19 @@ export function returnSubmittedQuotationBody() {
         quantity: 10000,
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139435/mobile-assets/hollow_blocks_multi_holes_so17yt.png",
-        marginAmount: 0,
-        marginPercentage: 0,
+        marginAmount: -90000,
+        marginPercentage: -81.82,
       },
       offerAmountBySupplier: {
-        amount: 210000,
+        amount: 110000,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 210000,
+        amount: 20299.999999999996,
+        currency: "SAR",
+      },
+      sellingPrice: {
+        amount: "2",
         currency: "SAR",
       },
     },
