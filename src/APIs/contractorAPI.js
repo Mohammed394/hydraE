@@ -132,14 +132,25 @@ export async function raiseManualRFQ() {
       phoneNumber: localStorage
         .getItem("ContractorPhoneNumber")
         .replace(/['"]+/g, ""),
-      projectName: "Test Project",
-      location: "Test Address",
       products: returnBasicProduct(),
       source: "WEB",
+      deliveryLocation: {
+        id: "9f590e7014514328bab35dd48060f51a",
+        address: "F8M3+W7Q, Abruq Ar Rughamah, Jeddah 22354, Saudi Arabia",
+        coordinates: {
+          lat: 21.48464963789118,
+          lng: 39.30290564352905,
+        },
+        cityId: "649155886f4db06c577f7a94",
+      },
     };
     let result = await axios.post(
       returnURL() + "/opportunity/raise/manual",
-      formData
+      formData,{
+        headers: {
+          'Accept-Language': 'en'
+        }
+      }
     );
     if (result.status == 201) {
       localStorage.setItem(

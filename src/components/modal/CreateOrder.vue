@@ -48,6 +48,11 @@ export default {
     };
     return { close };
   },
+  mounted(){
+    if(localStorage.getItem('text')){
+      this.formData.phone = localStorage.getItem('text')
+    }
+  },
   data() {
     return {
       formData: {
