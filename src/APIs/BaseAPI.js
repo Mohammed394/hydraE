@@ -30,31 +30,6 @@ export function returnBasicProduct() {
         "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139434/mobile-assets/finishing_cement_fq2n6u.png",
     },
     {
-      productId: "63e310a6ce5f9823c9002930",
-      name: "Multi Purpose Joint Compound",
-      imageUrls: [
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1675763043/products/Multi_Purpose_Joint_Compound_xrw96g.png",
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139435/mobile-assets/multi_purpose_joint_compo_nehyc9.png",
-      ],
-      attributes: [
-        {
-          name: "Brand",
-          type: "brand",
-          values: ["ASG"],
-          value: "ASG",
-        },
-        {
-          name: "Unit",
-          type: "unit",
-          values: ["28kg barell"],
-          value: "28kg barell",
-        },
-      ],
-      quantity: 1000,
-      imageUrl:
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139435/mobile-assets/multi_purpose_joint_compo_nehyc9.png",
-    },
-    {
       productId: "63c10eb2048f5908d50df38a",
       name: "SRC Sulphate Resistant Cement",
       imageUrls: [
@@ -135,64 +110,6 @@ export function returnBasicProduct() {
         "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1675844633/products/Spray_Paint_saq24t.png",
     },
     {
-      productId: "63c10eb2048f5908d50df389",
-      name: "Rebar",
-      imageUrls: [
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139439/mobile-assets/steel_rebar_v1oddb.png",
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139439/mobile-assets/steel_rebar_v1oddb.png",
-      ],
-      attributes: [
-        {
-          name: "Brand",
-          type: "brand",
-          values: [
-            "Sabic",
-            "Ittefaq",
-            "Rajhi",
-            "Al Shoroq",
-            "Al Tilal",
-            "Abdul Karim Al Rajhi",
-            "TAMEER",
-          ],
-          value: "Sabic",
-        },
-        {
-          name: "Unit",
-          type: "unit",
-          values: ["ton"],
-          value: "ton",
-        },
-        {
-          name: "Diameter Size",
-          type: "diameter_size",
-          values: [
-            "6mm",
-            "8mm",
-            "10mm",
-            "12mm",
-            "14mm",
-            "16mm",
-            "18mm",
-            "20mm",
-            "22mm",
-            "25mm",
-            "28mm",
-            "32mm",
-          ],
-          value: "6mm",
-        },
-        {
-          name: "Length",
-          type: "length",
-          values: ["12m", "6m"],
-          value: "12m",
-        },
-      ],
-      quantity: 2000,
-      imageUrl:
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139439/mobile-assets/steel_rebar_v1oddb.png",
-    },
-    {
       productId: "643663308435f561bc33eda5",
       name: "Concrete Nail",
       imageUrls: [
@@ -248,68 +165,7 @@ export function returnBasicProduct() {
       imageUrl:
         "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Wood_nail_ddvpa0.png",
     },
-    {
-      productId: "643666d28435f561bc33eda6",
-      name: "Steel Wire Mesh",
-      imageUrls: [
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Steel_wire_Mesh_eulqzx.png",
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Steel_wire_Mesh_eulqzx.png",
-      ],
-      attributes: [
-        {
-          name: "Brand",
-          type: "brand",
-          values: ["SABIC"],
-          value: "SABIC",
-        },
-        {
-          name: "Unit",
-          type: "unit",
-          values: ["EA"],
-          value: "EA",
-        },
-        {
-          name: "Size",
-          type: "size",
-          values: [
-            "20x20cm - 2x5m (6mm)",
-            "20x20cm - 2x5m (7mm)",
-            "20x20cm - 2x5m (8mm)",
-            "20x20cm - 2x5m (9mm)",
-            "20x20cm - 2x5m (10mm)",
-          ],
-          value: "20x20cm - 2x5m (6mm)",
-        },
-      ],
-      quantity: 10000,
-      imageUrl:
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Steel_wire_Mesh_eulqzx.png",
-    },
-    {
-      productId: "63c10eb2048f5908d50df38d",
-      name: "Multi Holes Concrete Blocks",
-      imageUrls: [
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1671533622/MultiHolesConcreteBlocks_svm2m1.webp",
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139435/mobile-assets/hollow_blocks_multi_holes_so17yt.png",
-      ],
-      attributes: [
-        {
-          name: "Unit",
-          type: "unit",
-          values: ["pcs"],
-          value: "pcs",
-        },
-        {
-          name: "Size",
-          type: "size",
-          values: ["400x200x150", "400x200x200", "400x200x250", "400x200x300"],
-          value: "400x200x150",
-        },
-      ],
-      quantity: 10000,
-      imageUrl:
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139435/mobile-assets/hollow_blocks_multi_holes_so17yt.png",
-    },
+
   ];
   return product;
 }
