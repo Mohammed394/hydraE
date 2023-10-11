@@ -30,31 +30,6 @@ export function returnBasicProduct() {
         "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139434/mobile-assets/finishing_cement_fq2n6u.png",
     },
     {
-      productId: "63c10eb2048f5908d50df38a",
-      name: "SRC Sulphate Resistant Cement",
-      imageUrls: [
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1674493680/products/SRCement_ck5zgo_h05pyr.webp",
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139438/mobile-assets/src_sulphate_resistant_cement_pebirn.png",
-      ],
-      attributes: [
-        {
-          name: "Brand",
-          type: "brand",
-          values: ["Riyadh Cement", "City Cement", "Yamama Cement"],
-          value: "Riyadh Cement",
-        },
-        {
-          name: "Unit",
-          type: "unit",
-          values: ["bags"],
-          value: "bags",
-        },
-      ],
-      quantity: 111111,
-      imageUrl:
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139438/mobile-assets/src_sulphate_resistant_cement_pebirn.png",
-    },
-    {
       productId: "63d1c838c367d330e447df02",
       name: "Vetonit Pool Fix",
       imageUrls: [
@@ -165,7 +140,6 @@ export function returnBasicProduct() {
       imageUrl:
         "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Wood_nail_ddvpa0.png",
     },
-
   ];
   return product;
 }
@@ -207,77 +181,12 @@ export function returnSubmittedQuotationBody() {
         amount: "11",
         currency: "SAR",
       },
-    },
-    {
-      product: {
-        productId: "63e310a6ce5f9823c9002930",
-        name: "Multi Purpose Joint Compound",
-        arabicName: null,
-        attributes: [
-          {
-            name: "Brand",
-            type: "brand",
-            value: "ASG",
-          },
-          {
-            name: "Unit",
-            type: "unit",
-            value: "28kg barell",
-          },
-        ],
-        quantity: 1000,
-        imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139435/mobile-assets/multi_purpose_joint_compo_nehyc9.png",
-        marginAmount: 9300,
-        marginPercentage: 84.55,
-      },
-      offerAmountBySupplier: {
-        amount: 11000,
-        currency: "SAR",
-      },
-      offerAmount: {
-        amount: 20300,
-        currency: "SAR",
-      },
-      sellingPrice: {
-        amount: "20",
-        currency: "SAR",
-      },
-    },
-    {
-      product: {
-        productId: "63c10eb2048f5908d50df38a",
-        name: "SRC Sulphate Resistant Cement",
-        arabicName: null,
-        attributes: [
-          {
-            name: "Brand",
-            type: "brand",
-            value: "Riyadh Cement",
-          },
-          {
-            name: "Unit",
-            type: "unit",
-            value: "bags",
-          },
-        ],
-        quantity: 111111,
-        imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139438/mobile-assets/src_sulphate_resistant_cement_pebirn.png",
-        marginAmount: -207222.02,
-        marginPercentage: -16.95,
-      },
-      offerAmountBySupplier: {
-        amount: 1222221,
-        currency: "SAR",
-      },
-      offerAmount: {
-        amount: 1014998.985,
-        currency: "SAR",
-      },
-      sellingPrice: {
-        amount: "9",
-        currency: "SAR",
+      supplier: {
+        id: "65265e5f4a6ca772edaba018",
+        name: "Test",
+        cityId: "64913b22e02ccab65544bb2c",
+        regionId: "65265e7c4a6ca772edaba019",
+        branchId: "65265eb64a6ca772edaba01b",
       },
     },
     {
@@ -314,6 +223,13 @@ export function returnSubmittedQuotationBody() {
       sellingPrice: {
         amount: "100",
         currency: "SAR",
+      },
+      supplier: {
+        id: "65265e5f4a6ca772edaba018",
+        name: "Test",
+        cityId: "64913b22e02ccab65544bb2c",
+        regionId: "65265e7c4a6ca772edaba019",
+        branchId: "65265eb64a6ca772edaba01b",
       },
     },
     {
@@ -356,51 +272,12 @@ export function returnSubmittedQuotationBody() {
         amount: "105",
         currency: "SAR",
       },
-    },
-    {
-      product: {
-        productId: "63c10eb2048f5908d50df389",
-        name: "Rebar",
-        arabicName: null,
-        attributes: [
-          {
-            name: "Brand",
-            type: "brand",
-            value: "Sabic",
-          },
-          {
-            name: "Unit",
-            type: "unit",
-            value: "ton",
-          },
-          {
-            name: "Diameter Size",
-            type: "diameter_size",
-            value: "6mm",
-          },
-          {
-            name: "Length",
-            type: "length",
-            value: "12m",
-          },
-        ],
-        quantity: 2000,
-        imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139439/mobile-assets/steel_rebar_v1oddb.png",
-        marginAmount: -7150,
-        marginPercentage: -3.57,
-      },
-      offerAmountBySupplier: {
-        amount: 200000,
-        currency: "SAR",
-      },
-      offerAmount: {
-        amount: 192850,
-        currency: "SAR",
-      },
-      sellingPrice: {
-        amount: "95",
-        currency: "SAR",
+      supplier: {
+        id: "65265e5f4a6ca772edaba018",
+        name: "Test",
+        cityId: "64913b22e02ccab65544bb2c",
+        regionId: "65265e7c4a6ca772edaba019",
+        branchId: "65265eb64a6ca772edaba01b",
       },
     },
     {
@@ -443,6 +320,13 @@ export function returnSubmittedQuotationBody() {
         amount: "200",
         currency: "SAR",
       },
+      supplier: {
+        id: "65265e5f4a6ca772edaba018",
+        name: "Test",
+        cityId: "64913b22e02ccab65544bb2c",
+        regionId: "65265e7c4a6ca772edaba019",
+        branchId: "65265eb64a6ca772edaba01b",
+      },
     },
     {
       product: {
@@ -479,82 +363,12 @@ export function returnSubmittedQuotationBody() {
         amount: "11",
         currency: "SAR",
       },
-    },
-    {
-      product: {
-        productId: "643666d28435f561bc33eda6",
-        name: "Steel Wire Mesh",
-        arabicName: null,
-        attributes: [
-          {
-            name: "Brand",
-            type: "brand",
-            value: "SABIC",
-          },
-          {
-            name: "Unit",
-            type: "unit",
-            value: "EA",
-          },
-          {
-            name: "Size",
-            type: "size",
-            value: "20x20cm - 2x5m (6mm)",
-          },
-        ],
-        quantity: 10000,
-        imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Steel_wire_Mesh_eulqzx.png",
-        marginAmount: 10300,
-        marginPercentage: 103,
-      },
-      offerAmountBySupplier: {
-        amount: 10000,
-        currency: "SAR",
-      },
-      offerAmount: {
-        amount: 20299.999999999996,
-        currency: "SAR",
-      },
-      sellingPrice: {
-        amount: "2",
-        currency: "SAR",
-      },
-    },
-    {
-      product: {
-        productId: "63c10eb2048f5908d50df38d",
-        name: "Multi Holes Concrete Blocks",
-        arabicName: null,
-        attributes: [
-          {
-            name: "Unit",
-            type: "unit",
-            value: "pcs",
-          },
-          {
-            name: "Size",
-            type: "size",
-            value: "400x200x150",
-          },
-        ],
-        quantity: 10000,
-        imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139435/mobile-assets/hollow_blocks_multi_holes_so17yt.png",
-        marginAmount: -90000,
-        marginPercentage: -81.82,
-      },
-      offerAmountBySupplier: {
-        amount: 110000,
-        currency: "SAR",
-      },
-      offerAmount: {
-        amount: 20299.999999999996,
-        currency: "SAR",
-      },
-      sellingPrice: {
-        amount: "2",
-        currency: "SAR",
+      supplier: {
+        id: "65265e5f4a6ca772edaba018",
+        name: "Test",
+        cityId: "64913b22e02ccab65544bb2c",
+        regionId: "65265e7c4a6ca772edaba019",
+        branchId: "65265eb64a6ca772edaba01b",
       },
     },
   ];
