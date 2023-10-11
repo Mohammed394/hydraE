@@ -5,140 +5,181 @@ export function returnURL() {
 export function returnBasicProduct() {
   var product = [
     {
-      productId: "63c10eb2048f5908d50df38c",
+      productId: "64995093319be626d9fbdc99",
       name: "Finishing Cement",
       imageUrls: [
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1671533621/FinishingCement_zxqhfp.webp",
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139434/mobile-assets/finishing_cement_fq2n6u.png",
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/Finishing_Cement_pyhoyx.png",
       ],
       attributes: [
         {
           name: "Brand",
           type: "brand",
-          values: ["Riyadh Cement", "City Cement", "Yamama Cement"],
-          value: "Riyadh Cement",
+          value: "Riyadh",
+        },
+        {
+          name: "Weight",
+          type: "weight",
+          value: "50 kg",
         },
         {
           name: "Unit",
           type: "unit",
-          values: ["bags"],
           value: "bags",
         },
       ],
-      quantity: 2000,
+      quantity: 11,
       imageUrl:
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139434/mobile-assets/finishing_cement_fq2n6u.png",
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/Finishing_Cement_pyhoyx.png",
     },
     {
-      productId: "63d1c838c367d330e447df02",
-      name: "Vetonit Pool Fix",
+      productId: "64f89d6a7e46d145c53f5464",
+      name: "Cement Tiles",
       imageUrls: [
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1674484270/products/Vetonit_Pool_Fix_iz5kcw.png",
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139441/mobile-assets/ventonit_pool_fix_kff3rh.png",
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084011/Product%20Catalog/cement-tiles_c11zwy.png",
       ],
       attributes: [
         {
           name: "Brand",
           type: "brand",
-          values: ["Saveto"],
-          value: "Saveto",
+          value: "Al Sarif",
         },
         {
-          name: "Unit",
-          type: "unit",
-          values: ["20kg bags"],
-          value: "20kg bags",
-        },
-      ],
-      quantity: 3000,
-      imageUrl:
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139441/mobile-assets/ventonit_pool_fix_kff3rh.png",
-    },
-    {
-      productId: "63e35c6bce5f9823c9002933",
-      name: "Spray Paint",
-      imageUrls: [
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1675844633/products/Spray_Paint_saq24t.png",
-      ],
-      attributes: [
-        {
-          name: "Brand",
-          type: "brand",
-          values: ["ANCHOR"],
-          value: "ANCHOR",
-        },
-        {
-          name: "Unit",
-          type: "unit",
-          values: ["12 pcs/carton"],
-          value: "12 pcs/carton",
+          name: "Size",
+          type: "size",
+          value: "40x40x4cm",
         },
         {
           name: "Colour",
           type: "colour",
-          values: ["White", "Black", "Red", "Yellow", "Blue", "Green"],
-          value: "White",
+          value: "Black",
+        },
+        {
+          name: "Unit",
+          type: "unit",
+          value: "ea",
         },
       ],
-      quantity: 5000,
+      quantity: 11,
       imageUrl:
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1675844633/products/Spray_Paint_saq24t.png",
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084011/Product%20Catalog/cement-tiles_c11zwy.png",
     },
     {
-      productId: "643663308435f561bc33eda5",
-      name: "Concrete Nail",
+      productId: "649950a3319be626d9fbdd1d",
+      name: "Gypsum Board",
       imageUrls: [
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Concrete_nail_d1y2pf.png",
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Concrete_nail_d1y2pf.png",
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Gypsum_Board_tcq7jc.png",
       ],
       attributes: [
         {
           name: "Brand",
           type: "brand",
-          values: ["Japan"],
-          value: "Japan",
-        },
-        {
-          name: "Unit",
-          type: "unit",
-          values: ["12 kilo/carton", "25 kilo/carton"],
-          value: "12 kilo/carton",
+          value: "MADA",
         },
         {
           name: "Size",
           type: "size",
-          values: ["5cm"],
-          value: "5cm",
+          value: "12.5mm - 1.2mtr x 2.4mtr",
+        },
+        {
+          name: "Type",
+          type: "type",
+          value: "Fire Rated",
+        },
+        {
+          name: "Unit",
+          type: "unit",
+          value: "pcs",
         },
       ],
-      quantity: 1000000,
+      quantity: 11,
       imageUrl:
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Concrete_nail_d1y2pf.png",
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Gypsum_Board_tcq7jc.png",
     },
     {
-      productId: "64366a008435f561bc33eda7",
-      name: "Wood Nail",
+      productId: "64995099319be626d9fbdcb3",
+      name: "Vetonit Pool Fix",
       imageUrls: [
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Wood_nail_ddvpa0.png",
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Wood_nail_ddvpa0.png",
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665151/Product%20Catalog/Vetonit_Pool_Fix_zfgua4.png",
       ],
       attributes: [
         {
+          name: "Brand",
+          type: "brand",
+          value: "SAVETO",
+        },
+        {
+          name: "Weight",
+          type: "weight",
+          value: "25 kg",
+        },
+        {
           name: "Unit",
           type: "unit",
-          values: ["2 kilo/carton)", "2.25 kilo/carton)"],
-          value: "2 kilo/carton)",
+          value: "bags",
+        },
+      ],
+      quantity: 11,
+      imageUrl:
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665151/Product%20Catalog/Vetonit_Pool_Fix_zfgua4.png",
+    },
+    {
+      productId: "6499509e319be626d9fbdce4",
+      name: "Concrete Nail",
+      imageUrls: [
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Concrete_Nails_punuc0.png",
+      ],
+      attributes: [
+        {
+          name: "Size",
+          type: "size",
+          value: "5 cm",
+        },
+        {
+          name: "Weight",
+          type: "weight",
+          value: "12kg / Carton",
+        },
+        {
+          name: "Unit",
+          type: "unit",
+          value: "cartons",
+        },
+      ],
+      quantity: 11,
+      imageUrl:
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Concrete_Nails_punuc0.png",
+    },
+    {
+      productId: "64f89dc97e46d145c53f5505",
+      name: "Styrofoam Block",
+      imageUrls: [
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084010/Product%20Catalog/styrofoam-block_hmptau.png",
+      ],
+      attributes: [
+        {
+          name: "Brand",
+          type: "brand",
+          value: "SAUDI POLYSTYRENE",
         },
         {
           name: "Size",
           type: "size",
-          values: ["5cm", "6cm"],
-          value: "5cm",
+          value: "200x400x20",
+        },
+        {
+          name: "Type",
+          type: "type",
+          value: "P - 8",
+        },
+        {
+          name: "Unit",
+          type: "unit",
+          value: "ea",
         },
       ],
-      quantity: 10000,
+      quantity: 11,
       imageUrl:
-        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Wood_nail_ddvpa0.png",
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084010/Product%20Catalog/styrofoam-block_hmptau.png",
     },
   ];
   return product;
@@ -148,14 +189,19 @@ export function returnSubmittedQuotationBody() {
   var product = [
     {
       product: {
-        productId: "63c10eb2048f5908d50df38c",
+        productId: "64995093319be626d9fbdc99",
         name: "Finishing Cement",
         arabicName: null,
         attributes: [
           {
             name: "Brand",
             type: "brand",
-            value: "Riyadh Cement",
+            value: "Riyadh",
+          },
+          {
+            name: "Weight",
+            type: "weight",
+            value: "50 kg",
           },
           {
             name: "Unit",
@@ -163,212 +209,297 @@ export function returnSubmittedQuotationBody() {
             value: "bags",
           },
         ],
-        quantity: 2000,
+        quantity: 11,
         imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139434/mobile-assets/finishing_cement_fq2n6u.png",
-        marginAmount: 330,
-        marginPercentage: 1.5,
+          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/Finishing_Cement_pyhoyx.png",
+        skuNumber: "CM-CB-01-FIN-50",
+        marginAmount: 0,
+        marginPercentage: 0,
+        supplierErr: "",
       },
       offerAmountBySupplier: {
-        amount: 22000,
+        amount: 242,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 22330,
+        amount: 0,
         currency: "SAR",
       },
       sellingPrice: {
-        amount: "11",
+        amount: 22,
         currency: "SAR",
       },
       supplier: {
-        id: "65265e5f4a6ca772edaba018",
-        name: "Test",
-        cityId: "64913b22e02ccab65544bb2c",
-        regionId: "65265e7c4a6ca772edaba019",
-        branchId: "65265eb64a6ca772edaba01b",
+        id: "652544fb4a6ca772edaba005",
+        name: "Barnes & Nobel Co.",
+        cityId: "649155886f4db06c577f7a94",
+        regionId: "6525450b4a6ca772edaba006",
+        branchId: "652545814a6ca772edaba007",
       },
     },
     {
       product: {
-        productId: "63d1c838c367d330e447df02",
+        productId: "64f89d6a7e46d145c53f5464",
+        name: "Cement Tiles",
+        arabicName: null,
+        attributes: [
+          {
+            name: "Brand",
+            type: "brand",
+            value: "Al Sarif",
+          },
+          {
+            name: "Size",
+            type: "size",
+            value: "40x40x4cm",
+          },
+          {
+            name: "Colour",
+            type: "colour",
+            value: "Black",
+          },
+          {
+            name: "Unit",
+            type: "unit",
+            value: "ea",
+          },
+        ],
+        quantity: 11,
+        imageUrl:
+          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084011/Product%20Catalog/cement-tiles_c11zwy.png",
+        skuNumber: "ITK-01-CT-BLK-04",
+        marginAmount: 0,
+        marginPercentage: 0,
+        supplierErr: "",
+      },
+      offerAmountBySupplier: {
+        amount: 242,
+        currency: "SAR",
+      },
+      offerAmount: {
+        amount: 0,
+        currency: "SAR",
+      },
+      sellingPrice: {
+        amount: 22,
+        currency: "SAR",
+      },
+      supplier: {
+        id: "6524db8b4a6ca772edab9ff9",
+        name: "Vendor 26Uue",
+        cityId: "64913b22e02ccab65544bb2c",
+        regionId: "6524ee4c4a6ca772edab9ffa",
+        branchId: "6524ee7a4a6ca772edab9ffb",
+      },
+    },
+    {
+      product: {
+        productId: "649950a3319be626d9fbdd1d",
+        name: "Gypsum Board",
+        arabicName: null,
+        attributes: [
+          {
+            name: "Brand",
+            type: "brand",
+            value: "MADA",
+          },
+          {
+            name: "Size",
+            type: "size",
+            value: "12.5mm - 1.2mtr x 2.4mtr",
+          },
+          {
+            name: "Type",
+            type: "type",
+            value: "Fire Rated",
+          },
+          {
+            name: "Unit",
+            type: "unit",
+            value: "pcs",
+          },
+        ],
+        quantity: 11,
+        imageUrl:
+          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Gypsum_Board_tcq7jc.png",
+        skuNumber: "GM-GB-FIR-03-12-24",
+        marginAmount: 0,
+        marginPercentage: 0,
+        supplierErr: "",
+      },
+      offerAmountBySupplier: {
+        amount: 242,
+        currency: "SAR",
+      },
+      offerAmount: {
+        amount: 0,
+        currency: "SAR",
+      },
+      sellingPrice: {
+        amount: 22,
+        currency: "SAR",
+      },
+      supplier: {
+        id: "6526366a4a6ca772edaba00b",
+        name: "Mc Cain Co.",
+        cityId: "64913b22e02ccab65544bb2c",
+        regionId: "652636804a6ca772edaba00c",
+        branchId: "652636914a6ca772edaba00d",
+      },
+    },
+    {
+      product: {
+        productId: "64995099319be626d9fbdcb3",
         name: "Vetonit Pool Fix",
         arabicName: null,
         attributes: [
           {
             name: "Brand",
             type: "brand",
-            value: "Saveto",
+            value: "SAVETO",
+          },
+          {
+            name: "Weight",
+            type: "weight",
+            value: "25 kg",
           },
           {
             name: "Unit",
             type: "unit",
-            value: "20kg bags",
+            value: "bags",
           },
         ],
-        quantity: 3000,
+        quantity: 11,
         imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1677139441/mobile-assets/ventonit_pool_fix_kff3rh.png",
-        marginAmount: 4500,
-        marginPercentage: 1.5,
+          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665151/Product%20Catalog/Vetonit_Pool_Fix_zfgua4.png",
+        skuNumber: "CHEMA-FM-01-VPO-25",
+        marginAmount: 0,
+        marginPercentage: 0,
+        supplierErr: "",
       },
       offerAmountBySupplier: {
-        amount: 300000,
+        amount: 242,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 304500,
+        amount: 0,
         currency: "SAR",
       },
       sellingPrice: {
-        amount: "100",
+        amount: 22,
         currency: "SAR",
       },
       supplier: {
-        id: "65265e5f4a6ca772edaba018",
-        name: "Test",
+        id: "6526366a4a6ca772edaba00b",
+        name: "Mc Cain Co.",
         cityId: "64913b22e02ccab65544bb2c",
-        regionId: "65265e7c4a6ca772edaba019",
-        branchId: "65265eb64a6ca772edaba01b",
+        regionId: "652636804a6ca772edaba00c",
+        branchId: "652636914a6ca772edaba00d",
       },
     },
     {
       product: {
-        productId: "63e35c6bce5f9823c9002933",
-        name: "Spray Paint",
-        arabicName: null,
-        attributes: [
-          {
-            name: "Brand",
-            type: "brand",
-            value: "ANCHOR",
-          },
-          {
-            name: "Unit",
-            type: "unit",
-            value: "12 pcs/carton",
-          },
-          {
-            name: "Colour",
-            type: "colour",
-            value: "White",
-          },
-        ],
-        quantity: 5000,
-        imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1675844633/products/Spray_Paint_saq24t.png",
-        marginAmount: 32875,
-        marginPercentage: 6.58,
-      },
-      offerAmountBySupplier: {
-        amount: 500000,
-        currency: "SAR",
-      },
-      offerAmount: {
-        amount: 532875,
-        currency: "SAR",
-      },
-      sellingPrice: {
-        amount: "105",
-        currency: "SAR",
-      },
-      supplier: {
-        id: "65265e5f4a6ca772edaba018",
-        name: "Test",
-        cityId: "64913b22e02ccab65544bb2c",
-        regionId: "65265e7c4a6ca772edaba019",
-        branchId: "65265eb64a6ca772edaba01b",
-      },
-    },
-    {
-      product: {
-        productId: "643663308435f561bc33eda5",
+        productId: "6499509e319be626d9fbdce4",
         name: "Concrete Nail",
         arabicName: null,
         attributes: [
           {
-            name: "Brand",
-            type: "brand",
-            value: "Japan",
+            name: "Size",
+            type: "size",
+            value: "5 cm",
+          },
+          {
+            name: "Weight",
+            type: "weight",
+            value: "12kg / Carton",
           },
           {
             name: "Unit",
             type: "unit",
-            value: "12 kilo/carton",
-          },
-          {
-            name: "Size",
-            type: "size",
-            value: "5cm",
+            value: "cartons",
           },
         ],
-        quantity: 1000000,
+        quantity: 11,
         imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Concrete_nail_d1y2pf.png",
-        marginAmount: 103000000,
-        marginPercentage: 103,
+          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Concrete_Nails_punuc0.png",
+        skuNumber: "TLCS-CON-CN-03-05-112",
+        marginAmount: 0,
+        marginPercentage: 0,
+        supplierErr: "",
       },
       offerAmountBySupplier: {
-        amount: 100000000,
+        amount: 242,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 203000000,
+        amount: 0,
         currency: "SAR",
       },
       sellingPrice: {
-        amount: "200",
+        amount: 22,
         currency: "SAR",
       },
       supplier: {
-        id: "65265e5f4a6ca772edaba018",
-        name: "Test",
+        id: "6524db8b4a6ca772edab9ff9",
+        name: "Vendor 26Uue",
         cityId: "64913b22e02ccab65544bb2c",
-        regionId: "65265e7c4a6ca772edaba019",
-        branchId: "65265eb64a6ca772edaba01b",
+        regionId: "6524ee4c4a6ca772edab9ffa",
+        branchId: "6524ee7a4a6ca772edab9ffb",
       },
     },
     {
       product: {
-        productId: "64366a008435f561bc33eda7",
-        name: "Wood Nail",
+        productId: "64f89dc97e46d145c53f5505",
+        name: "Styrofoam Block",
         arabicName: null,
         attributes: [
           {
-            name: "Unit",
-            type: "unit",
-            value: "2 kilo/carton)",
+            name: "Brand",
+            type: "brand",
+            value: "SAUDI POLYSTYRENE",
           },
           {
             name: "Size",
             type: "size",
-            value: "5cm",
+            value: "200x400x20",
+          },
+          {
+            name: "Type",
+            type: "type",
+            value: "P - 8",
+          },
+          {
+            name: "Unit",
+            type: "unit",
+            value: "ea",
           },
         ],
-        quantity: 10000,
+        quantity: 11,
         imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1681672675/mobile-assets/Wood_nail_ddvpa0.png",
-        marginAmount: 1650,
-        marginPercentage: 1.5,
+          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084010/Product%20Catalog/styrofoam-block_hmptau.png",
+        skuNumber: "INS-STFM-01-20020-8",
+        marginAmount: 0,
+        marginPercentage: 0,
+        supplierErr: "",
       },
       offerAmountBySupplier: {
-        amount: 110000,
+        amount: 242,
         currency: "SAR",
       },
       offerAmount: {
-        amount: 111649.99999999999,
+        amount: 0,
         currency: "SAR",
       },
       sellingPrice: {
-        amount: "11",
+        amount: 22,
         currency: "SAR",
       },
       supplier: {
-        id: "65265e5f4a6ca772edaba018",
-        name: "Test",
+        id: "6526366a4a6ca772edaba00b",
+        name: "Mc Cain Co.",
         cityId: "64913b22e02ccab65544bb2c",
-        regionId: "65265e7c4a6ca772edaba019",
-        branchId: "65265eb64a6ca772edaba01b",
+        regionId: "652636804a6ca772edaba00c",
+        branchId: "652636914a6ca772edaba00d",
       },
     },
   ];
