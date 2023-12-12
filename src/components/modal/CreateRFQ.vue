@@ -129,7 +129,7 @@ export default {
     },
     async acceptQuotation(){
       let result = await acceptQuotation()
-      result = await getOrderId()
+      // result = await getOrderId()
 
       if (result == true) {
         var temp = document.getElementById("textAreaField").value
@@ -138,9 +138,9 @@ export default {
         document.getElementById("textAreaField").value =
           temp +
           "\r\n" +
-          `-------------------------------------------` +
+          `Quotation is accepted and Order is created ... ` +
           "\r\n" +
-          `Order Id: ${localStorage.getItem("orderId")}`;
+          `Order No. ${localStorage.getItem("bidNumber")}`;
          
       } else {
         document.getElementById("textAreaField").value = "Failed to accept Quotation";

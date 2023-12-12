@@ -5,8 +5,8 @@
       <div class="modal" v-if="showModal1">
         <h1 class="title">Create Order</h1>
         <div class="button-container">
-        <button class="createButton" v-on:click="login1">Create</button>
-      </div>
+          <button class="createButton" v-on:click="login1">Create</button>
+        </div>
         <i class="far fa-times-circle" @click="close"></i>
         <div class="input-components">
           <div class="input-field">
@@ -35,9 +35,20 @@
 </template>
 
 <script>
-import { getBuyerInfo,getOpportunity, raiseManualRFQ, acceptQuotation, getOffer} from "../../APIs/contractorAPI";
-import { submitQuotation} from "../../APIs/supplierAPI";
-import { updateMargin, selectWinning, updateNote, getOrderId} from "../../APIs/retoolAPI";
+import {
+  getBuyerInfo,
+  getOpportunity,
+  raiseManualRFQ,
+  acceptQuotation,
+  getOffer,
+} from "../../APIs/contractorAPI";
+import { submitQuotation } from "../../APIs/supplierAPI";
+import {
+  updateMargin,
+  selectWinning,
+  updateNote,
+  getOrderId,
+} from "../../APIs/retoolAPI";
 export default {
   props: {
     showModal1: Boolean,
@@ -48,16 +59,16 @@ export default {
     };
     return { close };
   },
-  mounted(){
-    if(localStorage.getItem('text')){
-      this.formData.phone = localStorage.getItem('text')
+  mounted() {
+    if (localStorage.getItem("text")) {
+      this.formData.phone = localStorage.getItem("text");
     }
   },
   data() {
     return {
       formData: {
-        phone: ""
-            },
+        phone: "",
+      },
     };
   },
   methods: {
@@ -76,9 +87,9 @@ export default {
           "\r\n" +
           `RFQ ID: ${localStorage.getItem("rfqId")}` +
           "\r\n" +
-          `Products: \r\n${JSON.parse(localStorage.getItem(
-            "products"
-          )).split('\r\n')}`
+          `Products: \r\n${JSON.parse(localStorage.getItem("products")).split(
+            "\r\n"
+          )}`;
       } else {
         document.getElementById("textAreaField").value = "Failed to create RFQ";
       }
@@ -97,23 +108,6 @@ export default {
         document.getElementById("textAreaField").value =
           "Failed to submit Quotation";
       }
-
-      // result = await updateMargin();
-      // result = await updateNote()
-      // result = await selectWinning();
-      // result = await getOffer();
-      // if (result == true) {
-      //   var temp = document.getElementById("textAreaField").value;
-      //   document.getElementById("textAreaField").value =
-      //     temp +
-      //     "\r\n" +
-      //     `-------------------------------------------` +
-      //     "\r\n" +
-      //     `Quotation is selected as a Winning`;
-      // } else {
-      //   document.getElementById("textAreaField").value =
-      //     "Failed to submit Quotation";
-      // }
       result = await acceptQuotation();
       if (result == true) {
         var temp = document.getElementById("textAreaField").value;
@@ -122,20 +116,10 @@ export default {
           "\r\n" +
           `-------------------------------------------` +
           "\r\n" +
-          `Quotation is accepted`;
-      } else {
-        document.getElementById("textAreaField").value =
-          "Failed to accept Quotation";
-      }
-      result = await getOrderId()
-      if (result == true) {
-        var temp = document.getElementById("textAreaField").value;
-        document.getElementById("textAreaField").value =
-          temp +
+          `Quotation is accepted and Order is created ... ` +
           "\r\n" +
-          `-------------------------------------------` +
-          "\r\n" +
-          `Order Id: ${localStorage.getItem("orderId")}`;
+          `Order No. ${localStorage.getItem("bidNumber")}`;
+        +`-------------------------------------------`;
       } else {
         document.getElementById("textAreaField").value =
           "Failed to accept Quotation";

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { returnURL } from "../APIs/BaseAPI";
+import { headers, returnURL } from "../APIs/BaseAPI";
 import { getRandomName, getBid } from "../utilities/commonMethods";
 
 export async function updateMargin() {
@@ -378,7 +378,7 @@ export async function getOrderId() {
     let result = await axios.get(
       returnURL() +
         "/orders/paginated/filtered?page=0&size=1&orderNumber=" +
-        localStorage.getItem("rfqId").replace(/['"]+/g, "")
+        localStorage.getItem("rfqId").replace(/['"]+/g, ""), {headers:headers}
     );
     if (result.status == 200) {
       localStorage.setItem(

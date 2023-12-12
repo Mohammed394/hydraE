@@ -1,5 +1,5 @@
 import axios from "axios";
-import { returnURL, returnBasicProduct } from "../APIs/BaseAPI";
+import { returnURL, returnBasicProduct, headers } from "../APIs/BaseAPI";
 import { getRandomName } from "../utilities/commonMethods";
 
 export async function createContractor() {
@@ -20,7 +20,8 @@ export async function createContractor() {
     };
     let result = await axios.post(
       returnURL() + "/contractor/register",
-      formData
+      formData,
+      { headers }
     );
     if (result.status == 200) {
       localStorage.setItem("contractorId", JSON.stringify(result.data.id));
@@ -43,7 +44,8 @@ export async function activateAccount() {
       returnURL() +
         "/contractor/" +
         localStorage.getItem("contractorId").replace(/['"]+/g, ""),
-      formData
+      formData,
+      { headers }
     );
     if (result.status == 200) {
       localStorage.setItem(
@@ -71,7 +73,8 @@ export async function activateAccount() {
 export async function getBuyerInfo(phoneNumber) {
   try {
     let result = await axios.get(
-      returnURL() + "/contractor/phoneNumber/" + phoneNumber
+      returnURL() + "/contractor/phoneNumber/" + phoneNumber,
+      { headers: headers }
     );
     if (result.status == 200) {
       localStorage.setItem("contractorId", JSON.stringify(result.data.id));
@@ -146,11 +149,8 @@ export async function raiseManualRFQ() {
     };
     let result = await axios.post(
       returnURL() + "/opportunity/raise/manual",
-      formData,{
-        headers: {
-          'Accept-Language': 'en'
-        }
-      }
+      formData,
+      { headers: headers }
     );
     if (result.status == 201) {
       localStorage.setItem(
@@ -170,7 +170,8 @@ export async function getOpportunity() {
     let result = await axios.get(
       returnURL() +
         "/opportunity/" +
-        localStorage.getItem("opportunityId").replace(/['"]+/g, "")
+        localStorage.getItem("opportunityId").replace(/['"]+/g, ""),
+      { headers: headers }
     );
     if (result.status == 200) {
       localStorage.setItem("opportunityId", JSON.stringify(result.data.id));
@@ -200,7 +201,8 @@ export async function getOffer() {
     let result = await axios.get(
       returnURL() +
         "/offer/opportunity/" +
-        localStorage.getItem("opportunityId").replace(/['"]+/g, "")
+        localStorage.getItem("opportunityId").replace(/['"]+/g, ""),
+      { headers: headers }
     );
     if (result.status == 200) {
       localStorage.setItem("offerId", JSON.stringify(result.data.id));
@@ -222,7 +224,8 @@ export async function acceptQuotation() {
         "/bidding/bid/" +
         localStorage.getItem("bidId").replace(/['"]+/g, "") +
         "/status",
-      formData
+      formData,
+      { headers: headers }
     );
     if (result.status == 200) {
       return true;
@@ -244,7 +247,8 @@ export async function rejectQuotation() {
         "/bidding/bid/" +
         localStorage.getItem("bidId").replace(/['"]+/g, "") +
         "/status",
-      formData
+      formData,
+      { headers: headers }
     );
     if (result.status == 200) {
       return true;

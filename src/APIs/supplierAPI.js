@@ -1,5 +1,5 @@
 import axios from "axios";
-import { returnURL, returnSubmittedQuotationBody } from "../APIs/BaseAPI";
+import { returnURL, returnSubmittedQuotationBody, headers } from "../APIs/BaseAPI";
 import { getRandomName, getBid } from "../utilities/commonMethods";
 
 export async function createSupplier() {
@@ -64,7 +64,7 @@ export async function submitQuotation() {
   try {
     var formData = {
       supplierId: "63c4f8a715b61712067115c6",
-      expiryDate: "2023-12-22T10:56:48",
+      expiryDate: "2024-01-22T10:56:48",
       status: "SUBMITTED",
       notes: {
         content:
@@ -83,7 +83,7 @@ export async function submitQuotation() {
       returnURL() +
         "/bidding/bid/" +
         localStorage.getItem("opportunityId").replace(/['"]+/g, ""),
-      formData
+      formData, {headers:headers}
     );
     console.log(result.status);
 
