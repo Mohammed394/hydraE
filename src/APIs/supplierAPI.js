@@ -73,7 +73,7 @@ export async function submitQuotation() {
           " هذا مجرد اختبار يقيس مدى تحمل البرنامج حجم الكتابة - العنوان ٣٤  شارع الملك فهد - الموقع ٢٠٠٠ - عام ٢٠٢٣",
         visibility: true,
       },
-      paymentTermsId: "647d84c6399cd8f8cb099d6b",
+      paymentTermsId: "643007862071f75449d9634b",
       creditMarginPercentage: 1.5,
       lineItems: returnSubmittedQuotationBody(),
       termsAndConditions:

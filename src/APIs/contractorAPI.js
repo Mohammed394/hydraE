@@ -138,13 +138,14 @@ export async function raiseManualRFQ() {
       products: returnBasicProduct(),
       source: "WEB",
       deliveryLocation: {
-        id: "9f590e7014514328bab35dd48060f51a",
-        address: "F8M3+W7Q, Abruq Ar Rughamah, Jeddah 22354, Saudi Arabia",
+        id: "3cc1b5cfc2dd438f9f67958e9d83383b",
+        address:
+          "RBDB4529، 4529 أبي الحسن الهروي، 7935، حي شبرا، Riyadh 12797, Saudi Arabia",
         coordinates: {
-          lat: 21.48464963789118,
-          lng: 39.30290564352905,
+          lat: 24.5871739,
+          lng: 46.6831538,
         },
-        cityId: "649155886f4db06c577f7a94",
+        cityId: "64913b22e02ccab65544bb2c",
       },
     };
     let result = await axios.post(

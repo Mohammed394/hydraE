@@ -378,12 +378,395 @@ export async function getOrderId() {
     let result = await axios.get(
       returnURL() +
         "/orders/paginated/filtered?page=0&size=1&orderNumber=" +
-        localStorage.getItem("rfqId").replace(/['"]+/g, ""), {headers:headers}
+        localStorage.getItem("rfqId").replace(/['"]+/g, ""),
+      { headers: headers }
     );
     if (result.status == 200) {
       localStorage.setItem(
         "orderId",
         JSON.stringify(result.data.content[0].orderId)
+      );
+      return true;
+    } else {
+      return false;
+    }
+  } catch {
+    return false;
+  }
+}
+
+export async function addDeliveresSchedules() {
+  try {
+    var formData = {
+      orderId: "", //order id
+      deliveries: [
+        {
+          product: {
+            productId: "64995093319be626d9fbdc99",
+            name: "Finishing Cement",
+            arabicName: null,
+            attributes: [
+              {
+                name: "Brand",
+                type: "brand",
+                value: "Riyadh",
+              },
+              {
+                name: "Weight",
+                type: "weight",
+                value: "50 kg",
+              },
+              {
+                name: "Unit",
+                type: "unit",
+                value: "bags",
+              },
+            ],
+            quantity: 11,
+            imageUrl:
+              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/Finishing_Cement_pyhoyx.png",
+            skuNumber: "CM-CB-01-FIN-50",
+          },
+          quantity: 11,
+          returnedQuantity: 0,
+          productMarginPercentage: 100,
+        },
+        {
+          product: {
+            productId: "64f89d6a7e46d145c53f5464",
+            name: "Cement Tiles",
+            arabicName: null,
+            attributes: [
+              {
+                name: "Size",
+                type: "size",
+                value: "40x40x4cm",
+              },
+              {
+                name: "Colour",
+                type: "colour",
+                value: "Black",
+              },
+              {
+                name: "Unit",
+                type: "unit",
+                value: "ea",
+              },
+            ],
+            quantity: 11,
+            imageUrl:
+              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084011/Product%20Catalog/cement-tiles_c11zwy.png",
+            skuNumber: "ITK-01-CT-BLK-04",
+          },
+          quantity: 11,
+          returnedQuantity: 0,
+          productMarginPercentage: 50,
+        },
+        {
+          product: {
+            productId: "649950a3319be626d9fbdd1d",
+            name: "Gypsum Board",
+            arabicName: null,
+            attributes: [
+              {
+                name: "Brand",
+                type: "brand",
+                value: "MADA",
+              },
+              {
+                name: "Size",
+                type: "size",
+                value: "12.5mm - 1.2mtr x 2.4mtr",
+              },
+              {
+                name: "Type",
+                type: "type",
+                value: "Fire Rated",
+              },
+              {
+                name: "Unit",
+                type: "unit",
+                value: "pcs",
+              },
+            ],
+            quantity: 11,
+            imageUrl:
+              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Gypsum_Board_tcq7jc.png",
+            skuNumber: "GM-GB-FIR-03-12-24",
+          },
+          quantity: 11,
+          returnedQuantity: 0,
+          productMarginPercentage: 100,
+        },
+        {
+          product: {
+            productId: "64995099319be626d9fbdcb3",
+            name: "Vetonit Pool Fix",
+            arabicName: null,
+            attributes: [
+              {
+                name: "Brand",
+                type: "brand",
+                value: "SAVETO",
+              },
+              {
+                name: "Weight",
+                type: "weight",
+                value: "25 kg",
+              },
+              {
+                name: "Unit",
+                type: "unit",
+                value: "bags",
+              },
+            ],
+            quantity: 11,
+            imageUrl:
+              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665151/Product%20Catalog/Vetonit_Pool_Fix_zfgua4.png",
+            skuNumber: "CHEMA-FM-01-VPO-25",
+          },
+          quantity: 11,
+          returnedQuantity: 0,
+          productMarginPercentage: 400,
+        },
+        {
+          product: {
+            productId: "64f89dc97e46d145c53f5505",
+            name: "Styrofoam Block",
+            arabicName: null,
+            attributes: [
+              {
+                name: "Brand",
+                type: "brand",
+                value: "SAUDI POLYSTYRENE",
+              },
+              {
+                name: "Size",
+                type: "size",
+                value: "200x400x20",
+              },
+              {
+                name: "Type",
+                type: "type",
+                value: "P - 8",
+              },
+              {
+                name: "Unit",
+                type: "unit",
+                value: "ea",
+              },
+            ],
+            quantity: 11,
+            imageUrl:
+              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084010/Product%20Catalog/styrofoam-block_hmptau.png",
+            skuNumber: "INS-STFM-01-20020-8",
+          },
+          quantity: 11,
+          returnedQuantity: 0,
+          productMarginPercentage: 66.67,
+        },
+      ]
+    };
+    let result = await axios.post(
+      returnURL() + "/orders/schedule/delivery",
+      formData,
+      { headers: headers }
+    );
+    if (result.status == 201) {
+      localStorage.setItem(
+        "opportunityId",
+        JSON.stringify(result.data.opportunityId)
+      );
+      return true;
+    } else {
+      return false;
+    }
+  } catch {
+    return false;
+  }
+}
+
+export async function updateDelivery() {
+  try {
+    var formData = {
+      id: "", //order id
+      products: [
+        {
+          product: {
+            productId: "64995093319be626d9fbdc99",
+            name: "Finishing Cement",
+            arabicName: null,
+            attributes: [
+              {
+                name: "Brand",
+                type: "brand",
+                value: "Riyadh",
+              },
+              {
+                name: "Weight",
+                type: "weight",
+                value: "50 kg",
+              },
+              {
+                name: "Unit",
+                type: "unit",
+                value: "bags",
+              },
+            ],
+            quantity: 11,
+            imageUrl:
+              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/Finishing_Cement_pyhoyx.png",
+            skuNumber: "CM-CB-01-FIN-50",
+          },
+          quantity: 11,
+          returnedQuantity: 0,
+          productMarginPercentage: 100,
+        },
+        {
+          product: {
+            productId: "64f89d6a7e46d145c53f5464",
+            name: "Cement Tiles",
+            arabicName: null,
+            attributes: [
+              {
+                name: "Size",
+                type: "size",
+                value: "40x40x4cm",
+              },
+              {
+                name: "Colour",
+                type: "colour",
+                value: "Black",
+              },
+              {
+                name: "Unit",
+                type: "unit",
+                value: "ea",
+              },
+            ],
+            quantity: 11,
+            imageUrl:
+              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084011/Product%20Catalog/cement-tiles_c11zwy.png",
+            skuNumber: "ITK-01-CT-BLK-04",
+          },
+          quantity: 11,
+          returnedQuantity: 0,
+          productMarginPercentage: 50,
+        },
+        {
+          product: {
+            productId: "649950a3319be626d9fbdd1d",
+            name: "Gypsum Board",
+            arabicName: null,
+            attributes: [
+              {
+                name: "Brand",
+                type: "brand",
+                value: "MADA",
+              },
+              {
+                name: "Size",
+                type: "size",
+                value: "12.5mm - 1.2mtr x 2.4mtr",
+              },
+              {
+                name: "Type",
+                type: "type",
+                value: "Fire Rated",
+              },
+              {
+                name: "Unit",
+                type: "unit",
+                value: "pcs",
+              },
+            ],
+            quantity: 11,
+            imageUrl:
+              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Gypsum_Board_tcq7jc.png",
+            skuNumber: "GM-GB-FIR-03-12-24",
+          },
+          quantity: 11,
+          returnedQuantity: 0,
+          productMarginPercentage: 100,
+        },
+        {
+          product: {
+            productId: "64995099319be626d9fbdcb3",
+            name: "Vetonit Pool Fix",
+            arabicName: null,
+            attributes: [
+              {
+                name: "Brand",
+                type: "brand",
+                value: "SAVETO",
+              },
+              {
+                name: "Weight",
+                type: "weight",
+                value: "25 kg",
+              },
+              {
+                name: "Unit",
+                type: "unit",
+                value: "bags",
+              },
+            ],
+            quantity: 11,
+            imageUrl:
+              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665151/Product%20Catalog/Vetonit_Pool_Fix_zfgua4.png",
+            skuNumber: "CHEMA-FM-01-VPO-25",
+          },
+          quantity: 11,
+          returnedQuantity: 0,
+          productMarginPercentage: 400,
+        },
+        {
+          product: {
+            productId: "64f89dc97e46d145c53f5505",
+            name: "Styrofoam Block",
+            arabicName: null,
+            attributes: [
+              {
+                name: "Brand",
+                type: "brand",
+                value: "SAUDI POLYSTYRENE",
+              },
+              {
+                name: "Size",
+                type: "size",
+                value: "200x400x20",
+              },
+              {
+                name: "Type",
+                type: "type",
+                value: "P - 8",
+              },
+              {
+                name: "Unit",
+                type: "unit",
+                value: "ea",
+              },
+            ],
+            quantity: 11,
+            imageUrl:
+              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084010/Product%20Catalog/styrofoam-block_hmptau.png",
+            skuNumber: "INS-STFM-01-20020-8",
+          },
+          quantity: 11,
+          returnedQuantity: 0,
+          productMarginPercentage: 66.67,
+        },
+      ]
+    };
+    let result = await axios.post(
+      returnURL() + "/orders/schedule/delivery",
+      formData,
+      { headers: headers }
+    );
+    if (result.status == 201) {
+      localStorage.setItem(
+        "opportunityId",
+        JSON.stringify(result.data.opportunityId)
       );
       return true;
     } else {
