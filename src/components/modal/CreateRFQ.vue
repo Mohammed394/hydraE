@@ -129,8 +129,6 @@ export default {
     },
     async acceptQuotation(){
       let result = await acceptQuotation()
-      // result = await getOrderId()
-
       if (result == true) {
         var temp = document.getElementById("textAreaField").value
         document.getElementById("textAreaField").value = temp + "\r\n" + `-------------------------------------------`+ "\r\n" + 
@@ -144,6 +142,19 @@ export default {
          
       } else {
         document.getElementById("textAreaField").value = "Failed to accept Quotation";
+      }
+      result = await getOrderId()
+      if (result == true) {
+        var temp = document.getElementById("textAreaField").value;
+        document.getElementById("textAreaField").value =
+          temp +
+          "\r\n" +
+          `-------------------------------------------` +
+          "\r\n" +
+          `Order Id: ${localStorage.getItem("orderId")}`;
+      } else {
+        document.getElementById("textAreaField").value =
+          "Failed to accept Quotation";
       }
     },
     async rejectQuotation(){
