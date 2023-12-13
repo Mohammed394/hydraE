@@ -48,6 +48,9 @@ import {
   selectWinning,
   updateNote,
   getOrderId,
+  addDeliveresSchedules,
+  getDeliverablesData,
+  updateDelivery
 } from "../../APIs/retoolAPI";
 export default {
   props: {
@@ -136,6 +139,75 @@ export default {
       } else {
         document.getElementById("textAreaField").value =
           "Failed to accept Quotation";
+      }
+      result = await addDeliveresSchedules()
+      if (result == true) {
+        var temp = document.getElementById("textAreaField").value;
+        document.getElementById("textAreaField").value =
+          temp +
+          "\r\n" +
+          `-------------------------------------------` +
+          "\r\n" +
+          `Delieverables are scheduled successfully`;
+      } else {
+        document.getElementById("textAreaField").value =
+          "Failed to accept Quotation";
+      }
+      result = await getDeliverablesData()
+      console.log(result)
+      if (result == true) {
+        var temp = document.getElementById("textAreaField").value;
+        document.getElementById("textAreaField").value =
+          temp +
+          "\r\n" +
+          `-------------------------------------------` +
+          "\r\n" +
+          `Deliverable Id: ${localStorage.getItem("DeliverableID")}`;
+      } else {
+        document.getElementById("textAreaField").value =
+          "Failed to accept1 Quotation";
+      }
+      result = await updateDelivery("OUT_FOR_DELIVERY")
+      console.log(result)
+      if (result == true) {
+        var temp = document.getElementById("textAreaField").value;
+        document.getElementById("textAreaField").value =
+          temp +
+          "\r\n" +
+          `-------------------------------------------` +
+          "\r\n" +
+          `Delieverables are OUT_FOR_DELIVERY`;
+      } else {
+        document.getElementById("textAreaField").value =
+          "Failed to accept1 Quotation";
+      }
+      result = await getDeliverablesData()
+      console.log(result)
+      if (result == true) {
+        var temp = document.getElementById("textAreaField").value;
+        document.getElementById("textAreaField").value =
+          temp +
+          "\r\n" +
+          `-------------------------------------------` +
+          "\r\n" +
+          `Deliverable Id: ${localStorage.getItem("DeliverableID")}`;
+      } else {
+        document.getElementById("textAreaField").value =
+          "Failed to accept1 Quotation";
+      }
+      result = await updateDelivery("DELIVERED")
+      console.log(result)
+      if (result == true) {
+        var temp = document.getElementById("textAreaField").value;
+        document.getElementById("textAreaField").value =
+          temp +
+          "\r\n" +
+          `-------------------------------------------` +
+          "\r\n" +
+          `Delieverables are DELIVERED`;
+      } else {
+        document.getElementById("textAreaField").value =
+          "Failed to accept1 Quotation";
       }
     },
   },

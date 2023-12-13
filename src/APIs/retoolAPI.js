@@ -382,10 +382,7 @@ export async function getOrderId() {
       { headers: headers }
     );
     if (result.status == 200) {
-      localStorage.setItem(
-        "orderId",
-        JSON.stringify(result.data.orderId)
-      );
+      localStorage.setItem("orderId", JSON.stringify(result.data.orderId));
       return true;
     } else {
       return false;
@@ -398,8 +395,10 @@ export async function getOrderId() {
 export async function addDeliveresSchedules() {
   try {
     var formData = {
-      orderId: "", //order id
+      orderId: localStorage.getItem("orderId").replace(/['"]+/g, ""),
       deliveries: [
+        {
+        products: [
         {
           product: {
             productId: "64995093319be626d9fbdc99",
@@ -426,10 +425,10 @@ export async function addDeliveresSchedules() {
             imageUrl:
               "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/Finishing_Cement_pyhoyx.png",
             skuNumber: "CM-CB-01-FIN-50",
+            deliveredQuantity: 0,
+            remainingQuantity: 11,
           },
           quantity: 11,
-          returnedQuantity: 0,
-          productMarginPercentage: 100,
         },
         {
           product: {
@@ -457,10 +456,10 @@ export async function addDeliveresSchedules() {
             imageUrl:
               "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084011/Product%20Catalog/cement-tiles_c11zwy.png",
             skuNumber: "ITK-01-CT-BLK-04",
+            deliveredQuantity: 0,
+            remainingQuantity: 11,
           },
           quantity: 11,
-          returnedQuantity: 0,
-          productMarginPercentage: 50,
         },
         {
           product: {
@@ -493,10 +492,10 @@ export async function addDeliveresSchedules() {
             imageUrl:
               "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Gypsum_Board_tcq7jc.png",
             skuNumber: "GM-GB-FIR-03-12-24",
+            deliveredQuantity: 0,
+            remainingQuantity: 11,
           },
           quantity: 11,
-          returnedQuantity: 0,
-          productMarginPercentage: 100,
         },
         {
           product: {
@@ -524,10 +523,10 @@ export async function addDeliveresSchedules() {
             imageUrl:
               "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665151/Product%20Catalog/Vetonit_Pool_Fix_zfgua4.png",
             skuNumber: "CHEMA-FM-01-VPO-25",
+            deliveredQuantity: 0,
+            remainingQuantity: 11,
           },
           quantity: 11,
-          returnedQuantity: 0,
-          productMarginPercentage: 400,
         },
         {
           product: {
@@ -560,12 +559,21 @@ export async function addDeliveresSchedules() {
             imageUrl:
               "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084010/Product%20Catalog/styrofoam-block_hmptau.png",
             skuNumber: "INS-STFM-01-20020-8",
+            deliveredQuantity: 0,
+            remainingQuantity: 11,
           },
           quantity: 11,
-          returnedQuantity: 0,
-          productMarginPercentage: 66.67,
-        },
+        }
       ],
+      charges: {
+        amount: 0,
+        currency: "SAR",
+      },
+      deliveryDate: "2024-12-13T09:26:12.683Z",
+      deliveryType: "BRKZ",
+      status: "SCHEDULED",
+      vehicleType: "",
+    }]
     };
     let result = await axios.post(
       returnURL() + "/orders/schedule/delivery",
@@ -586,13 +594,35 @@ export async function addDeliveresSchedules() {
   }
 }
 
+export async function getDeliverablesData() {
+  try {
+    let result = await axios.get(
+      returnURL() +
+        "/orders/" +
+        localStorage.getItem("orderId").replace(/['"]+/g, "")+"/deliveries",
+      { headers: headers }
+    );
+    if (result.status == 200) {
+      localStorage.setItem("DeliverableID", JSON.stringify(result.data[0].id));
+      localStorage.setItem("ZohoData", JSON.stringify(result.data[0].zoho));
+      return true;
+    } else {
+      return false;
+    }
+  } catch {
+    return false;
+  }
+}
+
 export async function updateDelivery(status) {
+  console.log('Before API Call:');
+
   try {
     var formData = {
       deliveries: [
         {
-          id: "", //order id
-          zoho: {},
+          id: localStorage.getItem("DeliverableID").replace(/['"]+/g, ""),
+          zoho: localStorage.getItem("ZohoData"),
           products: [
             {
               product: {
@@ -761,7 +791,7 @@ export async function updateDelivery(status) {
             },
           ],
           status: status,
-          deliveryDate: "2023-12-12T11:32:53.4",
+          deliveryDate: "2024-12-12T11:32:53.4",
           vehicleId: null,
           vehicleName: null,
           deliveryType: "BRKZ",
@@ -770,18 +800,18 @@ export async function updateDelivery(status) {
           totalInvoiceAmount: { amount: 9629.81, currency: "SAR" },
           totalProductMargin: { amount: 3630, currency: "SAR" },
           paymentDueDate: null,
-          deliveryId: "2b4a3308-7299-4023-a4b5-b6772bfbb33d",
+          deliveryId: localStorage.getItem("DeliverableID").replace(/['"]+/g, "")
         },
       ],
-      orderId: "s",
+      orderId: localStorage.getItem("orderId").replace(/['"]+/g, "")
     };
-
-    let result = await axios.put(
-      returnURL() + "/orders/deliveries",
-      formData,
-      { headers: headers }
-    );
-    if (result.status == 201) {
+    console.log('FormData:', formData);
+    let result = await axios.put(returnURL() + "/orders/deliveries", formData, {
+      headers: headers,
+    });
+    console.log(formData)
+    console.log(result)
+    if (result.status == 200) {
       localStorage.setItem(
         "opportunityId",
         JSON.stringify(result.data.opportunityId)
