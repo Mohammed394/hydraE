@@ -10,7 +10,7 @@ export const headers = {
 export function returnBasicProduct() {
   var product = [
     {
-      productId: "64995093319be626d9fbdc99",
+      productId: "657ae140ad00b45090b1de5a",
       name: "Finishing Cement",
       imageUrls: [
         "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/Finishing_Cement_pyhoyx.png",
@@ -162,7 +162,7 @@ export function returnSubmittedQuotationBody() {
   var product = [
     {
       "product": {
-        "productId": "64995093319be626d9fbdc99",
+        "productId": "657ae140ad00b45090b1de5a",
         "name": "Finishing Cement",
         "arabicName": null,
         "attributes": [

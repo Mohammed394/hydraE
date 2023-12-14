@@ -401,7 +401,7 @@ export async function addDeliveresSchedules() {
         products: [
         {
           product: {
-            productId: "64995093319be626d9fbdc99",
+            productId: "657ae140ad00b45090b1de5a",
             name: "Finishing Cement",
             arabicName: null,
             attributes: [
@@ -626,7 +626,7 @@ export async function updateDelivery(status) {
           products: [
             {
               product: {
-                productId: "64995093319be626d9fbdc99",
+                productId: "657ae140ad00b45090b1de5a",
                 name: "Finishing Cement",
                 arabicName: null,
                 attributes: [
