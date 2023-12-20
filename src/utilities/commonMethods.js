@@ -25,3 +25,16 @@ export function getBid() {
     thirdtext += possible.charAt(Math.floor(Math.random() * possible.length));
   return firsttext +"-"+ secondtext+"-"+thirdtext;
 }
+export function getCurrentDateTime() {
+  const now = new Date();
+
+  const year = now.getFullYear();
+  const month = formatTimeComponent(now.getMonth() + 1);
+  const day = formatTimeComponent(now.getDate());
+  const hours = formatTimeComponent(now.getHours());
+  const minutes = formatTimeComponent(now.getMinutes());
+  const seconds = formatTimeComponent(now.getSeconds());
+  const milliseconds = now.getMilliseconds();
+
+  return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}.${milliseconds}`;
+}

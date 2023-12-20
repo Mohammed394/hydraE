@@ -1,6 +1,6 @@
 import axios from "axios";
 import { headers, returnURL } from "../APIs/BaseAPI";
-import { getRandomName, getBid } from "../utilities/commonMethods";
+import { getCurrentDateTime, getBid } from "../utilities/commonMethods";
 
 export async function updateMargin() {
   try {
@@ -791,7 +791,6 @@ export async function updateDelivery(status) {
             },
           ],
           status: status,
-          deliveryDate: "2024-12-12T11:32:53.4",
           vehicleId: null,
           vehicleName: null,
           deliveryType: "BRKZ",
@@ -818,6 +817,7 @@ export async function updateDelivery(status) {
       );
       return true;
     } else {
+      console.log(result)
       return false;
     }
   } catch {
