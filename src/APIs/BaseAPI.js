@@ -161,255 +161,250 @@ export function returnBasicProduct() {
 export function returnSubmittedQuotationBody() {
   var product = [
     {
-      "product": {
-        "productId": "657ae140ad00b45090b1de5a",
-        "name": "Finishing Cement",
-        "arabicName": null,
-        "attributes": [
+      product: {
+        productId: "657ae140ad00b45090b1de5a",
+        name: "Finishing Cement",
+        arabicName: null,
+        attributes: [
           {
-            "name": "Brand",
-            "type": "brand",
-            "value": "Riyadh"
+            name: "Brand",
+            type: "brand",
+            value: "Riyadh",
           },
           {
-            "name": "Weight",
-            "type": "weight",
-            "value": "50 kg"
+            name: "Weight",
+            type: "weight",
+            value: "50 kg",
           },
           {
-            "name": "Unit",
-            "type": "unit",
-            "value": "bags"
-          }
+            name: "Unit",
+            type: "unit",
+            value: "bags",
+          },
         ],
-        "quantity": 11,
-        "imageUrl": "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/Finishing_Cement_pyhoyx.png",
-        "skuNumber": "CM-CB-01-FIN-50",
-        "marginAmount": 1100,
-        "marginPercentage": 100,
-        "supplierErr": ""
+        quantity: 11,
+        imageUrl:
+          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/Finishing_Cement_pyhoyx.png",
+        skuNumber: "CM-CB-01-FIN-50",
+        marginAmount: 110,
+        marginPercentage: 100,
+        supplierErr: "",
       },
-      "offerAmountBySupplier": {
-        "amount": 1100,
-        "currency": "SAR"
+      offerAmountBySupplier: {
+        amount: 110,
+        currency: "SAR",
       },
-      "offerAmount": {
-        "amount": 0,
-        "currency": "SAR"
+      offerAmount: {
+        amount: 0,
+        currency: "SAR",
       },
-      "sellingPrice": {
-        "amount": 200,
-        "currency": "SAR"
+      sellingPrice: {
+        amount: 20,
+        currency: "SAR",
       },
-      "supplier": {
-        "id": "6569bda0ea55f870d7639e3b",
-        "name": "Shipping",
-        "cityId": "649155886f4db06c577f7a94",
-        "regionId": "6569bdcdea55f870d7639e3c"
-      }
+      supplier: {
+        id: "65843b523aa0185455c69959",
+        name: "Vendor DVIqz",
+      },
     },
     {
-      "product": {
-        "productId": "64f89d6a7e46d145c53f5464",
-        "name": "Cement Tiles",
-        "arabicName": null,
-        "attributes": [
+      product: {
+        productId: "64f89d6a7e46d145c53f5464",
+        name: "Cement Tiles",
+        arabicName: null,
+        attributes: [
           {
-            "name": "Size",
-            "type": "size",
-            "value": "40x40x4cm"
+            name: "Size",
+            type: "size",
+            value: "40x40x4cm",
           },
           {
-            "name": "Colour",
-            "type": "colour",
-            "value": "Black"
+            name: "Colour",
+            type: "colour",
+            value: "Black",
           },
           {
-            "name": "Unit",
-            "type": "unit",
-            "value": "ea"
-          }
+            name: "Unit",
+            type: "unit",
+            value: "ea",
+          },
         ],
-        "quantity": 11,
-        "imageUrl": "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084011/Product%20Catalog/cement-tiles_c11zwy.png",
-        "skuNumber": "ITK-01-CT-BLK-04",
-        "marginAmount": 1100,
-        "marginPercentage": 50,
-        "supplierErr": ""
+        quantity: 11,
+        imageUrl:
+          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084011/Product%20Catalog/cement-tiles_c11zwy.png",
+        skuNumber: "ITK-01-CT-BLK-04",
+        marginAmount: 110,
+        marginPercentage: 100,
+        supplierErr: "",
       },
-      "offerAmountBySupplier": {
-        "amount": 2200,
-        "currency": "SAR"
+      offerAmountBySupplier: {
+        amount: 110,
+        currency: "SAR",
       },
-      "offerAmount": {
-        "amount": 0,
-        "currency": "SAR"
+      offerAmount: {
+        amount: 0,
+        currency: "SAR",
       },
-      "sellingPrice": {
-        "amount": 300,
-        "currency": "SAR"
+      sellingPrice: {
+        amount: 20,
+        currency: "SAR",
       },
-      "supplier": {
-        "id": "6569bda0ea55f870d7639e3b",
-        "name": "Shipping",
-        "cityId": "649155886f4db06c577f7a94",
-        "regionId": "6569bdcdea55f870d7639e3c"
-      }
+      supplier: {
+        id: "65843b523aa0185455c69959",
+        name: "Vendor DVIqz",
+      },
     },
     {
-      "product": {
-        "productId": "649950a3319be626d9fbdd1d",
-        "name": "Gypsum Board",
-        "arabicName": null,
-        "attributes": [
+      product: {
+        productId: "649950a3319be626d9fbdd1d",
+        name: "Gypsum Board",
+        arabicName: null,
+        attributes: [
           {
-            "name": "Brand",
-            "type": "brand",
-            "value": "MADA"
+            name: "Brand",
+            type: "brand",
+            value: "MADA",
           },
           {
-            "name": "Size",
-            "type": "size",
-            "value": "12.5mm - 1.2mtr x 2.4mtr"
+            name: "Size",
+            type: "size",
+            value: "12.5mm - 1.2mtr x 2.4mtr",
           },
           {
-            "name": "Type",
-            "type": "type",
-            "value": "Fire Rated"
+            name: "Type",
+            type: "type",
+            value: "Fire Rated",
           },
           {
-            "name": "Unit",
-            "type": "unit",
-            "value": "pcs"
-          }
+            name: "Unit",
+            type: "unit",
+            value: "pcs",
+          },
         ],
-        "quantity": 11,
-        "imageUrl": "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Gypsum_Board_tcq7jc.png",
-        "skuNumber": "GM-GB-FIR-03-12-24",
-        "marginAmount": 550,
-        "marginPercentage": 100,
-        "supplierErr": ""
+        quantity: 11,
+        imageUrl:
+          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Gypsum_Board_tcq7jc.png",
+        skuNumber: "GM-GB-FIR-03-12-24",
+        marginAmount: 110,
+        marginPercentage: 100,
+        supplierErr: "",
       },
-      "offerAmountBySupplier": {
-        "amount": 550,
-        "currency": "SAR"
+      offerAmountBySupplier: {
+        amount: 110,
+        currency: "SAR",
       },
-      "offerAmount": {
-        "amount": 0,
-        "currency": "SAR"
+      offerAmount: {
+        amount: 0,
+        currency: "SAR",
       },
-      "sellingPrice": {
-        "amount": 100,
-        "currency": "SAR"
+      sellingPrice: {
+        amount: 20,
+        currency: "SAR",
       },
-      "supplier": {
-        "id": "6569bda0ea55f870d7639e3b",
-        "name": "Shipping",
-        "cityId": "649155886f4db06c577f7a94",
-        "regionId": "6569bdcdea55f870d7639e3c"
-      }
+      supplier: {
+        id: "65843b523aa0185455c69959",
+        name: "Vendor DVIqz",
+      },
     },
     {
-      "product": {
-        "productId": "64995099319be626d9fbdcb3",
-        "name": "Vetonit Pool Fix",
-        "arabicName": null,
-        "attributes": [
+      product: {
+        productId: "64995099319be626d9fbdcb3",
+        name: "Vetonit Pool Fix",
+        arabicName: null,
+        attributes: [
           {
-            "name": "Brand",
-            "type": "brand",
-            "value": "SAVETO"
+            name: "Brand",
+            type: "brand",
+            value: "SAVETO",
           },
           {
-            "name": "Weight",
-            "type": "weight",
-            "value": "25 kg"
+            name: "Weight",
+            type: "weight",
+            value: "25 kg",
           },
           {
-            "name": "Unit",
-            "type": "unit",
-            "value": "bags"
-          }
+            name: "Unit",
+            type: "unit",
+            value: "bags",
+          },
         ],
-        "quantity": 11,
-        "imageUrl": "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665151/Product%20Catalog/Vetonit_Pool_Fix_zfgua4.png",
-        "skuNumber": "CHEMA-FM-01-VPO-25",
-        "marginAmount": 440,
-        "marginPercentage": 400,
-        "supplierErr": ""
+        quantity: 11,
+        imageUrl:
+          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665151/Product%20Catalog/Vetonit_Pool_Fix_zfgua4.png",
+        skuNumber: "CHEMA-FM-01-VPO-25",
+        marginAmount: 110,
+        marginPercentage: 100,
+        supplierErr: "",
       },
-      "offerAmountBySupplier": {
-        "amount": 110,
-        "currency": "SAR"
+      offerAmountBySupplier: {
+        amount: 110,
+        currency: "SAR",
       },
-      "offerAmount": {
-        "amount": 0,
-        "currency": "SAR"
+      offerAmount: {
+        amount: 0,
+        currency: "SAR",
       },
-      "sellingPrice": {
-        "amount": 50,
-        "currency": "SAR"
+      sellingPrice: {
+        amount: 20,
+        currency: "SAR",
       },
-      "supplier": {
-        "id": "6569bda0ea55f870d7639e3b",
-        "name": "Shipping",
-        "cityId": "649155886f4db06c577f7a94",
-        "regionId": "6569bdcdea55f870d7639e3c"
-      }
+      supplier: {
+        id: "65843b523aa0185455c69959",
+        name: "Vendor DVIqz",
+      },
     },
     {
-      "product": {
-        "productId": "64f89dc97e46d145c53f5505",
-        "name": "Styrofoam Block",
-        "arabicName": null,
-        "attributes": [
+      product: {
+        productId: "64f89dc97e46d145c53f5505",
+        name: "Styrofoam Block",
+        arabicName: null,
+        attributes: [
           {
-            "name": "Brand",
-            "type": "brand",
-            "value": "SAUDI POLYSTYRENE"
+            name: "Brand",
+            type: "brand",
+            value: "SAUDI POLYSTYRENE",
           },
           {
-            "name": "Size",
-            "type": "size",
-            "value": "200x400x20"
+            name: "Size",
+            type: "size",
+            value: "200x400x20",
           },
           {
-            "name": "Type",
-            "type": "type",
-            "value": "P - 8"
+            name: "Type",
+            type: "type",
+            value: "P - 8",
           },
           {
-            "name": "Unit",
-            "type": "unit",
-            "value": "ea"
-          }
+            name: "Unit",
+            type: "unit",
+            value: "ea",
+          },
         ],
-        "quantity": 11,
-        "imageUrl": "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084010/Product%20Catalog/styrofoam-block_hmptau.png",
-        "skuNumber": "INS-STFM-01-20020-8",
-        "marginAmount": 440,
-        "marginPercentage": 66.67,
-        "supplierErr": ""
+        quantity: 11,
+        imageUrl:
+          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084010/Product%20Catalog/styrofoam-block_hmptau.png",
+        skuNumber: "INS-STFM-01-20020-8",
+        marginAmount: 110,
+        marginPercentage: 100,
+        supplierErr: "",
       },
-      "offerAmountBySupplier": {
-        "amount": 660,
-        "currency": "SAR"
+      offerAmountBySupplier: {
+        amount: 110,
+        currency: "SAR",
       },
-      "offerAmount": {
-        "amount": 0,
-        "currency": "SAR"
+      offerAmount: {
+        amount: 0,
+        currency: "SAR",
       },
-      "sellingPrice": {
-        "amount": 100,
-        "currency": "SAR"
+      sellingPrice: {
+        amount: 20,
+        currency: "SAR",
       },
-      "supplier": {
-        "id": "6569bda0ea55f870d7639e3b",
-        "name": "Shipping",
-        "cityId": "649155886f4db06c577f7a94",
-        "regionId": "6569bdcdea55f870d7639e3c"
-      }
-    }
+      supplier: {
+        id: "65843b523aa0185455c69959",
+        name: "Vendor DVIqz",
+      },
+    },
   ];
   return product;
 }
