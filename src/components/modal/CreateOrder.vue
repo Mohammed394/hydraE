@@ -6,6 +6,11 @@
         <h1 class="title">Create Order</h1>
         <div class="button-container">
           <button class="createButton" v-on:click="login1">Create</button>
+          <button class="createButton" v-on:click="deliverOrder">Deliver the Order</button>
+          <div class="button-container-extra">
+          <button class="infoButtons" v-on:click="updateTransaction">Change the Tansaction Status</button>
+          <button class="infoButtons" :disabled="buttonDisabled">Get Cashback Notification</button>
+          </div>
         </div>
         <i class="far fa-times-circle" @click="close"></i>
         <div class="input-components">
@@ -50,7 +55,8 @@ import {
   getOrderId,
   addDeliveresSchedules,
   getDeliverablesData,
-  updateDelivery
+  updateDelivery,
+  updateTransaction
 } from "../../APIs/retoolAPI";
 export default {
   props: {
@@ -72,6 +78,7 @@ export default {
       formData: {
         phone: "",
       },
+      buttonDisabled: false,
     };
   },
   methods: {
@@ -138,9 +145,12 @@ export default {
           `Order Id: ${localStorage.getItem("orderId")}`;
       } else {
         document.getElementById("textAreaField").value =
-          "Failed to accept Quotation";
+          "Error while fetching the order ID";
       }
-      result = await addDeliveresSchedules()
+      
+    },
+    async deliverOrder(){
+      let result = await addDeliveresSchedules()
       if (result == true) {
         var temp = document.getElementById("textAreaField").value;
         document.getElementById("textAreaField").value =
@@ -151,7 +161,7 @@ export default {
           `Delieverables are scheduled successfully`;
       } else {
         document.getElementById("textAreaField").value =
-          "Failed to accept Quotation";
+          "Error while scheduling the deliverables";
       }
       result = await getDeliverablesData()
       console.log(result)
@@ -165,7 +175,7 @@ export default {
           `Deliverable Id: ${localStorage.getItem("DeliverableID")}`;
       } else {
         document.getElementById("textAreaField").value =
-          "Failed to accept1 Quotation";
+          "Error while fetching the deliverables data";
       }
       result = await updateDelivery("OUT_FOR_DELIVERY")
       console.log(result)
@@ -179,7 +189,7 @@ export default {
           `Delieverables are OUT_FOR_DELIVERY`;
       } else {
         document.getElementById("textAreaField").value =
-          "Failed to accept1 Quotation";
+          "Error while updating the deliverable status";
       }
       result = await getDeliverablesData()
       console.log(result)
@@ -193,7 +203,7 @@ export default {
           `Deliverable Id: ${localStorage.getItem("DeliverableID")}`;
       } else {
         document.getElementById("textAreaField").value =
-          "Failed to accept1 Quotation";
+          "Error while fetching the deliverables data";
       }
       result = await updateDelivery("DELIVERED")
       console.log(result)
@@ -207,9 +217,24 @@ export default {
           `Delieverables are DELIVERED`;
       } else {
         document.getElementById("textAreaField").value =
-          "Failed to accept1 Quotation";
+          "Error while updating the deliverable status";
       }
     },
+    async updateTransaction(){
+      let result = await updateTransaction()
+      if (result == true) {
+        var temp = document.getElementById("textAreaField").value;
+        document.getElementById("textAreaField").value =
+          temp +
+          "\r\n" +
+          `-------------------------------------------` +
+          "\r\n" +
+          `All Transactions Got Updated Now`;
+      } else {
+        document.getElementById("textAreaField").value =
+          "Error While updating the transactions";
+      }
+    }
   },
 };
 </script>

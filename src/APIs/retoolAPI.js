@@ -824,3 +824,39 @@ export async function updateDelivery(status) {
     return false;
   }
 }
+
+export async function getTransactionId() {
+  try {
+    let result = await axios.get(
+      returnURL() +
+        "/payment/transactions?orderId=" +
+        localStorage.getItem("orderId").replace(/['"]+/g, ""),
+      { headers: headers }
+    );
+    if (result.status == 200) {
+      localStorage.setItem("transactionId", JSON.stringify(result.data.content[0].id));
+      return true;
+    } else {
+      return false;
+    }
+  } catch {
+    return false;
+  }
+}
+
+export async function updateTransaction() {
+  try {
+    let result = await axios.post(
+      returnURL() + "/payment/trigger-job-for-demo",
+      { headers: headers }
+    );
+    console.log(result)
+    if (result.status == 200) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch {
+    return false;
+  }
+}
