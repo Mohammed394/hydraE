@@ -846,8 +846,9 @@ export async function getTransactionId() {
 
 export async function updateTransaction() {
   try {
+    var formData = null
     let result = await axios.post(
-      returnURL() + "/payment/trigger-job-for-demo",
+      returnURL() + "/payment/trigger-job-for-demo", formData,
       { headers: headers }
     );
     console.log(result)
