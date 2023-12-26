@@ -398,182 +398,183 @@ export async function addDeliveresSchedules() {
       orderId: localStorage.getItem("orderId").replace(/['"]+/g, ""),
       deliveries: [
         {
-        products: [
-        {
-          product: {
-            productId: "657ae140ad00b45090b1de5a",
-            name: "Finishing Cement",
-            arabicName: null,
-            attributes: [
-              {
-                name: "Brand",
-                type: "brand",
-                value: "Riyadh",
+          products: [
+            {
+              product: {
+                productId: "657ae140ad00b45090b1de5a",
+                name: "Finishing Cement",
+                arabicName: null,
+                attributes: [
+                  {
+                    name: "Brand",
+                    type: "brand",
+                    value: "Riyadh",
+                  },
+                  {
+                    name: "Weight",
+                    type: "weight",
+                    value: "50 kg",
+                  },
+                  {
+                    name: "Unit",
+                    type: "unit",
+                    value: "bags",
+                  },
+                ],
+                quantity: 11,
+                imageUrl:
+                  "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/Finishing_Cement_pyhoyx.png",
+                skuNumber: "CM-CB-01-FIN-50",
+                deliveredQuantity: 0,
+                remainingQuantity: 11,
               },
-              {
-                name: "Weight",
-                type: "weight",
-                value: "50 kg",
+              quantity: 11,
+            },
+            {
+              product: {
+                productId: "64f89d6a7e46d145c53f5464",
+                name: "Cement Tiles",
+                arabicName: null,
+                attributes: [
+                  {
+                    name: "Size",
+                    type: "size",
+                    value: "40x40x4cm",
+                  },
+                  {
+                    name: "Colour",
+                    type: "colour",
+                    value: "Black",
+                  },
+                  {
+                    name: "Unit",
+                    type: "unit",
+                    value: "ea",
+                  },
+                ],
+                quantity: 11,
+                imageUrl:
+                  "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084011/Product%20Catalog/cement-tiles_c11zwy.png",
+                skuNumber: "ITK-01-CT-BLK-04",
+                deliveredQuantity: 0,
+                remainingQuantity: 11,
               },
-              {
-                name: "Unit",
-                type: "unit",
-                value: "bags",
+              quantity: 11,
+            },
+            {
+              product: {
+                productId: "649950a3319be626d9fbdd1d",
+                name: "Gypsum Board",
+                arabicName: null,
+                attributes: [
+                  {
+                    name: "Brand",
+                    type: "brand",
+                    value: "MADA",
+                  },
+                  {
+                    name: "Size",
+                    type: "size",
+                    value: "12.5mm - 1.2mtr x 2.4mtr",
+                  },
+                  {
+                    name: "Type",
+                    type: "type",
+                    value: "Fire Rated",
+                  },
+                  {
+                    name: "Unit",
+                    type: "unit",
+                    value: "pcs",
+                  },
+                ],
+                quantity: 11,
+                imageUrl:
+                  "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Gypsum_Board_tcq7jc.png",
+                skuNumber: "GM-GB-FIR-03-12-24",
+                deliveredQuantity: 0,
+                remainingQuantity: 11,
               },
-            ],
-            quantity: 11,
-            imageUrl:
-              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/Finishing_Cement_pyhoyx.png",
-            skuNumber: "CM-CB-01-FIN-50",
-            deliveredQuantity: 0,
-            remainingQuantity: 11,
+              quantity: 11,
+            },
+            {
+              product: {
+                productId: "64995099319be626d9fbdcb3",
+                name: "Vetonit Pool Fix",
+                arabicName: null,
+                attributes: [
+                  {
+                    name: "Brand",
+                    type: "brand",
+                    value: "SAVETO",
+                  },
+                  {
+                    name: "Weight",
+                    type: "weight",
+                    value: "25 kg",
+                  },
+                  {
+                    name: "Unit",
+                    type: "unit",
+                    value: "bags",
+                  },
+                ],
+                quantity: 11,
+                imageUrl:
+                  "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665151/Product%20Catalog/Vetonit_Pool_Fix_zfgua4.png",
+                skuNumber: "CHEMA-FM-01-VPO-25",
+                deliveredQuantity: 0,
+                remainingQuantity: 11,
+              },
+              quantity: 11,
+            },
+            {
+              product: {
+                productId: "64f89dc97e46d145c53f5505",
+                name: "Styrofoam Block",
+                arabicName: null,
+                attributes: [
+                  {
+                    name: "Brand",
+                    type: "brand",
+                    value: "SAUDI POLYSTYRENE",
+                  },
+                  {
+                    name: "Size",
+                    type: "size",
+                    value: "200x400x20",
+                  },
+                  {
+                    name: "Type",
+                    type: "type",
+                    value: "P - 8",
+                  },
+                  {
+                    name: "Unit",
+                    type: "unit",
+                    value: "ea",
+                  },
+                ],
+                quantity: 11,
+                imageUrl:
+                  "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084010/Product%20Catalog/styrofoam-block_hmptau.png",
+                skuNumber: "INS-STFM-01-20020-8",
+                deliveredQuantity: 0,
+                remainingQuantity: 11,
+              },
+              quantity: 11,
+            },
+          ],
+          charges: {
+            amount: 0,
+            currency: "SAR",
           },
-          quantity: 11,
+          deliveryDate: "2024-12-13T09:26:12.683Z",
+          deliveryType: "BRKZ",
+          status: "SCHEDULED",
+          vehicleType: "",
         },
-        {
-          product: {
-            productId: "64f89d6a7e46d145c53f5464",
-            name: "Cement Tiles",
-            arabicName: null,
-            attributes: [
-              {
-                name: "Size",
-                type: "size",
-                value: "40x40x4cm",
-              },
-              {
-                name: "Colour",
-                type: "colour",
-                value: "Black",
-              },
-              {
-                name: "Unit",
-                type: "unit",
-                value: "ea",
-              },
-            ],
-            quantity: 11,
-            imageUrl:
-              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084011/Product%20Catalog/cement-tiles_c11zwy.png",
-            skuNumber: "ITK-01-CT-BLK-04",
-            deliveredQuantity: 0,
-            remainingQuantity: 11,
-          },
-          quantity: 11,
-        },
-        {
-          product: {
-            productId: "649950a3319be626d9fbdd1d",
-            name: "Gypsum Board",
-            arabicName: null,
-            attributes: [
-              {
-                name: "Brand",
-                type: "brand",
-                value: "MADA",
-              },
-              {
-                name: "Size",
-                type: "size",
-                value: "12.5mm - 1.2mtr x 2.4mtr",
-              },
-              {
-                name: "Type",
-                type: "type",
-                value: "Fire Rated",
-              },
-              {
-                name: "Unit",
-                type: "unit",
-                value: "pcs",
-              },
-            ],
-            quantity: 11,
-            imageUrl:
-              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Gypsum_Board_tcq7jc.png",
-            skuNumber: "GM-GB-FIR-03-12-24",
-            deliveredQuantity: 0,
-            remainingQuantity: 11,
-          },
-          quantity: 11,
-        },
-        {
-          product: {
-            productId: "64995099319be626d9fbdcb3",
-            name: "Vetonit Pool Fix",
-            arabicName: null,
-            attributes: [
-              {
-                name: "Brand",
-                type: "brand",
-                value: "SAVETO",
-              },
-              {
-                name: "Weight",
-                type: "weight",
-                value: "25 kg",
-              },
-              {
-                name: "Unit",
-                type: "unit",
-                value: "bags",
-              },
-            ],
-            quantity: 11,
-            imageUrl:
-              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665151/Product%20Catalog/Vetonit_Pool_Fix_zfgua4.png",
-            skuNumber: "CHEMA-FM-01-VPO-25",
-            deliveredQuantity: 0,
-            remainingQuantity: 11,
-          },
-          quantity: 11,
-        },
-        {
-          product: {
-            productId: "64f89dc97e46d145c53f5505",
-            name: "Styrofoam Block",
-            arabicName: null,
-            attributes: [
-              {
-                name: "Brand",
-                type: "brand",
-                value: "SAUDI POLYSTYRENE",
-              },
-              {
-                name: "Size",
-                type: "size",
-                value: "200x400x20",
-              },
-              {
-                name: "Type",
-                type: "type",
-                value: "P - 8",
-              },
-              {
-                name: "Unit",
-                type: "unit",
-                value: "ea",
-              },
-            ],
-            quantity: 11,
-            imageUrl:
-              "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084010/Product%20Catalog/styrofoam-block_hmptau.png",
-            skuNumber: "INS-STFM-01-20020-8",
-            deliveredQuantity: 0,
-            remainingQuantity: 11,
-          },
-          quantity: 11,
-        }
       ],
-      charges: {
-        amount: 0,
-        currency: "SAR",
-      },
-      deliveryDate: "2024-12-13T09:26:12.683Z",
-      deliveryType: "BRKZ",
-      status: "SCHEDULED",
-      vehicleType: "",
-    }]
     };
     let result = await axios.post(
       returnURL() + "/orders/schedule/delivery",
@@ -599,7 +600,8 @@ export async function getDeliverablesData() {
     let result = await axios.get(
       returnURL() +
         "/orders/" +
-        localStorage.getItem("orderId").replace(/['"]+/g, "")+"/deliveries",
+        localStorage.getItem("orderId").replace(/['"]+/g, "") +
+        "/deliveries",
       { headers: headers }
     );
     if (result.status == 200) {
@@ -615,7 +617,7 @@ export async function getDeliverablesData() {
 }
 
 export async function updateDelivery(status) {
-  console.log('Before API Call:');
+  console.log("Before API Call:");
 
   try {
     var formData = {
@@ -799,17 +801,19 @@ export async function updateDelivery(status) {
           totalInvoiceAmount: { amount: 9629.81, currency: "SAR" },
           totalProductMargin: { amount: 3630, currency: "SAR" },
           paymentDueDate: null,
-          deliveryId: localStorage.getItem("DeliverableID").replace(/['"]+/g, "")
+          deliveryId: localStorage
+            .getItem("DeliverableID")
+            .replace(/['"]+/g, ""),
         },
       ],
-      orderId: localStorage.getItem("orderId").replace(/['"]+/g, "")
+      orderId: localStorage.getItem("orderId").replace(/['"]+/g, ""),
     };
-    console.log('FormData:', formData);
+    console.log("FormData:", formData);
     let result = await axios.put(returnURL() + "/orders/deliveries", formData, {
       headers: headers,
     });
-    console.log(formData)
-    console.log(result)
+    console.log(formData);
+    console.log(result);
     if (result.status == 200) {
       localStorage.setItem(
         "opportunityId",
@@ -817,7 +821,7 @@ export async function updateDelivery(status) {
       );
       return true;
     } else {
-      console.log(result)
+      console.log(result);
       return false;
     }
   } catch {
@@ -834,7 +838,10 @@ export async function getTransactionId() {
       { headers: headers }
     );
     if (result.status == 200) {
-      localStorage.setItem("transactionId", JSON.stringify(result.data.content[0].id));
+      localStorage.setItem(
+        "transactionId",
+        JSON.stringify(result.data.content[0].id)
+      );
       return true;
     } else {
       return false;
@@ -846,12 +853,27 @@ export async function getTransactionId() {
 
 export async function updateTransaction() {
   try {
-    var formData = null
+    const currentDate = new Date();
+
+    // Calculate the first day of the next month
+    const nextMonth = new Date(currentDate);
+    nextMonth.setMonth(currentDate.getMonth() + 1);
+    nextMonth.setDate(1);
+
+    // Format the date to be in "YYYY-MM-DD" format
+    const formattedDate = `${nextMonth.getFullYear()}-${(nextMonth.getMonth() + 1)
+      .toString()
+      .padStart(2, '0')}-${nextMonth.getDate().toString().padStart(2, '0')}`;
+
+    var formData = {
+      date: formattedDate,
+    };
     let result = await axios.post(
-      returnURL() + "/payment/trigger-job-for-demo", formData,
+      returnURL() + "/payment/trigger-job-for-demo",
+      formData,
       { headers: headers }
     );
-    console.log(result)
+    console.log(result);
     if (result.status == 200) {
       return true;
     } else {
