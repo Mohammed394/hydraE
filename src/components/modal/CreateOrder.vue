@@ -56,7 +56,8 @@ import {
   addDeliveresSchedules,
   getDeliverablesData,
   updateDelivery,
-  updateTransaction
+  updateTransaction,
+  getTransactionId
 } from "../../APIs/retoolAPI";
 export default {
   props: {
@@ -218,6 +219,19 @@ export default {
       } else {
         document.getElementById("textAreaField").value =
           "Error while updating the deliverable status";
+      }
+      result = await getTransactionId()
+      if (result == true) {
+        var temp = document.getElementById("textAreaField").value;
+        document.getElementById("textAreaField").value =
+          temp +
+          "\r\n" +
+          `-------------------------------------------` +
+          "\r\n" +
+          `Transaction Id: ${localStorage.getItem("transactionId")}`;
+      } else {
+        document.getElementById("textAreaField").value =
+          "Error while fetching transaction ID";
       }
     },
     async updateTransaction(){
