@@ -8,7 +8,7 @@
           <button class="createButton" v-on:click="login1">Create</button>
           <button class="createButton" v-on:click="deliverOrder">Deliver the Order</button>
           <div class="button-container-extra">
-          <button class="infoButtons" v-on:click="updateTransaction">Change the Tansaction Status</button>
+          <button class="infoButtons" v-on:click="updateTransaction">Change Transactions to Active </button>
           <button class="infoButtons" :disabled="buttonDisabled">Get Cashback Notification</button>
           </div>
         </div>
