@@ -797,9 +797,9 @@ export async function updateDelivery(status) {
           vehicleName: null,
           deliveryType: "BRKZ",
           charges: { amount: 0, currency: "SAR" },
-          totalTaxablePrice: { amount: 8373.75, currency: "SAR" },
-          totalInvoiceAmount: { amount: 9629.81, currency: "SAR" },
-          totalProductMargin: { amount: 3630, currency: "SAR" },
+          totalTaxablePrice: {amount: 1111, currency: "SAR"},
+          totalInvoiceAmount: {amount: 1277.65, currency: "SAR"},
+          totalProductMargin: {amount: 671, currency: "SAR"},
           paymentDueDate: null,
           deliveryId: localStorage
             .getItem("DeliverableID")

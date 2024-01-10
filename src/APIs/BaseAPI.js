@@ -186,10 +186,12 @@ export function returnSubmittedQuotationBody() {
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/Finishing_Cement_pyhoyx.png",
         skuNumber: "CM-CB-01-FIN-50",
-        marginAmount: 110,
-        marginPercentage: 100,
+        isSelected: true,
+        marginAmount: 11,
+        marginPercentage: 10,
         supplierErr: "",
       },
+      id: "a216eb24-5019-412a-bebd-2534892baf35",
       offerAmountBySupplier: {
         amount: 110,
         currency: "SAR",
@@ -199,12 +201,12 @@ export function returnSubmittedQuotationBody() {
         currency: "SAR",
       },
       sellingPrice: {
-        amount: 20,
+        amount: 11,
         currency: "SAR",
       },
       supplier: {
-        id: "65843b523aa0185455c69959",
-        name: "Vendor DVIqz",
+        id: "659d291a64e09c1b3179c85f",
+        name: "Vendor vQZpy",
       },
     },
     {
@@ -233,12 +235,14 @@ export function returnSubmittedQuotationBody() {
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084011/Product%20Catalog/cement-tiles_c11zwy.png",
         skuNumber: "ITK-01-CT-BLK-04",
-        marginAmount: 110,
-        marginPercentage: 100,
+        isSelected: false,
+        marginAmount: 165,
+        marginPercentage: 300,
         supplierErr: "",
       },
+      id: "9841dbbf-23b9-4813-8163-7ba0b91eda37",
       offerAmountBySupplier: {
-        amount: 110,
+        amount: 55,
         currency: "SAR",
       },
       offerAmount: {
@@ -250,8 +254,8 @@ export function returnSubmittedQuotationBody() {
         currency: "SAR",
       },
       supplier: {
-        id: "65843b523aa0185455c69959",
-        name: "Vendor DVIqz",
+        id: "659d291a64e09c1b3179c85f",
+        name: "Vendor vQZpy",
       },
     },
     {
@@ -285,10 +289,12 @@ export function returnSubmittedQuotationBody() {
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Gypsum_Board_tcq7jc.png",
         skuNumber: "GM-GB-FIR-03-12-24",
-        marginAmount: 110,
-        marginPercentage: 100,
+        isSelected: false,
+        marginAmount: 220,
+        marginPercentage: 200,
         supplierErr: "",
       },
+      id: "6ea93909-7766-4746-8e22-777f9f6f5b1e",
       offerAmountBySupplier: {
         amount: 110,
         currency: "SAR",
@@ -298,12 +304,12 @@ export function returnSubmittedQuotationBody() {
         currency: "SAR",
       },
       sellingPrice: {
-        amount: 20,
+        amount: 30,
         currency: "SAR",
       },
       supplier: {
-        id: "65843b523aa0185455c69959",
-        name: "Vendor DVIqz",
+        id: "659d291a64e09c1b3179c85f",
+        name: "Vendor vQZpy",
       },
     },
     {
@@ -332,10 +338,12 @@ export function returnSubmittedQuotationBody() {
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665151/Product%20Catalog/Vetonit_Pool_Fix_zfgua4.png",
         skuNumber: "CHEMA-FM-01-VPO-25",
-        marginAmount: 110,
-        marginPercentage: 100,
+        isSelected: false,
+        marginAmount: 220,
+        marginPercentage: 200,
         supplierErr: "",
       },
+      id: "7ea13355-0379-4c3a-a6e6-cb77858628e1",
       offerAmountBySupplier: {
         amount: 110,
         currency: "SAR",
@@ -345,12 +353,12 @@ export function returnSubmittedQuotationBody() {
         currency: "SAR",
       },
       sellingPrice: {
-        amount: 20,
+        amount: 30,
         currency: "SAR",
       },
       supplier: {
-        id: "65843b523aa0185455c69959",
-        name: "Vendor DVIqz",
+        id: "659d291a64e09c1b3179c85f",
+        name: "Vendor vQZpy",
       },
     },
     {
@@ -384,12 +392,14 @@ export function returnSubmittedQuotationBody() {
         imageUrl:
           "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084010/Product%20Catalog/styrofoam-block_hmptau.png",
         skuNumber: "INS-STFM-01-20020-8",
-        marginAmount: 110,
+        isSelected: false,
+        marginAmount: 55,
         marginPercentage: 100,
         supplierErr: "",
       },
+      id: "ada951c8-38b4-47b0-8cb0-d2d6317d1d68",
       offerAmountBySupplier: {
-        amount: 110,
+        amount: 55,
         currency: "SAR",
       },
       offerAmount: {
@@ -397,12 +407,12 @@ export function returnSubmittedQuotationBody() {
         currency: "SAR",
       },
       sellingPrice: {
-        amount: 20,
+        amount: 10,
         currency: "SAR",
       },
       supplier: {
-        id: "65843b523aa0185455c69959",
-        name: "Vendor DVIqz",
+        id: "659d291a64e09c1b3179c85f",
+        name: "Vendor vQZpy",
       },
     },
   ];
