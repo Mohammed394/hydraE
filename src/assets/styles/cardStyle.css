@@ -60,7 +60,7 @@ span .h3,
 .front h3 {
   font-weight: normal;
   margin-top: 50px;
-  font-size: 22px;
+  font-size: 26px;
 }
 
 .front h3:after {
@@ -90,6 +90,7 @@ span .h3,
   font-size: 12px;
   padding: 8px 12px;
   border-radius: 15px;
+
 }
 
 .back p {
@@ -131,6 +132,7 @@ span .h3,
   backface-visibility: hidden;
   transition: 0.6s;
   transform-style: preserve-3d;
+  font-family: fantasy;
 
   position: absolute;
   top: 70px;

@@ -396,7 +396,7 @@ export async function addDeliveresSchedules() {
   try {
     var formData = {
       orderId: localStorage.getItem("orderId").replace(/['"]+/g, ""),
-      deliveries: {
+      deliveries: [{
         products: [
           {
             product: {
@@ -542,14 +542,14 @@ export async function addDeliveresSchedules() {
           },
         ],
         status: "SCHEDULED",
-        deliveryDate: "2024-11-30T20:12:18.781Z",
+        deliveryDate: "2024-01-30T20:12:18.781Z",
         vehicleType: "",
         deliveryType: "BRKZ",
         charges: {
           amount: 0,
           currency: "SAR",
         },
-      },
+      }],
     };
     let result = await axios.post(
       returnURL() + "/orders/schedule/delivery",

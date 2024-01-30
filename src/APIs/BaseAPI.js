@@ -1,5 +1,5 @@
 export function returnURL() {
-  var baseURL = "https://api.staging.brkz.co";
+  var baseURL = `https://api.staging.brkz.com`;
   return baseURL;
 }
 export const headers = {
@@ -9,6 +9,118 @@ export const headers = {
 };
 export function returnBasicProduct() {
   var product = [
+    {
+      productId: "649950a3319be626d9fbdd21",
+      name: "Reinforcement Steel Rebar",
+      attributes: [
+        {
+          name: "Brand",
+          type: "brand",
+          value: "SABIC",
+        },
+        {
+          name: "Diameter Size",
+          type: "diameter_size",
+          value: "8mm",
+        },
+        {
+          name: "Length",
+          type: "length",
+          value: "6m Grade (40)",
+        },
+        {
+          name: "Unit",
+          type: "unit",
+          value: "ton",
+        },
+      ],
+      imageUrl:
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665155/Product%20Catalog/Steel_Rebar_rimrpu.png",
+      quantity: 10,
+    },
+    {
+      productId: "649950a3319be626d9fbdd21",
+      name: "Reinforcement Steel Rebar",
+      attributes: [
+        {
+          name: "Brand",
+          type: "brand",
+          value: "SABIC",
+        },
+        {
+          name: "Diameter Size",
+          type: "diameter_size",
+          value: "10mm",
+        },
+        {
+          name: "Length",
+          type: "length",
+          value: "12m Grade(60)",
+        },
+        {
+          name: "Unit",
+          type: "unit",
+          value: "ton",
+        },
+      ],
+      imageUrl:
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665155/Product%20Catalog/Steel_Rebar_rimrpu.png",
+      quantity: 10,
+    },
+    {
+      productId: "64995092319be626d9fbdc91",
+      name: "Ordinary Portland Cement (OPC)",
+      attributes: [
+        {
+          name: "Brand",
+          type: "brand",
+          value: "SAUDI CEMENT",
+        },
+        {
+          name: "Weight",
+          type: "weight",
+          value: "50 kg",
+        },
+        {
+          name: "Unit",
+          type: "unit",
+          value: "bags",
+        },
+      ],
+      imageUrl:
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/OPC_Ordinary_Portland_Cem.._fjeqq3.png",
+      quantity: 10,
+    },
+    {
+      productId: "6579b4c9a28bdb0fced67bf2",
+      name: "Normal (U Shape) Block",
+      attributes: [
+        {
+          name: "Brand",
+          type: "brand",
+          value: "Local",
+        },
+        {
+          name: "Size",
+          type: "size",
+          value: "20x20x20",
+        },
+        {
+          name: "Unit",
+          type: "unit",
+          value: "EA",
+        },
+      ],
+      imageUrl:
+        "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1702453611/Product%20Catalog/Normal_U_Shaped_Block_ziufef.png",
+      quantity: 10,
+    },
+  ];
+  return product;
+}
+
+export function returnSubmittedQuotationBody() {
+  var product =  [
     {
       product: {
         productId: "649950a3319be626d9fbdd21",
@@ -221,267 +333,6 @@ export function returnBasicProduct() {
         cityId: null,
         regionId: null,
         branchId: null,
-      },
-    },
-  ];
-  return product;
-}
-
-export function returnSubmittedQuotationBody() {
-  var product = [
-    {
-      product: {
-        productId: "657ae140ad00b45090b1de5a",
-        name: "Finishing Cement",
-        arabicName: null,
-        attributes: [
-          {
-            name: "Brand",
-            type: "brand",
-            value: "Riyadh",
-          },
-          {
-            name: "Weight",
-            type: "weight",
-            value: "50 kg",
-          },
-          {
-            name: "Unit",
-            type: "unit",
-            value: "bags",
-          },
-        ],
-        quantity: 11,
-        imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665156/Product%20Catalog/Finishing_Cement_pyhoyx.png",
-        skuNumber: "CM-CB-01-FIN-50",
-        isSelected: false,
-        marginAmount: 11,
-        marginPercentage: 10,
-        supplierErr: "",
-      },
-      id: "c4614da6-6795-4828-97a0-a2dbbb264732",
-      offerAmountBySupplier: {
-        amount: 110,
-        currency: "SAR",
-      },
-      offerAmount: {
-        amount: 0,
-        currency: "SAR",
-      },
-      sellingPrice: {
-        amount: 11,
-        currency: "SAR",
-      },
-      supplier: {
-        id: "659fcbf63b5f506d2e6cc708",
-        name: "Vendor PkFI4",
-      },
-    },
-    {
-      product: {
-        productId: "64f89d6a7e46d145c53f5464",
-        name: "Cement Tiles",
-        arabicName: null,
-        attributes: [
-          {
-            name: "Size",
-            type: "size",
-            value: "40x40x4cm",
-          },
-          {
-            name: "Colour",
-            type: "colour",
-            value: "Black",
-          },
-          {
-            name: "Unit",
-            type: "unit",
-            value: "ea",
-          },
-        ],
-        quantity: 11,
-        imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084011/Product%20Catalog/cement-tiles_c11zwy.png",
-        skuNumber: "ITK-01-CT-BLK-04",
-        isSelected: false,
-        marginAmount: 165,
-        marginPercentage: 300,
-        supplierErr: "",
-      },
-      id: "3facf347-6961-4ca2-bd21-e3c89932c62b",
-      offerAmountBySupplier: {
-        amount: 55,
-        currency: "SAR",
-      },
-      offerAmount: {
-        amount: 0,
-        currency: "SAR",
-      },
-      sellingPrice: {
-        amount: 20,
-        currency: "SAR",
-      },
-      supplier: {
-        id: "659fcbf63b5f506d2e6cc708",
-        name: "Vendor PkFI4",
-      },
-    },
-    {
-      product: {
-        productId: "649950a3319be626d9fbdd1d",
-        name: "Gypsum Board",
-        arabicName: null,
-        attributes: [
-          {
-            name: "Brand",
-            type: "brand",
-            value: "MADA",
-          },
-          {
-            name: "Size",
-            type: "size",
-            value: "12.5mm - 1.2mtr x 2.4mtr",
-          },
-          {
-            name: "Type",
-            type: "type",
-            value: "Fire Rated",
-          },
-          {
-            name: "Unit",
-            type: "unit",
-            value: "pcs",
-          },
-        ],
-        quantity: 11,
-        imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665149/Product%20Catalog/Gypsum_Board_tcq7jc.png",
-        skuNumber: "GM-GB-FIR-03-12-24",
-        isSelected: false,
-        marginAmount: 220,
-        marginPercentage: 200,
-        supplierErr: "",
-      },
-      id: "3dc34f77-e785-4b5a-af2b-8b2fe97113bc",
-      offerAmountBySupplier: {
-        amount: 110,
-        currency: "SAR",
-      },
-      offerAmount: {
-        amount: 0,
-        currency: "SAR",
-      },
-      sellingPrice: {
-        amount: 30,
-        currency: "SAR",
-      },
-      supplier: {
-        id: "659fcbf63b5f506d2e6cc708",
-        name: "Vendor PkFI4",
-      },
-    },
-    {
-      product: {
-        productId: "64995099319be626d9fbdcb3",
-        name: "Vetonit Pool Fix",
-        arabicName: null,
-        attributes: [
-          {
-            name: "Brand",
-            type: "brand",
-            value: "SAVETO",
-          },
-          {
-            name: "Weight",
-            type: "weight",
-            value: "25 kg",
-          },
-          {
-            name: "Unit",
-            type: "unit",
-            value: "bags",
-          },
-        ],
-        quantity: 11,
-        imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1691665151/Product%20Catalog/Vetonit_Pool_Fix_zfgua4.png",
-        skuNumber: "CHEMA-FM-01-VPO-25",
-        isSelected: false,
-        marginAmount: 220,
-        marginPercentage: 200,
-        supplierErr: "",
-      },
-      id: "7f0e78ce-c201-49f2-9982-80c8a1b4850b",
-      offerAmountBySupplier: {
-        amount: 110,
-        currency: "SAR",
-      },
-      offerAmount: {
-        amount: 0,
-        currency: "SAR",
-      },
-      sellingPrice: {
-        amount: 30,
-        currency: "SAR",
-      },
-      supplier: {
-        id: "659fcbf63b5f506d2e6cc708",
-        name: "Vendor PkFI4",
-      },
-    },
-    {
-      product: {
-        productId: "64f89dc97e46d145c53f5505",
-        name: "Styrofoam Block",
-        arabicName: null,
-        attributes: [
-          {
-            name: "Brand",
-            type: "brand",
-            value: "SAUDI POLYSTYRENE",
-          },
-          {
-            name: "Size",
-            type: "size",
-            value: "200x400x20",
-          },
-          {
-            name: "Type",
-            type: "type",
-            value: "P - 8",
-          },
-          {
-            name: "Unit",
-            type: "unit",
-            value: "ea",
-          },
-        ],
-        quantity: 11,
-        imageUrl:
-          "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1694084010/Product%20Catalog/styrofoam-block_hmptau.png",
-        skuNumber: "INS-STFM-01-20020-8",
-        isSelected: false,
-        marginAmount: 55,
-        marginPercentage: 100,
-        supplierErr: "",
-      },
-      id: "ec7389ef-892a-4f6c-a5a1-41c4ada74a8d",
-      offerAmountBySupplier: {
-        amount: 55,
-        currency: "SAR",
-      },
-      offerAmount: {
-        amount: 0,
-        currency: "SAR",
-      },
-      sellingPrice: {
-        amount: 10,
-        currency: "SAR",
-      },
-      supplier: {
-        id: "659fcbf63b5f506d2e6cc708",
-        name: "Vendor PkFI4",
       },
     },
   ];

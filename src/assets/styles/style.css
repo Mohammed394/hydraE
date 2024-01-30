@@ -96,8 +96,11 @@
 }
 @media (min-width: 768px) {
   .navbar .page-title {
-    font-size: 1.625rem;
+    font-size: 3.625rem;
+    font-weight: bold;
     max-width: 150px;
+    font-family:fantasy;
+
   }
 }
 @media (min-width: 1200px) {
