@@ -13,7 +13,7 @@
           <button @click="fetchContractorDetails">Raise RFQ</button>
           <button @click="submitQuotation">Submit Quotation</button>
           <button @click="acceptBid">Accept Bid</button>
-          <button @click="updateDelivery">Update Delivery</button>
+          <button @click="bulkUpdates">Update Delivery</button>
           <button @click="purchaseOrder">Purchace Order</button>
           <button @click="assignDelivery">Assign Delivery</button>
           <button @click="outForDelivery">Out For Delivery</button>
@@ -228,13 +228,13 @@ export default {
         })
       }))
       const result = await bulkUpdatesCall(baseUrl, updatedRequestBody)
+      updateDelivery()
       log.value += `\nBULK  Updated`
       log.value += '\n---------------------------------------------------------'
       log.value += '\n---------------------------------------------------------'
     }
 
     const updateDelivery = async () => {
-      bulkUpdates()
       const selectedEnvironment = localStorage.getItem('selectedEnvironment') || 'staging'
       const baseUrl = getBaseUrl(selectedEnvironment)
       const currentDateTime = getCurrentDateTime()
