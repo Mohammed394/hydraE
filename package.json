@@ -1,43 +1,31 @@
 {
-  "name": "hydrafirst",
+  "name": "hydra",
   "version": "0.0.0",
+  "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
-    "serve": "node --version",
-    "preview": "vite preview --port 4173",
+    "build": "vite build",
+    "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "start": "vue-cli-service serve --port 3000",
-    "build": "vue-cli-service build"
+    "format": "prettier --write src/"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.2.0",
-    "@fortawesome/free-brands-svg-icons": "^6.2.0",
-    "@fortawesome/free-regular-svg-icons": "^6.2.0",
-    "@fortawesome/free-solid-svg-icons": "^6.2.0",
-    "@fortawesome/vue-fontawesome": "^3.0.2",
-    "@vue/cli-service": "^5.0.8",
-    "cors": "^2.8.5",
-    "crypto": "^1.0.1",
-    "crypto-browserify": "^3.12.0",
-    "http": "^0.0.1-security",
-    "mongodb": "^6.3.0",
-    "querystring": "^0.2.1",
-    "querystring-es3": "^0.2.1",
-    "stream-http": "^3.2.0",
-    "timers-browserify": "^2.0.12",
-    "url": "^0.11.3",
-    "util": "^0.12.5",
-    "vue": "^3.2.38",
-    "vue-axios": "^3.4.1",
-    "vue-router": "^4.1.5"
+    "axios": "^1.7.2",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.0",
+    "vue-typer": "^1.2.0"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.1.4",
-    "@vitejs/plugin-vue": "^3.0.3",
-    "@vue/eslint-config-prettier": "^7.0.0",
-    "eslint": "^8.22.0",
-    "eslint-plugin-vue": "^9.3.0",
-    "prettier": "^2.7.1",
-    "vite": "^3.0.9"
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vitejs/plugin-vue-jsx": "^4.0.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "prettier": "^3.2.5",
+    "vite": "^5.3.1",
+    "vite-plugin-vue-devtools": "^7.3.1"
   }
 }

@@ -1,0 +1,78 @@
+/* src/styles/CardStyles.css */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px; /* Adjust dimensions as needed */
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #ff851b;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-front {
+    background: #f0f0f000;
+    justify-content: space-between; /* Ensures space between image and text */
+    padding: 10px;
+  }
+  
+  .card-back {
+    background: rgba(255, 133, 27, 0); /* Transparent orange background */
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
+  .card-image {
+    width: 80%; /* Adjust image size as needed */
+    max-height: 60%; /* Adjust image size as needed */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin: 10px 0; /* Centering the image with margins */
+  }
+  
+  .card-text {
+    font-size: 1.4rem;
+    color: #ff851b;
+    font-family: fantasy;
+    font-weight: bold;
+  }
+  
+  .card-description {
+    padding: 20px;
+    font-family: fantasy;
+    font-size: 1.2rem;
+
+
+  }
+  

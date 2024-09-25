@@ -1,21 +1,16 @@
-import { createRouter, createWebHistory } from "vue-router";
-import LoginView from "../views/LoginView.vue";
-import MainMenu from "../views/MainMenu.vue";
+// frontend/src/router/index.js
+
+import { createRouter, createWebHistory } from 'vue-router';
+import HomePage from '../components/HomePage.vue';
+
+const routes = [
+  { path: '/', component: HomePage },
+  // Add more routes here
+];
+
 const router = createRouter({
-  history: createWebHistory(""),
-  routes: [
-    {
-      path: "/Main",
-      name: "defaultview",
-      component: MainMenu,
-    },
-    {
-      path: "/",
-      name: "LoginView",
-      component: LoginView,
-      redirect: "/Main",
-    },
-  ],
+  history: createWebHistory(),
+  routes
 });
 
 export default router;
