@@ -44,7 +44,7 @@ export default {
   components: { Intro, Popup, CanvasDots, CustomDropdown },
   setup() {
     const menuItems = ref([
-      { id: 1, name: 'Buyer Journey', description: 'You can simulate the Buyer journey', image: '../src/assets/RFQ.png' },
+      { id: 1, name: 'Buyer Journey', description: 'You can simulate the Buyer journey', image: '/src/assets/RFQ.png' },
       // Add more items as needed
     ]);
 
