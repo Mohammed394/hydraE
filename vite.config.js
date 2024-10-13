@@ -13,7 +13,22 @@ export default defineConfig({
     vueDevTools(),
   ],
   server: {
-    port: 3000
+    port: 3000,
+    proxy: {
+      '/local': {
+        target: 'http://localhost:8060',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/local/, ''),
+        configure: (proxy, options) => {
+          proxy.on('proxyReq', (proxyReq, req, res) => {
+            // Copy all headers from the original request to the proxy request
+            Object.keys(req.headers).forEach(key => {
+              proxyReq.setHeader(key, req.headers[key]);
+            });
+          });
+        }
+      }
+    }
   },
   resolve: {
     alias: {
