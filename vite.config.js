@@ -15,10 +15,10 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/local': {
+      '/api': {
         target: 'http://localhost:8060',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/local/, ''),
+        rewrite: (path) => path.replace(/^\/api/, ''),
         configure: (proxy, options) => {
           proxy.on('proxyReq', (proxyReq, req, res) => {
             // Copy all headers from the original request to the proxy request
