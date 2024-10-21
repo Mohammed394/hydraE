@@ -2,7 +2,8 @@ import axios from 'axios'
 
 const BASE_URLS = {
   staging: 'https://api.staging.brkz.com',
-  dev: 'https://api.dev.brkz.com'
+  dev: 'https://api.dev.brkz.com',
+  local: '/api'
 }
 
 export const getBaseUrl = (environment) => BASE_URLS[environment]

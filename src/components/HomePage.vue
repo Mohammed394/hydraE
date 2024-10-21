@@ -57,6 +57,7 @@ export default {
     const environments = ref([
       { label: 'Staging', value: 'staging' },
       { label: 'Dev', value: 'dev' },
+      { label: 'Local', value: 'local' },
     ]);
 
     const openPopup = (item) => {
