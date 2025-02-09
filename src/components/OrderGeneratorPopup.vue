@@ -33,6 +33,7 @@
                   {{ type.label }}
                 </option>
               </select>
+              <p v-if="typesErrorMessage" style="color: red;">{{ typesErrorMessage }}</p>
             </div>
           </div>
           <div class="buttons">
@@ -87,6 +88,7 @@ const languageOptions = ['en', 'ar_sa']
 const lang = ref('en')
 const buyerPhoneNo = ref('');
 let errorMessage = ref('');
+let typesErrorMessage = ref('');
 const itemsCount = ref(1);
 const itemsType = ref('');
 const itemOptions = [1, 2, 8];
@@ -118,6 +120,13 @@ const generateOrder = async () => {
   }
   else {
     errorMessage.value = '';
+  }
+  if(itemsCount.value == 2 && itemsType.value == ''){
+    typesErrorMessage.value = 'Items type should be set!';
+    return;
+  }
+  else {
+    typesErrorMessage.value = '';
   }
   const selectedEnvironment = localStorage.getItem('selectedEnvironment') || 'staging'
   baseUrl = getBaseUrl(selectedEnvironment)
