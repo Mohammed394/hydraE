@@ -12,12 +12,23 @@ const axiosInstance = axios.create({
   headers: {
     'brkz-client-id': 'IIBcthJM78AJ7Owz',
     'brkz-client-secret': '9e26f236f40f43b2b99c021396bce98e',
+    'city-id': '64913b22e02ccab65544bb2c',
     'Accept-Language': 'en',
     'Content-Type': 'application/json'
   }
 })
 
-export const callEndpoint = async (baseUrl, endpoint, method = 'GET', data = null) => {
+const axiosInstance_ar = axios.create({
+  headers: {
+    'brkz-client-id': 'IIBcthJM78AJ7Owz',
+    'brkz-client-secret': '9e26f236f40f43b2b99c021396bce98e',
+    'city-id': '64913b22e02ccab65544bb2c',
+    'Accept-Language': 'ar_sa',
+    'Content-Type': 'application/json'
+  }
+})
+
+export const callEndpoint = async (baseUrl, endpoint, method = 'GET', data = null, lang='en') => {
   const url = `${baseUrl}${endpoint}`
   const options = {
     method,
@@ -26,7 +37,11 @@ export const callEndpoint = async (baseUrl, endpoint, method = 'GET', data = nul
   }
 
   try {
-    const response = await axiosInstance(options)
+    let response = null
+    if( lang === 'en')
+      response = await axiosInstance(options)
+    else
+      response = await axiosInstance_ar(options)
     return response.data
   } catch (error) {
     console.error('API call error:', error)
@@ -43,12 +58,12 @@ export const getContractorByPhone = async (baseUrl, phoneNumber) => {
   return await callEndpoint(baseUrl, `/contractor/phoneNumber/${phoneNumber}`, 'GET')
 }
 
-export const raiseRFQ = async (baseUrl, requestBody) => {
-  return await callEndpoint(baseUrl, '/opportunity/raise/manual', 'POST', requestBody)
+export const raiseRFQ = async (baseUrl, requestBody, lang='en') => {
+  return await callEndpoint(baseUrl, '/opportunity/raise/manual', 'POST', requestBody, lang)
 }
 
-export const submitQuotation = async (baseUrl, opportunityId, requestBody) => {
-  return await callEndpoint(baseUrl, `/bidding/bid/${opportunityId}`, 'POST', requestBody)
+export const submitQuotation = async (baseUrl, opportunityId, requestBody, lang='en') => {
+  return await callEndpoint(baseUrl, `/bidding/bid/${opportunityId}`, 'POST', requestBody, lang)
 }
 
 export const updateBidStatus = async (baseUrl, bidId, requestBody) => {
