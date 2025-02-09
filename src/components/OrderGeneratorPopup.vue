@@ -91,7 +91,7 @@ let errorMessage = ref('');
 let typesErrorMessage = ref('');
 const itemsCount = ref(1);
 const itemsType = ref('');
-const itemOptions = [1, 2, 8];
+const itemOptions = [1, 2];
 const itemTypeOptions = [
   {
     value: '0',
