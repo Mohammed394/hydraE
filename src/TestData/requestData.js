@@ -892,7 +892,7 @@ export const rfqRefactoredBody_ar_2items_different= {
   "source": "WEB"
 }
 
-const expiryDate = Temporal.now.plainDateTimeISO().plus({ days: 2 }).toString().slice(0, 19)
+const expiryDate = new Date(new Date().setDate(new Date().getDate() + 2)).toISOString().slice(0, 19)
 
 
 export const quotationRequestBody_en_single_item = {
