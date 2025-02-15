@@ -3,7 +3,6 @@
     <div class="popup-content">
       <h2>{{ item.name }}</h2>
       <div class="popup-body">
-        <div class="popup-buttons">
           <div class="input-group">
             <div class="form-group">
               <label for="buyerPhoneNo">Buyer Phone Number</label>
@@ -35,11 +34,10 @@
               </select>
               <p v-if="typesErrorMessage" style="color: red;">{{ typesErrorMessage }}</p>
             </div>
-          </div>
           <div class="buttons">
-            <button @click="generateOrder">Generate Order</button>
-          </div>
-          <button class="close-button" @click="$emit('close')">Close</button>
+            <button @click="generateOrder">Generate Order</button>          
+            <button class="close-button" @click="$emit('close')">Close</button>
+        </div>
         </div>
 
         <!-- Separate div for log textarea and Clear Log button -->
@@ -229,6 +227,7 @@ const acceptQuotation = async () => {
     addLog(
       `Order Generated Successfully!\n\tOrderNumber: ${rfqId.value}\n\tOppurtunityId: ${opportunityId.value}\n\tOrderId: ${orderId}\n\tOrder Status: IN_PROCESS`
     )
+    addLog('---------------------------------------------------------')
   } catch (error) {
     addLog(`Error: ${error.message}`)
   }
@@ -337,51 +336,5 @@ const updateQuotationRequestPerInput = (lang, productsCount, productsType) => {
 }
 </script>
 
+<style scoped src="../styles/orderGeneratorStyles.css"></style>
 <style src="../styles/main.css"></style>
-<style scoped>
-#items_count {
-  position: relative;
-  display: inline-block;
-  font-family: fantasy;
-  color: white;
-}
-
-.form-group {
-  margin-bottom: 1em;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.5em;
-  font-weight: bold;
-}
-
-input,
-select {
-  width: 100%;
-  padding: 0.3em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4em;
-}
-
-button {
-  padding: 0.5em;
-  font-size: 1em;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  color: #fff;
-  background-color: #001f3f;
-}
-
-button.clear-logs {
-  background-color: #dc3545;
-}
-</style>
