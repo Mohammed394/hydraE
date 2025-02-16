@@ -227,7 +227,7 @@ const acceptQuotation = async () => {
     addLog(
       `Order Generated Successfully!\n\tOrderNumber: ${rfqId.value}\n\tOppurtunityId: ${opportunityId.value}\n\tOrderId: ${orderId}\n\tOrder Status: IN_PROCESS`
     )
-    logs.value += '-----------------------------------------------------------------------'
+    logs.value += '-----------------------------------------------------------------------\n'
   } catch (error) {
     addLog(`Error: ${error.message}`)
   }
