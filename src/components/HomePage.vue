@@ -26,7 +26,9 @@
           </div>
         </div>
       </div>
-      <Popup v-if="selectedItem" :item="selectedItem" @close="selectedItem = null" />
+      <Popup v-if="selectedItem && selectedItem.id == 1" :item="selectedItem" @close="selectedItem = null" />
+      <OrderGeneratorPopup v-if="selectedItem && selectedItem.id == 2" :item="selectedItem"
+        @close="selectedItem = null" />
     </div>
   </div>
 </template>
@@ -39,12 +41,14 @@ import CanvasDots from './CanvasDots.vue';
 import CustomDropdown from './CustomDropdown.vue';
 
 import '../styles/CardStyles.css'; // Import the card styles
+import OrderGeneratorPopup from './OrderGeneratorPopup.vue';
 
 export default {
-  components: { Intro, Popup, CanvasDots, CustomDropdown },
+  components: { Intro, Popup, OrderGeneratorPopup, CanvasDots, CustomDropdown },
   setup() {
     const menuItems = ref([
       { id: 1, name: 'Buyer Journey', description: 'You can simulate the Buyer journey', image: '/RFQ.png' },
+      { id: 2, name: 'Order Generator', description: 'Create customized order for your task', image: '/new-order.png' },
       // Add more items as needed
     ]);
 

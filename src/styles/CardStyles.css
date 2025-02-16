@@ -10,7 +10,7 @@
     perspective: 1000px;
     width: 200px;
     height: 300px; /* Adjust dimensions as needed */
-    margin: 10px;
+    margin: 36px;
     cursor: pointer;
     position: relative;
   }
@@ -46,6 +46,7 @@
     background: #f0f0f000;
     justify-content: space-between; /* Ensures space between image and text */
     padding: 10px;
+    margin: 20px;
   }
   
   .card-back {
@@ -72,7 +73,5 @@
     padding: 20px;
     font-family: fantasy;
     font-size: 1.2rem;
-
-
   }
   
