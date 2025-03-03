@@ -501,7 +501,7 @@ export const assignDeliveryBody = {
   },
   paymentTerms: 'NET_30',
   vehicleId: '65f2bf7301ad10752554eeff',
-  transporterId: null,
+  transporterId: '66546563ec40a80af3dc9a65',
   products: [
     {
       lineItemId: '',
