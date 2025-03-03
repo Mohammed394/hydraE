@@ -157,9 +157,9 @@ export const quotationRequestBody = {
         name: 'الشركة المنتجة الجديدة',
         cityId: '64913b22e02ccab65544bb2c',
         region: 'CENTRAL',
-        branchId: '664c3a343cf29916811c06dd',
+        branchId: '67c44c7b99a5ab3e28b9c941',
         countryId: '64feead127385273ca3cc38c',
-        address: ''
+        address: 'Tuwaiq, Riyadh 13785, Saudi Arabia'
       }
     },
     {
@@ -218,9 +218,9 @@ export const quotationRequestBody = {
         name: 'الشركة المنتجة الجديدة',
         cityId: '64913b22e02ccab65544bb2c',
         region: 'CENTRAL',
-        branchId: '664c3a343cf29916811c06dd',
+        branchId: '67c44c7b99a5ab3e28b9c941',
         countryId: '64feead127385273ca3cc38c',
-        address: ''
+        address: 'Tuwaiq, Riyadh 13785, Saudi Arabia'
       }
     }
   ]
@@ -368,7 +368,7 @@ export const updatedeliveryBody = {
     cityId: '64913b22e02ccab65544bb2c',
     cityName: 'Riyadh',
     region: 'CENTRAL',
-    branchId: '664c3a343cf29916811c06dd',
+    branchId: '67c44c7b99a5ab3e28b9c941',
     countryId: '64feead127385273ca3cc38c',
     countryName: 'Saudi Arabia',
     address: '',
@@ -417,7 +417,7 @@ export const updatedeliveryBody = {
         cityId: '64913b22e02ccab65544bb2c',
         cityName: 'Riyadh',
         region: 'CENTRAL',
-        branchId: '664c3a343cf29916811c06dd',
+        branchId: '67c44c7b99a5ab3e28b9c941',
         countryId: '64feead127385273ca3cc38c',
         countryName: 'Saudi Arabia',
         address: '',
@@ -473,7 +473,7 @@ export const updatedeliveryBody = {
         cityId: '64913b22e02ccab65544bb2c',
         cityName: 'Riyadh',
         region: 'CENTRAL',
-        branchId: '664c3a343cf29916811c06dd',
+        branchId: '67c44c7b99a5ab3e28b9c941',
         countryId: '64feead127385273ca3cc38c',
         countryName: 'Saudi Arabia',
         address: '',
@@ -494,6 +494,7 @@ export const updatedeliveryBody = {
 export const assignDeliveryBody = {
   date: '',
   type: 'BRKZ',
+  trackingEnabled : true,
   cost: {
     amount: 0,
     currency: 'SAR'
@@ -543,7 +544,7 @@ export const assignDeliveryBody = {
         name: 'الشركة المنتجة الجديدة',
         cityId: '64913b22e02ccab65544bb2c',
         region: 'CENTRAL',
-        branchId: '664c3a343cf29916811c06dd'
+        branchId: '67c44c7b99a5ab3e28b9c941'
       },
       supplierUnitPrice: {
         amount: 10,
@@ -593,7 +594,7 @@ export const assignDeliveryBody = {
         name: 'الشركة المنتجة الجديدة',
         cityId: '64913b22e02ccab65544bb2c',
         region: 'CENTRAL',
-        branchId: '664c3a343cf29916811c06dd'
+        branchId: '67c44c7b99a5ab3e28b9c941'
       },
       supplierUnitPrice: {
         amount: 10,
