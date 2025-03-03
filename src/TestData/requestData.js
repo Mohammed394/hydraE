@@ -78,10 +78,10 @@ export const rfqRequestBody = {
   ],
   deliveryLocation: {
     id: '273e0995a3c44e6b862d323ed1e8108a',
-    address: 'PWH5+8J Al Ghuzayaz Saudi Arabia',
+    address: 'Al Ghuzayaz Saudi Arabia',
     coordinates: {
-      lat: 24.7283065,
-      lng: 45.9091079
+      lat: 24.523455,
+      lng: 46.427105
     },
     cityId: '653a4a391448a41100db6f9c'
   },
