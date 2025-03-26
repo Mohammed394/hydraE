@@ -248,6 +248,8 @@ export default {
         const orderId = result2.content[0].orderId
         localStorage.setItem('deliveryId', deliveryId)
         localStorage.setItem('orderId', orderId)
+        addLog(`Delivery ID: ${deliveryId}`)
+        addLog(`ORDER ID: ${orderId}`)
       } catch (error) {
         log.value += `\nError: ${error.message}`
       }
@@ -566,14 +568,18 @@ export default {
 
 .log-section textarea {
   width: 100%;
-  height: 120px;
+  height: 600px;
   margin-left: 0px;
-  margin-bottom: 10px;
 }
 .log-section button {
   margin-left: 893px;
+  
 }
 .close-button {
   margin-right: 900px;
+  margin-top: -40px;
+}
+.popup-content {
+  height: 1000px;
 }
 </style>
