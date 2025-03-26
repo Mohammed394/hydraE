@@ -29,6 +29,8 @@
       <Popup v-if="selectedItem && selectedItem.id == 1" :item="selectedItem" @close="selectedItem = null" />
       <OrderGeneratorPopup v-if="selectedItem && selectedItem.id == 2" :item="selectedItem"
         @close="selectedItem = null" />
+      <GPSPopup v-if="selectedItem && selectedItem.id == 3" :item="selectedItem"
+        @close="selectedItem = null" />
     </div>
   </div>
 </template>
@@ -42,13 +44,15 @@ import CustomDropdown from './CustomDropdown.vue';
 
 import '../styles/CardStyles.css'; // Import the card styles
 import OrderGeneratorPopup from './OrderGeneratorPopup.vue';
+import GPSPopup from './GPSPopup.vue';
 
 export default {
-  components: { Intro, Popup, OrderGeneratorPopup, CanvasDots, CustomDropdown },
+  components: { Intro, Popup, OrderGeneratorPopup, CanvasDots, CustomDropdown, GPSPopup },
   setup() {
     const menuItems = ref([
       { id: 1, name: 'Buyer Journey', description: 'You can simulate the Buyer journey', image: '/RFQ.png' },
       { id: 2, name: 'Order Generator', description: 'Create customized order for your task', image: '/new-order.png' },
+      { id: 3, name: 'GPS Tracking', description: 'Simulate Truck Journey', image: '/map.png' },
       // Add more items as needed
     ]);
 

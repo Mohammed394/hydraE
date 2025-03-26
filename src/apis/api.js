@@ -92,3 +92,11 @@ export const createDeliveryNote = async(baseUrl, deliveryId, requestBody) => {
 export const addDeliveryNoteUrl = async(baseUrl, deliveryId, deliveryNoteUrl) => {
   return await callEndpoint(baseUrl, `/deliveries/${deliveryId}/delivery-note-url?deliveryNoteUrl=${deliveryNoteUrl}`, 'PATCH')
 }
+
+export const startTracking = async(baseUrl, deliveryId, requestBody) => {
+  return await callEndpoint(baseUrl, `/tracking/deliveries/${deliveryId}/start`, 'POST', requestBody)
+}
+
+export const geofenceUpdate = async (baseUrl, deliveryId, requestBody) => {
+  return await callEndpoint(baseUrl, `/tracking/deliveries/${deliveryId}/geofence-event`, 'PUT', requestBody)
+}

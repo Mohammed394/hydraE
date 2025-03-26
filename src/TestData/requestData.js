@@ -420,7 +420,7 @@ export const updatedeliveryBody = {
         branchId: '67c44c7b99a5ab3e28b9c941',
         countryId: '64feead127385273ca3cc38c',
         countryName: 'Saudi Arabia',
-        address: '',
+        address: 'Tuwaiq, Riyadh 13785, Saudi Arabia',
         mobileNumber: '+201003420770',
         company: null
       },
@@ -476,7 +476,7 @@ export const updatedeliveryBody = {
         branchId: '67c44c7b99a5ab3e28b9c941',
         countryId: '64feead127385273ca3cc38c',
         countryName: 'Saudi Arabia',
-        address: '',
+        address: 'Tuwaiq, Riyadh 13785, Saudi Arabia',
         mobileNumber: '+201003420770',
         company: null
       },
@@ -544,6 +544,7 @@ export const assignDeliveryBody = {
         name: 'الشركة المنتجة الجديدة',
         cityId: '64913b22e02ccab65544bb2c',
         region: 'CENTRAL',
+        address: 'Tuwaiq, Riyadh 13785, Saudi Arabia',
         branchId: '67c44c7b99a5ab3e28b9c941'
       },
       supplierUnitPrice: {
@@ -594,6 +595,7 @@ export const assignDeliveryBody = {
         name: 'الشركة المنتجة الجديدة',
         cityId: '64913b22e02ccab65544bb2c',
         region: 'CENTRAL',
+        address: 'Tuwaiq, Riyadh 13785, Saudi Arabia',
         branchId: '67c44c7b99a5ab3e28b9c941'
       },
       supplierUnitPrice: {
@@ -1872,4 +1874,18 @@ export const quotationRequestBody_ar_2items_different = {
           }
       }
   ]
+}
+
+export const startTrackingBody = {
+  "lat": 12.2342,
+  "lng": 34.354345
+}
+
+export const geofenceUpdateBody = {
+  "geofenceId": "SUPPLIER", // SUPPLIER, BUYER_INNER, BUYER_OUTER,
+  "eventType": "ENTRY", // ENTRY, EXIT
+  "currentCoordinate": {
+  "lat": 24.524959383928604,
+  "lng": 46.4367500692606
+  }
 }

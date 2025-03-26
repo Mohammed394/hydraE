@@ -75,7 +75,7 @@ body {
 .popup-content {
   background: white;
   margin-top: 250px;
-  padding: 20px;
+  padding: 45px;
   border-radius: 8px;
   max-width: 1000px;
   height: 600px;
@@ -197,4 +197,10 @@ body {
 
 .log-section button:hover {
   background-color: #ff7878;
+}
+.map-container {
+  width: 50%;
+  height: 200px;
+  margin-left: 100px;
+  border: 1px solid #ccc;
 }
