@@ -38,8 +38,8 @@
             <button @click="generateOrder">Generate Order</button>
             <div class="po-buttons buttons" v-if="itemsCount == 1 && lang =='en' && isOrderGenerated">
               <div class="credit-option">
-                <input type="checkbox" id="credit" v-model="isCredit">
-                <label for="credit">Credit</label>
+                <input type="checkbox" id="credit" v-model="isCreditSupplier">
+                <label for="credit">Credit Supplier</label>
               </div>   
               <button @click="generatePurchaseOrder">Generate PO</button>    
               <button @click="procApprovePurchaseOrder">Proc. Approve PO</button>    
@@ -123,7 +123,7 @@ const itemTypeOptions = [
   },
 ];
 
-const isCredit = ref(false)
+const isCreditSupplier = ref(false)
 const logs = ref('')
 const orderNumber = ref('')
 const orderId = ref('')
@@ -286,7 +286,7 @@ const updateDelivery = async () => {
       deliveryDate: currentDateTime,
       referenceNumber: `${updateDeliveryRequest.deliveryNumber}-${orderNumber.value}`,
       expectedDeliveryDate: currentDateTime,
-      deliveryPaymentTerms: isCredit.value ? CREDIT_SUPP_PAYMENT : DEFAULT_SUPP_PAYMENT,
+      deliveryPaymentTerms: isCreditSupplier.value ? CREDIT_SUPP_PAYMENT : DEFAULT_SUPP_PAYMENT,
       products: updateDeliveryRequest.products.map((product, index) => {
         return {
           ...product,
@@ -342,7 +342,7 @@ const finApprovePurchaseOrder = async () => {
         `\tPayment Request Due Date: ${paymentRequest.dueDate.split('T')[0]}\n`
       )
     else
-      addLog(`\tNo Payment Request is created against this PO\n`)
+      addLog(`No Payment Request is created against this PO\n`)
     addLineSeparator()
     addLog('...  resetting order state ...')
     await new Promise(resolve => setTimeout(resolve, 3000)) // 3 seconds delay
@@ -461,7 +461,7 @@ const updateQuotationRequestPerInput = (lang, productsCount, productsType) => {
 
 const resetOrderState = () => {
   isOrderGenerated.value = false
-  isCredit.value = false
+  isCreditSupplier.value = false
   orderNumber.value = ''
   orderId.value = ''
   opportunityId.value = ''
