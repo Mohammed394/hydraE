@@ -26,17 +26,17 @@
           </div>
         </div>
       </div>
-      <Popup v-if="selectedItem && selectedItem.id == 1" :item="selectedItem" @close="selectedItem = null" />
+      <Popup v-if="selectedItem && selectedItem.id == 1" :item="selectedItem" @close="closePopup()" />
       <OrderGeneratorPopup v-if="selectedItem && selectedItem.id == 2" :item="selectedItem"
-        @close="selectedItem = null" />
+              @close="closePopup()"/>
       <GPSPopup v-if="selectedItem && selectedItem.id == 3" :item="selectedItem"
-        @close="selectedItem = null" />
+        @close="closePopup()" />
     </div>
   </div>
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import Intro from './Intro.vue';
 import Popup from './Popup.vue';
 import CanvasDots from './CanvasDots.vue';
@@ -46,15 +46,27 @@ import '../styles/CardStyles.css'; // Import the card styles
 import OrderGeneratorPopup from './OrderGeneratorPopup.vue';
 import GPSPopup from './GPSPopup.vue';
 
+class MenuItem {
+  constructor(name, description, image) {
+    this.name = name;
+    this.description = description;
+    this.image = image;
+    this.id = MenuItem.nextId++;
+  }
+}
+MenuItem.nextId = 1;
+
 export default {
   components: { Intro, Popup, OrderGeneratorPopup, CanvasDots, CustomDropdown, GPSPopup },
   setup() {
-    const menuItems = ref([
-      { id: 1, name: 'Buyer Journey', description: 'You can simulate the Buyer journey', image: '/RFQ.png' },
-      { id: 2, name: 'Order Generator', description: 'Create customized order for your task', image: '/new-order.png' },
-      { id: 3, name: 'GPS Tracking', description: 'Simulate Truck Journey', image: '/map.png' },
-      // Add more items as needed
-    ]);
+    const menuItems = computed(() => {
+      const items = [
+        new MenuItem('Buyer Journey', 'You can simulate the Buyer journey', '/RFQ.png'),
+        new MenuItem('Order Generator', 'Create customized order for your task', '/new-order.png'),
+        new MenuItem('GPS Tracking', 'Simulate Truck Journey', '/map.png'),
+      ];
+      return items;
+    });
 
     const selectedItem = ref(null);
     const savedEnvironment = localStorage.getItem('selectedEnvironment') || 'staging';
@@ -89,6 +101,10 @@ export default {
       }, 3000); // Show intro for 3 seconds
     });
 
+    const closePopup = () => {
+        selectedItem.value = null;
+    };
+
     return {
       menuItems,
       selectedItem,
@@ -96,6 +112,7 @@ export default {
       showIntro,
       showEnvironmentAlert,
       openPopup,
+      closePopup,
       environments,
       showAlert
     };
