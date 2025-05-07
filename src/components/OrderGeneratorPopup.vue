@@ -325,6 +325,7 @@ const finApprovePurchaseOrder = async () => {
   try {
     const result = await approvePurchaseOrder(baseUrl, deliveryId.value)
     addLog('Purchase Order Approved by Finance!');
+    addLineSeparator()
     addLog('Fetching Details ..')
     const poDetails = await getPurchaseOrderDetails(baseUrl, result.zoho.purchaseOrderId)
     const paymentRequest = poDetails.supplierPaymentRequest
@@ -333,13 +334,18 @@ const finApprovePurchaseOrder = async () => {
       `\tTotal Amount: ${result.total.amount} ${result.total.currency}\n`+
       `\tDelivery Status: ${poDetails.delivery.status}\n` +
       `\tDelivery Date: ${poDetails.delivery.deliveryDate.split('T')[0]}\n` +
-      `\tSupplier Payment: ${poDetails.supplier.isCredit ? 'Credit' : 'Cash'} - ${poDetails.supplier.paymentTerm}\n` +
-      `\tPayment Request Status: ${paymentRequest.status}\n` +
-      `\tPayment Request Due Date: ${paymentRequest.dueDate.split('T')[0]}\n`
+      `\tSupplier Payment: ${poDetails.supplier.isCredit ? 'Credit' : 'Cash'} - ${poDetails.supplier.paymentTerm}\n`
     ); 
+    if(paymentRequest)
+      addLog(
+        `\tPayment Request Status: ${paymentRequest.status}\n` +
+        `\tPayment Request Due Date: ${paymentRequest.dueDate.split('T')[0]}\n`
+      )
+    else
+      addLog(`\tNo Payment Request is created against this PO\n`)
     addLineSeparator()
-    addLog('...  resetting order state in 5 seconds ...')
-    await new Promise(resolve => setTimeout(resolve, 5000)) // 5 seconds delay
+    addLog('...  resetting order state ...')
+    await new Promise(resolve => setTimeout(resolve, 3000)) // 3 seconds delay
     resetOrderState()
   } catch (error) {
       const errorMessage = error.response?.data?.message || error.message;
