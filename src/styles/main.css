@@ -22,7 +22,7 @@ body {
 .navbar .logo {
   font-size: 3.5rem;
   font-weight: bold;
-  font-family: fantasy;
+  font-family: Cursive;
 }
 
 .navbar select {
@@ -32,7 +32,7 @@ body {
   border: 1px solid #ccc;
   background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
   color: white;
-  font-family: fantasy;
+  font-family: Cursive;
   font-size: 1.4rem;
   outline: none;
   cursor: pointer;
@@ -43,7 +43,7 @@ body {
 .navbar select option {
   background-color: #001f3f; /* Background for dropdown items */
   color: white;
-  font-family: fantasy;
+  font-family: Cursive;
 }
 
 .navbar select:focus {
@@ -88,6 +88,7 @@ body {
 .popup-content h2 {
   color: #001f3f;
   margin-bottom: 20px;
+  font-family: Cursive;
 }
 
 .popup-body {
