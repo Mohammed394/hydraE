@@ -66,7 +66,7 @@
   align-items: center;
   z-index: 1000;
   transition: opacity 1s ease-in-out;
-  font-family: fantasy;
+  font-family: Cursive;
   cursor: pointer;
 }
 

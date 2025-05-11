@@ -897,83 +897,107 @@ export const rfqRefactoredBody_ar_2items_different= {
 
 const expiryDate = new Date(new Date().setDate(new Date().getDate() + 2)).toISOString().slice(0, 19)
 
+const product_single_en_attrs =  [
+  {
+      "name": "Diameter Size",
+      "type": "diameter_size",
+      "value": "12mm"
+  },
+  {
+      "name": "Length",
+      "type": "length",
+      "value": "12m"
+  },
+  {
+      "name": "BRAND",
+      "type": "brand",
+      "value": "SABIC"
+  },
+  {
+      "name": "Unit",
+      "type": "unit",
+      "value": "rod"
+  }
+]
+
+export const CREDIT_SUPP_PAYMENT = "NET_10"
+export const DEFAULT_SUPP_PAYMENT = "DEFAULT"
 
 export const quotationRequestBody_en_single_item = {
-  "status": "SUBMITTED",
-  "supplierId": "63c1457b15b61712067115bf",
-  "expiryDate": expiryDate,
-  "notes": {
-      "content": "",
-      "visibility": false
-  },
-  "termsAndConditions": "Payment:\n100% advance payment is required.\n50% advance payment is required, with the remaining balance due within 30 days from delivery.\nFully payment due within 30 days from delivery.\nDelivery:\na) Materials will be delivered to Riyadh within 2 days, from date of receiving payment (cash orders)\nb) Materials will be delivered to Riyadh within 2 days, from date of PO issuance (credit orders)\nValidity:\nPrice is valid for 1 day from the quotation date.\nPrice Inclusions:\nPrice includes delivery to the job site in Riyadh.\nLiability for Damages:\nBRKZ co. will take necessary precautions to ensure proper packaging and handling of the materials for transportation, in case any damages incurred during transit BRKZ co. will cooperate with the contractor and the transportation provider to facilitate the resolution of the claim and ensure a satisfactory outcome.\nInspection upon Delivery:\nIf the material is delivered by BRKZ co., the contractor must inspect the delivered materials upon receipt and notify BRKZ co. immediately of any damages observed. If damages are discovered upon inspection, the contractor should document and photograph the damages as evidence for any potential claims.\nLimitations of Liability:\nIn no event shall BRKZ co. be liable for any indirect, consequential, or incidental damages arising from material damages or delays before, after, or during the delivery of agreed material.\nQuantity Changes:\nQuoted price is subject to adjustment based on any quantity or specification variations.\nAvailability:\nMaterials are subject to stock availability.\nQuality and Warranty:\nPlease refer to the manufacturer's warranty for details on specific products.\nForce Majeure:\nDelivery times may be affected by unforeseen events beyond our control. In the event of force majeure, BRKZ co. will make reasonable efforts to minimize delays.\nGoverning Law:\nAny disputes arising from this quotation will be subject to Saudi Arabian laws.\nEntire Agreement:\nBy accepting this quotation, you confirm your acceptance of these terms and conditions.",
-  "paymentTermsId": "643007862071f75449d9634b",
-  "creditMarginPercentage": 0,
-  "lineItems": [
-      {
-          "product": {
-              "productId": "649950a3319be626d9fbdd21",
-              "name": "Reinforcement Steel Rebar",
-              "arabicName": null,
-              "attributes": [
-                  {
-                      "name": "Diameter Size",
-                      "type": "diameter_size",
-                      "value": "12mm"
-                  },
-                  {
-                      "name": "Length",
-                      "type": "length",
-                      "value": "12m"
-                  },
-                  {
-                      "name": "BRAND",
-                      "type": "brand",
-                      "value": "SABIC"
-                  },
-                  {
-                      "name": "Unit",
-                      "type": "unit",
-                      "value": "rod"
-                  }
-              ],
-              "quantity": 100,
-              "imageUrl": "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1707657013/Product%20Catalog/Rebar_cyizrr.png",
-              "unit": null,
-              "skuNumber": "ST-RS-01-12-12",
-              "pricing": null,
-              "marginAmount": 1500,
-              "marginPercentage": 1.1,
-              "supplierErr": "",
-              "sellingPriceWithCMErr": ""
-          },
-          "offerAmountBySupplier": {
-              "amount": 136000,
-              "currency": "SAR"
-          },
-          "offerAmount": {
-              "amount": 137500,
-              "currency": "SAR"
-          },
-          "sellingPrice": {
-              "amount": 1375,
-              "currency": "SAR"
-          },
-          "supplier": {
-              "id": "679f8b056d062a1456fe4798",
-              "name": "Hydra Supplier",
-              "cityId": "64913b22e02ccab65544bb2c",
-              "region": "CENTRAL",
-              "branchId": "679f8c9c6d062a1456fe4799",
-              "countryId": "64feead127385273ca3cc38c",
-              "address": ""
-          }
-      }
-  ]
+    "status": "SUBMITTED",
+    "supplierId": "6707d298b08cd0670f101374",
+    "expiryDate": expiryDate,
+    "notes": {
+        "visibility": false,
+        "content": ""
+    },
+    "termsAndConditions": "Payment:\n100% advance payment is required.\n\nDelivery:\na) Materials will be delivered to Riyadh within 2 days, from date of receiving payment (cash orders)\nb) Materials will be delivered to Riyadh within 2 days, from date of PO issuance (credit orders)\n\nValidity:\nPrice is valid for 1 day from the quotation date.\n\nPrice Inclusions:\nPrice includes delivery to the job site in Riyadh.\n\nLiability for Damages:\nBRKZ co. will take necessary precautions to ensure proper packaging and handling of the materials for transportation, in case any damages incurred during transit BRKZ co. will cooperate with the contractor and the transportation provider to facilitate the resolution of the claim and ensure a satisfactory outcome.\n\nInspection upon Delivery:\nIf the material is delivered by BRKZ co., the contractor must inspect the delivered materials upon receipt and notify BRKZ co. immediately of any damages observed. If damages are discovered upon inspection, the contractor should document and photograph the damages as evidence for any potential claims.\n\nLimitations of Liability:\nIn no event shall BRKZ co. be liable for any indirect, consequential, or incidental damages arising from material damages or delays before, after, or during the delivery of agreed material.\n\nQuantity Changes:\nQuoted price is subject to adjustment based on any quantity or specification variations.\n\nAvailability:\nMaterials are subject to stock availability.\n\nQuality and Warranty:\nPlease refer to the manufacturer's warranty for details on specific products.\n\nForce Majeure:\nDelivery times may be affected by unforeseen events beyond our control. In the event of force majeure, BRKZ co. will make reasonable efforts to minimize delays.\n\nGoverning Law:\nAny disputes arising from this quotation will be subject to Saudi Arabian laws.\n\nEntire Agreement:\nBy accepting this quotation, you confirm your acceptance of these terms and conditions.",
+    "paymentTermsId": "643007862071f75449d9634b",
+    "creditMarginPercentage": 0,
+    "lineItems": [
+        {
+            "product": {
+                "productId": "649950a3319be626d9fbdd21",
+                "name": "Reinforcement Steel Rebar",
+                "arabicName": null,
+                "attributes": product_single_en_attrs,
+                "quantity": 100,
+                "imageUrl": "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1707657013/Product%20Catalog/Rebar_cyizrr.png",
+                "skuNumber": "ST-RS-01-12-12",
+                "lineItemPrice": {
+                    "price": {
+                        "amount": 110,
+                        "currency": "SAR"
+                    },
+                    "unitId": "66583d11a265da3c821d48ca",
+                    "unitNameI18n": {
+                        "en": "rod",
+                        "ar_sa": "سيخ"
+                    },
+                    "unitName": "rod",
+                    "margin": {
+                        "amount": 4.4,
+                        "currency": "SAR"
+                    },
+                    "marginPercentage": 4.1,
+                    "supplierId": "67626ea390e3d06c5b7ebc9c"
+                },
+                "isSelected": false,
+                "marginAmount": 2000,
+                "marginPercentage": 20,
+                "supplierErr": "",
+                "sellingPriceWithCMErr": ""
+            },
+            "id": "2a815365-b2be-43c0-b800-e3624ab02aff",
+            "offerAmountBySupplier": {
+                "amount": 10000,
+                "currency": "SAR"
+            },
+            "offerAmount": {
+                "amount": 0,
+                "currency": "SAR"
+            },
+            "sellingPrice": {
+                "amount": 120,
+                "currency": "SAR"
+            },
+            "supplier": {
+                "id": "67fe530d6cf1a5222a72a9b8",
+                "name": "Banking Tests",
+                "cityId": "64913b22e02ccab65544bb2c",
+                "region": "CENTRAL",
+                "branchId": "67fe53376cf1a5222a72a9b9",
+                "countryId": "64feead127385273ca3cc38c",
+                "address": ""
+            }
+        }
+    ]
 }
+
+
 export const quotationRequestBody_ar_single_item = {
   "status": "SUBMITTED",
-  "supplierId": "63c1457b15b61712067115bf",
+  "supplierId": "6707d298b08cd0670f101374",
   "expiryDate": expiryDate,
   "notes": {
       "visibility": false,
@@ -1011,43 +1035,61 @@ export const quotationRequestBody_ar_single_item = {
                   }
               ],
               "quantity": 100,
-              "imageUrl": "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1707657013/Product%20Catalog/Rebar_cyizrr.png",
-              "skuNumber": "ST-RS-01-12-12",
-              "lineItemPrice": null,
-              "isSelected": false,
-              "marginAmount": 1500,
-              "marginPercentage": 1.1,
-              "supplierErr": "",
-              "sellingPriceWithCMErr": ""
-          },
-          "offerAmountBySupplier": {
-              "amount": 136000,
-              "currency": "SAR"
-          },
-          "offerAmount": {
-              "amount": 0,
-              "currency": "SAR"
-          },
-          "sellingPrice": {
-              "amount": 1375,
-              "currency": "SAR"
-          },
-          "supplier": {
-              "id": "679f8b056d062a1456fe4798",
-              "name": "Hydra Supplier",
-              "cityId": "64913b22e02ccab65544bb2c",
-              "region": "CENTRAL",
-              "branchId": "679f8c9c6d062a1456fe4799",
-              "countryId": "64feead127385273ca3cc38c",
-              "address": ""
-          }
-      }
+                "imageUrl": "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1707657013/Product%20Catalog/Rebar_cyizrr.png",
+                "skuNumber": "ST-RS-01-12-12",
+                "lineItemPrice": {
+                    "price": {
+                        "amount": 110,
+                        "currency": "SAR"
+                    },
+                    "unitId": "66583d11a265da3c821d48ca",
+                    "unitNameI18n": {
+                        "en": "rod",
+                        "ar_sa": "سيخ"
+                    },
+                    "unitName": "rod",
+                    "margin": {
+                        "amount": 4.4,
+                        "currency": "SAR"
+                    },
+                    "marginPercentage": 4.1,
+                    "supplierId": "67626ea390e3d06c5b7ebc9c"
+                },
+                "isSelected": false,
+                "marginAmount": 2000,
+                "marginPercentage": 20,
+                "supplierErr": "",
+                "sellingPriceWithCMErr": ""
+            },
+            "id": "2a815365-b2be-43c0-b800-e3624ab02aff",
+            "offerAmountBySupplier": {
+                "amount": 10000,
+                "currency": "SAR"
+            },
+            "offerAmount": {
+                "amount": 0,
+                "currency": "SAR"
+            },
+            "sellingPrice": {
+                "amount": 120,
+                "currency": "SAR"
+            },
+            "supplier": {
+                "id": "67fe530d6cf1a5222a72a9b8",
+                "name": "Banking Tests",
+                "cityId": "64913b22e02ccab65544bb2c",
+                "region": "CENTRAL",
+                "branchId": "67fe53376cf1a5222a72a9b9",
+                "countryId": "64feead127385273ca3cc38c",
+                "address": ""
+            }
+        }
   ]
 }
 
 export const quotationRequestBody_en_2items_2units = {
   "status": "SUBMITTED",
-  "supplierId": "63c1457b15b61712067115bf",
+  "supplierId": "6707d298b08cd0670f101374",
   "expiryDate": expiryDate,
   "notes": {
       "visibility": false,
@@ -1062,28 +1104,7 @@ export const quotationRequestBody_en_2items_2units = {
               "productId": "649950a3319be626d9fbdd21",
               "name": "Reinforcement Steel Rebar",
               "arabicName": null,
-              "attributes": [
-                  {
-                      "name": "Diameter Size",
-                      "type": "diameter_size",
-                      "value": "12mm"
-                  },
-                  {
-                      "name": "Length",
-                      "type": "length",
-                      "value": "12m"
-                  },
-                  {
-                      "name": "BRAND",
-                      "type": "brand",
-                      "value": "SABIC"
-                  },
-                  {
-                      "name": "Unit",
-                      "type": "unit",
-                      "value": "rod"
-                  }
-              ],
+              "attributes": product_single_en_attrs,
               "quantity": 100,
               "imageUrl": "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1707657013/Product%20Catalog/Rebar_cyizrr.png",
               "skuNumber": "ST-RS-01-12-12",
@@ -1179,7 +1200,7 @@ export const quotationRequestBody_en_2items_2units = {
 }
 export const quotationRequestBody_ar_2items_2units = {
   "status": "SUBMITTED",
-  "supplierId": "63c1457b15b61712067115bf",
+  "supplierId": "6707d298b08cd0670f101374",
   "expiryDate": expiryDate,
   "notes": {
       "visibility": false,
@@ -1312,7 +1333,7 @@ export const quotationRequestBody_ar_2items_2units = {
 
 export const quotationRequestBody_en_2items_2skus = {
   "status": "SUBMITTED",
-  "supplierId": "63c1457b15b61712067115bf",
+  "supplierId": "6707d298b08cd0670f101374",
   "expiryDate": expiryDate,
   "notes": {
       "visibility": false,
@@ -1327,28 +1348,7 @@ export const quotationRequestBody_en_2items_2skus = {
               "productId": "649950a3319be626d9fbdd21",
               "name": "Reinforcement Steel Rebar",
               "arabicName": null,
-              "attributes": [
-                  {
-                      "name": "Diameter Size",
-                      "type": "diameter_size",
-                      "value": "12mm"
-                  },
-                  {
-                      "name": "Length",
-                      "type": "length",
-                      "value": "12m"
-                  },
-                  {
-                      "name": "BRAND",
-                      "type": "brand",
-                      "value": "SABIC"
-                  },
-                  {
-                      "name": "Unit",
-                      "type": "unit",
-                      "value": "rod"
-                  }
-              ],
+              "attributes": product_single_en_attrs,
               "quantity": 100,
               "imageUrl": "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1707657013/Product%20Catalog/Rebar_cyizrr.png",
               "skuNumber": "ST-RS-01-12-12",
@@ -1445,7 +1445,7 @@ export const quotationRequestBody_en_2items_2skus = {
 
 export const quotationRequestBody_ar_2items_2skus = {
   "status": "SUBMITTED",
-  "supplierId": "63c1457b15b61712067115bf",
+  "supplierId": "6707d298b08cd0670f101374",
   "expiryDate": expiryDate,
   "notes": {
       "visibility": false,
@@ -1578,7 +1578,7 @@ export const quotationRequestBody_ar_2items_2skus = {
 
 export const quotationRequestBody_en_2items_different = {
   "status": "SUBMITTED",
-  "supplierId": "63c1457b15b61712067115bf",
+  "supplierId": "6707d298b08cd0670f101374",
   "expiryDate": expiryDate,
   "notes": {
       "visibility": false,
@@ -1593,28 +1593,7 @@ export const quotationRequestBody_en_2items_different = {
               "productId": "649950a3319be626d9fbdd21",
               "name": "Reinforcement Steel Rebar",
               "arabicName": null,
-              "attributes": [
-                  {
-                      "name": "Diameter Size",
-                      "type": "diameter_size",
-                      "value": "12mm"
-                  },
-                  {
-                      "name": "Length",
-                      "type": "length",
-                      "value": "12m"
-                  },
-                  {
-                      "name": "BRAND",
-                      "type": "brand",
-                      "value": "SABIC"
-                  },
-                  {
-                      "name": "Unit",
-                      "type": "unit",
-                      "value": "rod"
-                  }
-              ],
+              "attributes": product_single_en_attrs,
               "quantity": 10000,
               "imageUrl": "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1707657013/Product%20Catalog/Rebar_cyizrr.png",
               "skuNumber": "ST-RS-01-12-12",
@@ -1728,7 +1707,7 @@ export const quotationRequestBody_en_2items_different = {
 
 export const quotationRequestBody_ar_2items_different = {
   "status": "SUBMITTED",
-  "supplierId": "63c1457b15b61712067115bf",
+  "supplierId": "6707d298b08cd0670f101374",
   "expiryDate": expiryDate,
   "notes": {
       "visibility": false,
@@ -1874,6 +1853,91 @@ export const quotationRequestBody_ar_2items_different = {
           }
       }
   ]
+}
+
+export const updateDraftDelivery_en_item_Request = {
+  "id": "",
+  "orderId": "",
+  "opportunityId": "",
+  "deliveryNumber": "D01",
+  "orderNumber": "",
+  "contractorId": "",
+  "zoho": null,
+  "products": [
+      {
+          "lineItemId": "",
+          "product": {
+              "lineItemId": null,
+              "productId": "649950a3319be626d9fbdd21",
+              "name": "Reinforcement Steel Rebar",
+              "arabicName": null,
+              "attributes": product_single_en_attrs,
+              "quantity": 100,
+              "imageUrl": "https://res.cloudinary.com/dtbk6u1pb/image/upload/v1707657013/Product%20Catalog/Rebar_cyizrr.png",
+              "skuNumber": "ST-RS-01-12-12"
+          },
+          "quantity": 100,
+          "supplier": null,
+          "supplierUnitPrice": {
+              "amount": "100",
+              "currency": "SAR"
+          },
+          "returnedQuantity": 0,
+          "productMarginPercentage": 20,
+          "productMarginAmount": 2000,
+          "discount": {
+              "amount": 0,
+              "currency": "SAR"
+          }
+      }
+  ],
+  "status": "DRAFT",
+  "isASAP": false,
+  "deliveryDate": "",
+  "expectedDeliveryDate": null,
+  "type": "BRKZ",
+  "cost": {
+      "amount": 0,
+      "currency": "SAR"
+  },
+  "trips": 1,
+  "preTaxTotal": {
+      "amount": 0,
+      "currency": "SAR"
+  },
+  "postTaxTotal": {
+      "amount": 0,
+      "currency": "SAR"
+  },
+  //"paymentTerms": "",
+  "supplier": {
+      "id": "67fe530d6cf1a5222a72a9b8",
+      "name": "Banking Tests",
+      "mobileNumber": "+989858",
+      "cityId": "64913b22e02ccab65544bb2c",
+      "region": "CENTRAL",
+      "branchId": "67fe53376cf1a5222a72a9b9",
+      "countryId": "64feead127385273ca3cc38c",
+      "address": "",
+      "cityName": "Riyadh",
+      "countryName": "Saudi Arabia"
+  },
+  "supplierDeliveryNotes": null,
+  "purchaseOrder": null,
+  "createdAt": "",
+  "updatedAt": "",
+  "referenceNumber": "",
+  "discount": {
+      "amount": 0,
+      "currency": "SAR"
+  },
+  "buyerPaymentTerms": "Cash",
+  "trackingEnabled": false,
+  "deliveryDateErr": "",
+  "supplierErr": "",
+  "selectedBranchIdx": 0,
+  "termsErr": "",
+  "deliveryPaymentTerms": ""
 }
 
 export const startTrackingBody = {

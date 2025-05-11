@@ -63,7 +63,7 @@ export default {
 .custom-dropdown {
   position: relative;
   display: inline-block;
-  font-family: fantasy;
+  font-family: Cursive;
   color: white;
 }
 

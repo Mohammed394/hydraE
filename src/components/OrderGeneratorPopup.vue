@@ -3,43 +3,51 @@
     <div class="popup-content">
       <h2>{{ item.name }}</h2>
       <div class="popup-body">
-          <div class="input-group">
-            <div class="form-group">
-              <label for="buyerPhoneNo">Buyer Phone Number</label>
-              <input id="buyerPhoneNo" type="text" placeholder="+208313131313" v-model="buyerPhoneNo" />
-              <p v-if="errorMessage" style="color: red;">{{ errorMessage }}</p>
-            </div>
-            <div class="form-group">
-              <label for="lang">Language</label>
-              <select id="lang" v-model="lang">
-                <option v-for="lang in languageOptions" :key="lang" :value="lang">
-                  {{ lang }}
-                </option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="itemsCount">Items Count</label>
-              <select id="itemsCount" v-model="itemsCount">
-                <option v-for="count in itemOptions" :key="count" :value="count">
-                  {{ count }}
-                </option>
-              </select>
-            </div>
-            <div v-if="itemsCount == 2" class="form-group">
-              <label for="itemsType">Items Types</label>
-              <select id="itemsType" v-model="itemsType">
-                <option v-for="type in itemTypeOptions" :key="type" :value="type">
-                  {{ type.label }}
-                </option>
-              </select>
-              <p v-if="typesErrorMessage" style="color: red;">{{ typesErrorMessage }}</p>
-            </div>
+        <div class="input-group">
+          <div class="form-group">
+            <label for="buyerPhoneNo">Buyer Phone Number</label>
+            <input id="buyerPhoneNo" type="text" placeholder="+208313131313" v-model="buyerPhoneNo" />
+            <p v-if="errorMessage" style="color: red;">{{ errorMessage }}</p>
+          </div>
+          <div class="form-group">
+            <label for="lang">Language</label>
+            <select id="lang" v-model="lang">
+              <option v-for="lang in languageOptions" :key="lang" :value="lang">
+                {{ lang }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="itemsCount">Items Count</label>
+            <select id="itemsCount" v-model="itemsCount">
+              <option v-for="count in itemOptions" :key="count" :value="count">
+                {{ count }}
+              </option>
+            </select>
+          </div>
+          <div v-if="itemsCount == 2" class="form-group">
+            <label for="itemsType">Items Types</label>
+            <select id="itemsType" v-model="itemsType">
+              <option v-for="type in itemTypeOptions" :key="type" :value="type">
+                {{ type.label }}
+              </option>
+            </select>
+            <p v-if="typesErrorMessage" style="color: red;">{{ typesErrorMessage }}</p>
+          </div>
           <div class="buttons">
-            <button @click="generateOrder">Generate Order</button>          
+            <button @click="generateOrder">Generate Order</button>
+            <div class="po-buttons buttons" v-if="itemsCount == 1 && lang =='en' && isOrderGenerated">
+              <div class="credit-option">
+                <input type="checkbox" id="credit" v-model="isCreditSupplier">
+                <label for="credit">Credit Supplier</label>
+              </div>   
+              <button @click="generatePurchaseOrder">Generate PO</button>    
+              <button @click="procApprovePurchaseOrder">Proc. Approve PO</button>    
+              <button @click="finApprovePurchaseOrder">Fin. Approve PO</button>    
+            </div>
             <button class="close-button" @click="$emit('close')">Close</button>
+          </div>
         </div>
-        </div>
-
         <!-- Separate div for log textarea and Clear Log button -->
         <div class="log-section">
           <textarea v-model="logs" rows="12"></textarea>
@@ -59,6 +67,12 @@ import {
   submitQuotation as submitQuotationCall,
   getDeliveries as getDeliveriesCall,
   updateBidStatus,
+  getCurrentDateTime,
+  updateDelivery as updateDeliveryCall,
+  purchaseOrder as purchaseOrderCall,
+  initApprovePurchaseOrder,
+  approvePurchaseOrder,
+  getPurchaseOrderDetails
 } from '../apis/api'
 
 import {
@@ -77,8 +91,12 @@ import {
   quotationRequestBody_en_2items_2skus,
   quotationRequestBody_ar_2items_2skus,
   quotationRequestBody_en_2items_different,
-  quotationRequestBody_ar_2items_different
+  quotationRequestBody_ar_2items_different,
+  updateDraftDelivery_en_item_Request as updateDeliveryRequest,
+  DEFAULT_SUPP_PAYMENT,
+  CREDIT_SUPP_PAYMENT
 } from '../TestData/requestData'
+
 const props = defineProps({
   item: Object
 });
@@ -104,11 +122,17 @@ const itemTypeOptions = [
     label: 'Different Products',
   },
 ];
+
+const isCreditSupplier = ref(false)
 const logs = ref('')
-const rfqId = ref('')
+const orderNumber = ref('')
+const orderId = ref('')
 const opportunityId = ref('')
 const quotationId = ref('')
 const contractorId = ref('')
+const isOrderGenerated = ref(false)
+const deliveryId = ref('')
+
 let baseUrl = ""
 
 const generateOrder = async () => {
@@ -131,9 +155,9 @@ const generateOrder = async () => {
   await fetchContractorInfo()
   await getDeliveries()
   await submitQuotation()
-  await acceptQuotation()
-
+  await acceptQuotation()  
 }
+
 const fetchContractorInfo = async () => {
   if (!buyerPhoneNo.value.startsWith('+')) {
     addLog('Please enter a valid phone number starting with +')
@@ -149,7 +173,7 @@ const fetchContractorInfo = async () => {
     }
     contractorId.value = contractorDetails.id
     addLog(`Fetched Successfully!`)
-    addLog('---------------------------------------------------------')
+    addLineSeparator()
     localStorage.setItem('phoneNumber', buyerPhoneNo.value)
     await raiseCustomizedRFQ(contractorId.value, lang, itemsCount, itemsType)
   } catch (error) {
@@ -158,7 +182,6 @@ const fetchContractorInfo = async () => {
 }
 
 const raiseCustomizedRFQ = async (contractorId, lang, productCount, productsType) => {
-
   const customizedRequestBody = selectRfqRequestBodyPerInput(lang.value, productCount.value, productsType.value.value)
   const updatedRequestBody = {
     ...customizedRequestBody,
@@ -168,8 +191,8 @@ const raiseCustomizedRFQ = async (contractorId, lang, productCount, productsType
     const result = await raiseRFQCall(baseUrl, updatedRequestBody, lang.value)
     addLog(`RFQ Raised`)
     addLog(`RFQ Number: ${result.rfqId}`)
-    addLog('---------------------------------------------------------')
-    rfqId.value = result.rfqId
+    addLineSeparator()
+    orderNumber.value = result.rfqId
     opportunityId.value = result.opportunityId
   } catch (error) {
     addLog(`\nError: ${error.message}`)
@@ -207,7 +230,7 @@ const submitQuotation = async () => {
     const result = await submitQuotationCall(baseUrl, opportunityId.value, quotationRequestBody)
     quotationId.value = result.id
     addLog(`Quotation Submitted`)
-    addLog('---------------------------------------------------------')
+    addLineSeparator()
   } catch (error) {
     addLog(`Error: ${error.message}`)
   }
@@ -223,13 +246,110 @@ const acceptQuotation = async () => {
   try {
     await updateBidStatus(baseUrl, quotationId.value, requestBody)
     const result2 = await getDeliveriesCall(baseUrl, opportunityId.value)
-    const orderId = result2.content[0].orderId
+    orderId.value = result2.content[0].orderId
+    deliveryId.value = result2.content[0].id
     addLog(
-      `Order Generated Successfully!\n\tOrderNumber: ${rfqId.value}\n\tOppurtunityId: ${opportunityId.value}\n\tOrderId: ${orderId}\n\tOrder Status: IN_PROCESS`
+      `Order Generated Successfully!\n\tOrderNumber: ${orderNumber.value}\n\tOppurtunityId: ${opportunityId.value}\n\tOrderId: ${orderId.value}\n\tOrder Status: IN_PROCESS`
     )
-    logs.value += '-----------------------------------------------------------------------\n'
+    isOrderGenerated.value = true
+    addLineSeparator()
   } catch (error) {
     addLog(`Error: ${error.message}`)
+  }
+}
+
+const generatePurchaseOrder = async () => {
+  await updateDelivery()
+  addLog('Generating Purchase Order...');
+  try {
+    const result = await purchaseOrderCall(baseUrl, deliveryId.value)
+    const poNumber = result.poNumber  
+    addLog(`Purchase Order Generated Successfully! PO Number: ${poNumber}`);
+    addLineSeparator()
+  } catch (error) {
+      const errorMessage = error.response?.data?.message || error.message;
+      addLog(`Error generating Purchase Order:${errorMessage}`);
+  }
+}
+
+const updateDelivery = async () => {
+  addLog('Updating the delivery .. ');
+  const lineItem_0_id = localStorage.getItem("lineItem_0_id")
+  const currentDateTime = getCurrentDateTime()
+  const request = {
+      ...updateDeliveryRequest,
+      id: deliveryId.value,
+      orderId: orderId.value,
+      opportunityId: opportunityId.value,
+      orderNumber: orderNumber.value,
+      contractorId: contractorId.value,
+      deliveryDate: currentDateTime,
+      referenceNumber: `${updateDeliveryRequest.deliveryNumber}-${orderNumber.value}`,
+      expectedDeliveryDate: currentDateTime,
+      deliveryPaymentTerms: isCreditSupplier.value ? CREDIT_SUPP_PAYMENT : DEFAULT_SUPP_PAYMENT,
+      products: updateDeliveryRequest.products.map((product, index) => {
+        return {
+          ...product,
+          lineItemId: lineItem_0_id
+        }
+      })
+  }
+
+  try {
+    await updateDeliveryCall(
+    baseUrl,
+    deliveryId.value,
+    request
+    )
+    addLog(`Draft Delivery ${request.referenceNumber} Updated Successfully!`)    
+    addLineSeparator()
+  } catch (error) {
+    addLog(`Error: ${error.message}`)
+  }
+}
+
+const procApprovePurchaseOrder = async () => {
+  addLog('Procurement Approving Purchase Order...');
+  try {
+    await initApprovePurchaseOrder(baseUrl, deliveryId.value)
+    addLog('Purchase Order Approved by Procurement!');
+    addLineSeparator()
+  } catch (error) {
+      const errorMessage = error.response?.data?.message || error.message;
+      addLog(`Error during Procurement Approval: ${errorMessage}`);
+  }
+}
+
+const finApprovePurchaseOrder = async () => {
+  addLog('Finance Approving Purchase Order...');
+  try {
+    const result = await approvePurchaseOrder(baseUrl, deliveryId.value)
+    addLog('Purchase Order Approved by Finance!');
+    addLineSeparator()
+    addLog('Fetching Details ..')
+    const poDetails = await getPurchaseOrderDetails(baseUrl, result.zoho.purchaseOrderId)
+    const paymentRequest = poDetails.supplierPaymentRequest
+    addLog(
+      `\n\t${result.poNumber} is now ${result.status}\n` + 
+      `\tTotal Amount: ${result.total.amount} ${result.total.currency}\n`+
+      `\tDelivery Status: ${poDetails.delivery.status}\n` +
+      `\tDelivery Date: ${poDetails.delivery.deliveryDate.split('T')[0]}\n` +
+      `\tSupplier Payment: ${poDetails.supplier.isCredit ? 'Credit' : 'Cash'} - ${poDetails.supplier.paymentTerm}\n`
+    ); 
+    if(paymentRequest)
+      addLog(
+        `\tPayment Request Status: ${paymentRequest.status}\n` +
+        `\tPayment Request Due Date: ${paymentRequest.dueDate.split('T')[0]}\n`
+      )
+    else
+      addLog(`No Payment Request is created against this PO\n`)
+    addLineSeparator()
+    addLog('...  resetting order state ...')
+    await new Promise(resolve => setTimeout(resolve, 3000)) // 3 seconds delay
+    resetOrderState()
+  } catch (error) {
+      const errorMessage = error.response?.data?.message || error.message;
+      addLog(`Error during Finance Approval: ${errorMessage}`);
   }
 }
 
@@ -240,6 +360,10 @@ const clearLogs = () => {
 const addLog = (message) => {
   const timestamp = new Date().toLocaleTimeString()
   logs.value += `[${timestamp}] ${message}\n`
+}
+
+const addLineSeparator = () => {
+  logs.value += '-----------------------------------------------------------------------\n'
 }
 
 const selectRfqRequestBodyPerInput = (lang, productsCount, productsType) => {
@@ -334,6 +458,23 @@ const updateQuotationRequestPerInput = (lang, productsCount, productsType) => {
     }
   }
 }
+
+const resetOrderState = () => {
+  isOrderGenerated.value = false
+  isCreditSupplier.value = false
+  orderNumber.value = ''
+  orderId.value = ''
+  opportunityId.value = ''
+  quotationId.value = ''
+  contractorId.value = ''
+  deliveryId.value = ''
+
+  localStorage.removeItem('lineItem_0_id')
+  localStorage.removeItem('lineItem_1_id')
+  addLog('...  Order state is reset ...')
+  addLineSeparator()
+}
+
 </script>
 
 <style scoped src="../styles/orderGeneratorStyles.css"></style>

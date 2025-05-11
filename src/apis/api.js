@@ -77,9 +77,23 @@ export const getDeliveries = async (baseUrl, opportunityId) => {
 export const bulkUpdates = async (baseUrl, requestBody) => {
   return await callEndpoint(baseUrl, '/deliveries/bulk-update', 'POST', requestBody)
 }
+
 export const purchaseOrder = async (baseUrl, deliveryId) => {
   return await callEndpoint(baseUrl, `/deliveries/${deliveryId}/purchase-order`, 'POST', {})
 }
+
+export const initApprovePurchaseOrder = async (baseUrl, deliveryId) => {
+  return await callEndpoint(baseUrl, `/deliveries/${deliveryId}/purchase-order/initially-approve`, 'POST', {})
+}
+
+export const approvePurchaseOrder = async (baseUrl, deliveryId) => {
+  return await callEndpoint(baseUrl, `/deliveries/${deliveryId}/purchase-order/approve`, 'POST', {})
+}
+
+export const getPurchaseOrderDetails = async (baseUrl, purchaseOrderId) => {
+  return await callEndpoint(baseUrl, `/purchase-orders/${purchaseOrderId}`, 'GET', {})
+}
+
 export const updateDelivery = async (baseUrl, deliveryId, requestBody) => {
   return await callEndpoint(baseUrl, `/deliveries/${deliveryId}`, 'PUT', requestBody)
 }
