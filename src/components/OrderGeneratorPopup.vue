@@ -327,6 +327,7 @@ const finApprovePurchaseOrder = async () => {
     addLog('Purchase Order Approved by Finance!');
     addLineSeparator()
     addLog('Fetching Details ..')
+    await new Promise(resolve => setTimeout(resolve, 2000)) // 2 seconds delay
     const poDetails = await getPurchaseOrderDetails(baseUrl, result.zoho.purchaseOrderId)
     const paymentRequest = poDetails.supplierPaymentRequest
     addLog(
@@ -338,7 +339,7 @@ const finApprovePurchaseOrder = async () => {
     ); 
     if(paymentRequest)
       addLog(
-        `\tPayment Request Status: ${paymentRequest.status}\n` +
+        `\n\tPayment Request Status: ${paymentRequest.status}\n` +
         `\tPayment Request Due Date: ${paymentRequest.dueDate.split('T')[0]}\n`
       )
     else
