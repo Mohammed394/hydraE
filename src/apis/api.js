@@ -94,6 +94,18 @@ export const getPurchaseOrderDetails = async (baseUrl, purchaseOrderId) => {
   return await callEndpoint(baseUrl, `/purchase-orders/${purchaseOrderId}`, 'GET', {})
 }
 
+export const getPaymentRequest = async (baseUrl, paymentRequestId) => {
+  return await callEndpoint(baseUrl, `/supplier-payment-requests/${paymentRequestId}`, 'GET', {})
+}
+
+export const makePayment = async (baseUrl, requestBody) => {
+  return callEndpoint(baseUrl, '/supplier-payments', 'POST', requestBody)
+}
+
+export const markPaymentAsPaid = async (baseUrl, paymentId, proofRequest) => {
+  return callEndpoint(baseUrl, `/supplier-payments/${paymentId}/paid`, 'POST', proofRequest)
+}
+
 export const updateDelivery = async (baseUrl, deliveryId, requestBody) => {
   return await callEndpoint(baseUrl, `/deliveries/${deliveryId}`, 'PUT', requestBody)
 }

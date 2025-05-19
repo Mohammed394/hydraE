@@ -1909,7 +1909,7 @@ export const updateDraftDelivery_en_item_Request = {
       "amount": 0,
       "currency": "SAR"
   },
-  //"paymentTerms": "",
+  "paymentTerms": "Cash",
   "supplier": {
       "id": "67fe530d6cf1a5222a72a9b8",
       "name": "Banking Tests",
@@ -1938,6 +1938,45 @@ export const updateDraftDelivery_en_item_Request = {
   "selectedBranchIdx": 0,
   "termsErr": "",
   "deliveryPaymentTerms": ""
+}
+
+const snbBankStagingId = "64636ac1dc706b1cb953caf9" 
+const bankTransfer = "BANK_TRANSFER"
+const bankingSupplierBank = {
+  "accountName": "Riyadh Benef",
+  "accountNumber": "125487",
+  "bankName": "Riyadh Bank",
+  "iban": "SARA548545456565"
+}
+const fullPayment = {
+  "amount": 11500,
+  "currency": "SAR"
+}
+
+const halfPayment = {
+  "amount": 5750,
+  "currency": "SAR"
+}
+
+export const createPaymentBodyRequest = (paymentType, paymentRequestId) => {
+  const paymentAmount = paymentType === "single" ? fullPayment : halfPayment;
+
+  return {
+    "amount": paymentAmount,
+    "fromBankAccountId": snbBankStagingId,
+    "method": bankTransfer,
+    "paymentRequestsContributions": [
+      {
+        "amount": fullPayment, // the paymentRequest 
+        "id": paymentRequestId,
+      },
+    ],
+    "toBankAccount": bankingSupplierBank,
+  }
+}
+
+export const paymentProofRequest = {
+  "proofUrl": "https://api.staging.brkz.com/files/171e3a39-23c6-4382-89ce-5157ec723f6b.jpeg"
 }
 
 export const startTrackingBody = {
