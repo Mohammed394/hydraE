@@ -44,6 +44,18 @@
               <button @click="generatePurchaseOrder">Generate PO</button>    
               <button @click="procApprovePurchaseOrder">Proc. Approve PO</button>    
               <button @click="finApprovePurchaseOrder">Fin. Approve PO</button>    
+              <div class="payments" v-if="isSuppPaymentRequestCreated">
+                <label for="paymentType">Supplier Payment Type</label>
+                <select id="paymentType" v-model="paymentType">
+                  <option v-for="type in supplierPaymentTypes" :key="type" :value="type">
+                  {{ type.label }}
+                  </option>
+                </select>
+                <button @click="handlePayment">Make Payment</button>
+              </div>
+              <div v-if="paymentsIds.length > 0" class="mark-paid">
+                  <button @click="markPaymentsAsPaid">Mark as Paid</button>
+              </div>
             </div>
             <button class="close-button" @click="$emit('close')">Close</button>
           </div>
@@ -72,7 +84,10 @@ import {
   purchaseOrder as purchaseOrderCall,
   initApprovePurchaseOrder,
   approvePurchaseOrder,
-  getPurchaseOrderDetails
+  getPurchaseOrderDetails,
+  getPaymentRequest as getPaymentRequestCall,
+  makePayment as makePaymentCall,
+  markPaymentAsPaid as markAsPaidCall
 } from '../apis/api'
 
 import {
@@ -94,7 +109,9 @@ import {
   quotationRequestBody_ar_2items_different,
   updateDraftDelivery_en_item_Request as updateDeliveryRequest,
   DEFAULT_SUPP_PAYMENT,
-  CREDIT_SUPP_PAYMENT
+  CREDIT_SUPP_PAYMENT,
+  createPaymentBodyRequest,
+  paymentProofRequest
 } from '../TestData/requestData'
 
 const props = defineProps({
@@ -123,6 +140,16 @@ const itemTypeOptions = [
   },
 ];
 
+const supplierPaymentTypes = [
+  {
+    value: 'single',
+    label: 'Single Payment',
+  },
+  {
+    value: 'Multiple',
+    label: 'Multiple Payments',
+  },
+];
 const isCreditSupplier = ref(false)
 const logs = ref('')
 const orderNumber = ref('')
@@ -132,7 +159,10 @@ const quotationId = ref('')
 const contractorId = ref('')
 const isOrderGenerated = ref(false)
 const deliveryId = ref('')
-
+const paymentRequestId = ref('')
+const paymentType = ref('single')
+let paymentsIds = ref([])
+let isSuppPaymentRequestCreated = ref(false)
 let baseUrl = ""
 
 const generateOrder = async () => {
@@ -226,6 +256,10 @@ const getDeliveries = async () => {
 
 const submitQuotation = async () => {
   const quotationRequestBody = updateQuotationRequestPerInput(lang.value, itemsCount.value, itemsType.value.value)
+  if (!quotationRequestBody) {
+    addLog("Error: Quotation request body is missing or invalid.");
+    return;
+  }
   try {
     const result = await submitQuotationCall(baseUrl, opportunityId.value, quotationRequestBody)
     quotationId.value = result.id
@@ -270,6 +304,29 @@ const generatePurchaseOrder = async () => {
       const errorMessage = error.response?.data?.message || error.message;
       addLog(`Error generating Purchase Order:${errorMessage}`);
   }
+}
+
+const showPaymentRequestSummery = async () => {
+  try {
+    const result = await getPaymentRequestCall(baseUrl, paymentRequestId.value)
+    const supplierPaymentRequest = result.supplierPaymentRequest
+
+    const currency = supplierPaymentRequest.amount.currency
+    const balanceDue = supplierPaymentRequest.balanceDueAmount.amount
+    const status = supplierPaymentRequest.status
+    const dueDate = supplierPaymentRequest.dueDate.split('T')[0]
+
+    addLog(
+      `Payment Request Info: \n`+
+      `\tBalance Due: ${balanceDue} ${currency}\n` +
+      `\tStatus: ${status}\n` +
+      `\tDue Date: ${dueDate}` 
+    )
+  } catch (error) {
+    const errorMessage = error.response?.data?.message || error.message;
+    addLog(`Error fetching payment request summary: ${errorMessage}`);
+  }
+  addLineSeparator()
 }
 
 const updateDelivery = async () => {
@@ -335,23 +392,70 @@ const finApprovePurchaseOrder = async () => {
       `\tTotal Amount: ${result.total.amount} ${result.total.currency}\n`+
       `\tDelivery Status: ${poDetails.delivery.status}\n` +
       `\tDelivery Date: ${poDetails.delivery.deliveryDate.split('T')[0]}\n` +
-      `\tSupplier Payment: ${poDetails.supplier.isCredit ? 'Credit' : 'Cash'} - ${poDetails.supplier.paymentTerm}\n`
-    ); 
-    if(paymentRequest)
-      addLog(
-        `\n\tPayment Request Status: ${paymentRequest.status}\n` +
-        `\tPayment Request Due Date: ${paymentRequest.dueDate.split('T')[0]}\n`
-      )
+      `\tSupplier Payment: ${poDetails.supplier.isCredit ? 'Credit' : 'Cash'}: ${poDetails.supplier.paymentTerm}\n`
+    ) 
+    if(paymentRequest){ 
+      isSuppPaymentRequestCreated.value = true
+      paymentRequestId.value = paymentRequest.id
+      await showPaymentRequestSummery()
+    }
     else
       addLog(`No Payment Request is created against this PO\n`)
-    addLineSeparator()
-    addLog('...  resetting order state ...')
-    await new Promise(resolve => setTimeout(resolve, 3000)) // 3 seconds delay
-    resetOrderState()
+  } catch (error) {
+      const errorMessage = error.response?.data?.message || error.message
+      addLog(`Error during Finance Approval: ${errorMessage}`)
+  }
+}
+
+const handlePayment = async () => {
+  addLog('Making Payment...');
+  const paymentBody = createPaymentBodyRequest(paymentType.value.value, paymentRequestId.value)
+  try {
+    if(paymentType.value.value == 'single'){
+      const result = await processPaymentCall(paymentBody)
+      paymentsIds.value.push(result.id)
+      addLog(`Payment of ${result.amount} made successfully!\n` + 
+            `\tPayment ID: ${result.id}\n` + 
+            `\tPayment Status: ${result.status}`);
+    }
+    else { // for now multiple = 2 payments
+      for (let i = 0; i < 2; i++){
+        const result = await processPaymentCall(paymentBody)
+        addLog(`Payment #${i+1} of ${result.amount} made successfully!\n` + 
+              `\tPayment ID: ${result.id}\n` + 
+              `\tPayment Status: ${result.status}`);
+        paymentsIds.value.push(result.id)
+      }
+    }
+    addLineSeparator()   
   } catch (error) {
       const errorMessage = error.response?.data?.message || error.message;
-      addLog(`Error during Finance Approval: ${errorMessage}`);
+      addLog(`Error making payment: ${errorMessage}`);
   }
+}
+
+const processPaymentCall = async (requestBody) => {
+  const response = await makePaymentCall(baseUrl, requestBody);
+  return {
+    id: response.id,
+    status: response.status,
+    amount: response.amount.amount,
+  }
+}
+
+const markPaymentsAsPaid = async () => {
+  for (const paymentId of paymentsIds.value) {
+    try {
+      await markAsPaidCall(baseUrl, paymentId, paymentProofRequest);
+      addLog(`Payment ID ${paymentId} marked as PAID successfully`);
+    } catch (error) {
+      addLog(`Error marking Payment ID ${paymentId} as paid: ${error.message}`);
+    }
+  }
+  addLineSeparator()
+  await showPaymentRequestSummery()
+  addLog('...  resetting order state ...')
+  await resetOrderState()
 }
 
 const clearLogs = () => {
@@ -460,16 +564,21 @@ const updateQuotationRequestPerInput = (lang, productsCount, productsType) => {
   }
 }
 
-const resetOrderState = () => {
+const resetOrderState = async () => {
+  await new Promise(resolve => setTimeout(resolve, 3000)) // 3 seconds delay
+
+  isSuppPaymentRequestCreated.value = false
   isOrderGenerated.value = false
   isCreditSupplier.value = false
   orderNumber.value = ''
-  orderId.value = ''
   opportunityId.value = ''
   quotationId.value = ''
   contractorId.value = ''
   deliveryId.value = ''
-
+  orderId.value = ''
+  paymentType.value = 'single'
+  paymentsIds.value = []
+  paymentRequestId.value = ''
   localStorage.removeItem('lineItem_0_id')
   localStorage.removeItem('lineItem_1_id')
   addLog('...  Order state is reset ...')
