@@ -1877,7 +1877,19 @@ export const updateDraftDelivery_en_item_Request = {
               "skuNumber": "ST-RS-01-12-12"
           },
           "quantity": 100,
-          "supplier": null,
+          "supplier": {
+              "id": "67fe530d6cf1a5222a72a9b8",
+              "name": "Banking Tests",
+              "mobileNumber": "+989858",
+              "cityId": "64913b22e02ccab65544bb2c",
+              "region": "CENTRAL",
+              "branchId": "67fe53376cf1a5222a72a9b9",
+              "countryId": "64feead127385273ca3cc38c",
+              "address": "",
+              "cityName": "Riyadh",
+              "countryName": "Saudi Arabia",
+              "isCredit": false
+          },
           "supplierUnitPrice": {
               "amount": "100",
               "currency": "SAR"
@@ -1920,7 +1932,8 @@ export const updateDraftDelivery_en_item_Request = {
       "countryId": "64feead127385273ca3cc38c",
       "address": "",
       "cityName": "Riyadh",
-      "countryName": "Saudi Arabia"
+      "countryName": "Saudi Arabia",
+      "isCredit": false
   },
   "supplierDeliveryNotes": null,
   "purchaseOrder": null,

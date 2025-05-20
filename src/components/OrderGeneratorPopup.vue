@@ -344,12 +344,21 @@ const updateDelivery = async () => {
       referenceNumber: `${updateDeliveryRequest.deliveryNumber}-${orderNumber.value}`,
       expectedDeliveryDate: currentDateTime,
       deliveryPaymentTerms: isCreditSupplier.value ? CREDIT_SUPP_PAYMENT : DEFAULT_SUPP_PAYMENT,
+      supplier: {
+        ...updateDeliveryRequest.supplier,
+        isCredit: isCreditSupplier.value
+      },
       products: updateDeliveryRequest.products.map((product, index) => {
         return {
           ...product,
-          lineItemId: lineItem_0_id
+          lineItemId: lineItem_0_id,
+          supplier: {
+            ...product.supplier,
+            isCredit: isCreditSupplier.value
+          },
         }
-      })
+      }),
+
   }
 
   try {
